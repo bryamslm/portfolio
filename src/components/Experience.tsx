@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaTools, FaChartLine, FaGraduationCap } from "react-icons/fa";
+import { FaTools, FaChartLine } from "react-icons/fa";
 
 const experiences = [
   {

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCode, FaTools, FaMobileAlt, FaGamepad, FaServer } from "react-icons/fa";
-import { SiNextdotjs, SiFramework7 } from "react-icons/si";
+import { FaCode, FaTools, FaMobileAlt, FaGamepad } from "react-icons/fa";
+import { SiFramework7 } from "react-icons/si";
 
 const skills = [
   {

@@ -17,7 +17,7 @@ export default function Profile() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-6xl font-bold text-center"
       >
-        Hi, I'm <span className="text-light-secondary dark:text-dark-secondary">Bryam López</span>
+        Hi, I&apos;m Bryam López <span className="text-light-secondary dark:text-dark-secondary">Bryam López</span>
       </motion.h1>
 
       <motion.h2
