@@ -36,6 +36,13 @@ const projects = [
     techStack: ["Node.js", "OpenTelemetry", "Prometheus", "Grafana", "Docker"],
     repoLink: "",  // Por definir
     liveDemo: ""   // Proyecto en desarrollo
+  },
+  {
+    title: "Personal Portfolio Website",
+    description: "A responsive portfolio website built with Next.js, showcasing my projects and skills.",
+    techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    repoLink: "https://github.com/bryamslm/portfolio/tree/main",
+    liveDemo: "https://portfolio-bryam.vercel.app"
   }
 ];
 

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bryam López | Full Stack Developer",
     description: "Professional portfolio showcasing projects and skills.",
-    url: "https://yourdomain.com",
+    url: "https://portfolio-bryam.vercel.app",
     siteName: "Bryam López Portfolio",
     type: "website",
   }
