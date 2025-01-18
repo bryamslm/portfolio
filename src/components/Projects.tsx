@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { title } from "process";
 import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 
 const projects = [
@@ -13,7 +14,7 @@ const projects = [
       { title: "Solitaire Chess", link: "https://youtu.be/b9-SXXBkaCI" },
       { title: "Horseshoe and Solitaire Chess", link: "https://youtu.be/baV5nmyhgCw" },
       { title: "Ionization and Dissociation", link: "https://youtu.be/-TNEy7JM824" },
-      { title: "Hydraulic Arm", link: "https://youtu.be/RIFfUAT6lzk" }
+      { title: "Hydraulic Arm", link: "https://youtu.be/CRjKiKDNYTA" }
     ]
   },
   {
@@ -22,7 +23,8 @@ const projects = [
     techStack: ["React", "Firebase", "JavaScript", "Node.js"],
     repoLink: "https://github.com/bryamslm/EngineeringProject",
     videos: [
-      { title: "Administrator Warning", link: "https://youtu.be/eHsoa-aDKYQ?si=vzabd7Iv0JLMbNXs" }
+      { title: "Purchase warning", link: "https://youtu.be/eHsoa-aDKYQ?si=vzabd7Iv0JLMbNXs" },
+      { title: "Order Section", link: "https://youtu.be/xM4sXsR91VE?si=p_Lj3N-EKDatlsEL" },
     ]
   },
   {
