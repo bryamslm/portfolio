@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { video } from "framer-motion/client";
 import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 
 const projects = [
@@ -21,14 +22,18 @@ const projects = [
     description: "Online store built with React and Firebase, optimizing purchases and reducing load time by 20%.",
     techStack: ["React", "Firebase", "JavaScript", "Node.js"],
     repoLink: "https://github.com/bryamslm/EngineeringProject",
-    liveDemo: ""  // Por definir
+    videos: [
+      { title: "Administrator Warning", link: "https://youtu.be/eHsoa-aDKYQ?si=vzabd7Iv0JLMbNXs" }
+    ]
   },
   {
     title: "Bomberman VR Game",
     description: "VR Bomberman game for Android with gaze-based tracking and 5 unique levels.",
     techStack: ["Unity", "C#", "Vuforia SDK"],
     repoLink: "https://github.com/bryamslm/Bomberman-Android-VR",
-    liveDemo: ""  // Por definir
+    videos: [
+      { title: "Bomberman VR Demo", link: "https://youtu.be/amUBe5nlToA" }
+    ]
   },
   {
     title: "Observability Framework Demo",
