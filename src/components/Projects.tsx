@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { video } from "framer-motion/client";
 import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 
 const projects = [
