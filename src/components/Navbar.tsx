@@ -36,10 +36,10 @@ export default function Navbar() {
 
   const navigationLinks = [
     { href: "profile", label: "Profile" },
-    { href: "education", label: "Education" },
-    { href: "experience", label: "Experience" },
     { href: "projects", label: "Projects" },
+    { href: "experience", label: "Experience" },
     { href: "skills", label: "Skills" },
+    { href: "education", label: "Education" },
   ];
 
   return (

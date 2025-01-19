@@ -11,10 +11,10 @@ export default function Home() {
     <main>
       <Navbar />
       <Profile />
-      <Education />
-      <Experience />
       <Projects />
+      <Experience />
       <Skills />
+      <Education />
       <Footer />
     </main>
   );
