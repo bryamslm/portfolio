@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { FaCode, FaTools, FaMobileAlt, FaGamepad, FaJava } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { SiFramework7, SiJavascript, SiTypescript, SiPython, SiCplusplus, SiExpress, SiReact, SiNextdotjs, SiNodedotjs, SiFlutter, SiIonic, SiUnity, SiGrafana, SiPrometheus, SiOpentelemetry, SiElasticsearch } from "react-icons/si";
-import { div } from "framer-motion/client";
 
 const skills = [
   {
