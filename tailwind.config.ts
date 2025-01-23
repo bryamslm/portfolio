@@ -24,6 +24,10 @@ module.exports = {
           border: "#374151",
         },
       },
+      borderColor: {
+        "light-border": "#E5E7EB", // Modo claro
+        "dark-border": "#374151",  // Modo oscuro
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
@@ -31,3 +35,4 @@ module.exports = {
   },
   plugins: [],
 };
+

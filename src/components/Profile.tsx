@@ -54,7 +54,7 @@ export default function Profile() {
         </button>
 
         <a
-          href="/documents/CV_Bryam_Lopez_EN_2024.pdf"
+          href="/documents/CV_Bryam_Lopez.pdf"
           download="Bryam_Lopez_CV.pdf"
           className="px-6 py-2 rounded-md border border-light-secondary dark:border-dark-secondary text-light-text dark:text-dark-text hover:bg-light-secondary dark:hover:bg-dark-secondary hover:text-dark-background transition-colors"
         >

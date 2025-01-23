@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaTools, FaChartLine } from "react-icons/fa";
+import { FaTools, FaCaretRight } from "react-icons/fa";
 
 const experiences = [
   {
@@ -9,9 +9,9 @@ const experiences = [
     company: "Vivo Gaming",
     period: "Jul 2024 - Nov 2024",
     description: [
-      "🛠 Developed a scalable observability framework for Node.js services, reducing error detection time by 67% (from 15 to 5 minutes).",
-      "🔎 Integrated observability tools such as OpenTelemetry, Prometheus, Grafana, Elasticsearch, and Tempo.",
-      "📊 Configured dashboards and real-time alerts in Grafana, improving incident resolution efficiency by 50%."
+      "Developed a scalable observability framework for Node.js services, reducing error detection time by 67% (from 15 to 5 minutes).",
+      "Integrated observability tools such as OpenTelemetry, Prometheus, Grafana, Elasticsearch, and Tempo.",
+      "Configured dashboards and real-time alerts in Grafana, improving incident resolution efficiency by 50%."
     ],
     techStack: ["Node.js", "OpenTelemetry", "Prometheus", "Grafana", "Docker"]
   },
@@ -20,9 +20,9 @@ const experiences = [
     company: "Tecnológico de Costa Rica",
     period: "Aug 2022 – Dec 2023",
     description: [
-      "🎮 Designed interactive AR educational applications using Unity and Vuforia SDK, increasing student engagement by 60%.",
-      "🌱 Created AR experiences to simplify molecular ionization concepts and promote biodiversity awareness.",
-      "⚙️ Enhanced mechanics learning with AR-based modules for teaching torque operations."
+      "Designed interactive AR educational applications using Unity and Vuforia SDK, increasing student engagement by 60%.",
+      "Created AR experiences to simplify molecular ionization concepts and promote biodiversity awareness.",
+      "Enhanced mechanics learning with AR-based modules for teaching torque operations."
     ],
     techStack: ["Unity", "Vuforia SDK", "C#", "AR/VR Technologies"]
   },
@@ -31,8 +31,8 @@ const experiences = [
     company: "Tecnológico de Costa Rica",
     period: "Aug 2023 – Dec 2023",
     description: [
-      "🛒 Developed a fully functional e-commerce web application using React and Firebase.",
-      "⚡ Optimized site performance, reducing load time by 20%."
+      "Developed a fully functional e-commerce web application using React and Firebase.",
+      "Optimized site performance, reducing load time by 20%."
     ],
     techStack: ["React", "Firebase", "JavaScript", "Node.js"]
   },
@@ -41,8 +41,8 @@ const experiences = [
     company: "Tecnológico de Costa Rica",
     period: "Aug 2022 – Jul 2023",
     description: [
-      "📚 Guided over 20 students in programming and data structures.",
-      "📝 Developed interactive materials to enhance algorithm comprehension by 20%."
+      "Guided over 20 students in programming and data structures.",
+      "Developed interactive materials to enhance algorithm comprehension by 20%."
     ],
     techStack: ["Python", "C++", "Java"]
   },
@@ -51,8 +51,8 @@ const experiences = [
     company: "Tecnológico de Costa Rica",
     period: "Dec 2022 – Feb 2023",
     description: [
-      "🎮 Developed Bomberman VR for Android, integrating gaze-based tracking.",
-      "🗺️ Designed 5 progressively challenging levels."
+      "Developed Bomberman VR for Android, integrating gaze-based tracking.",
+      "Designed 5 progressively challenging levels."
     ],
     techStack: ["Unity", "C#", "Vuforia SDK"]
   }
@@ -71,14 +71,14 @@ export default function Experience() {
           Professional Experience
         </motion.h2>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
-              className="border rounded-lg p-6 shadow-lg bg-light-section dark:bg-dark-section hover:shadow-xl transition-shadow"
+              className="border rounded-lg p-6 bg-light-section dark:bg-dark-section shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform"
             >
               {/* Cargo y Empresa */}
               <div className="flex items-center space-x-2">
@@ -92,10 +92,10 @@ export default function Experience() {
               </p>
 
               {/* Lista de Logros */}
-              <ul className="mt-4 list-disc pl-5 space-y-2 text-light-text dark:text-dark-text">
+              <ul className="mt-4 list-disc pl-2 space-y-2 text-light-text dark:text-dark-text">
                 {exp.description.map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <FaChartLine className="mr-2 mt-1 text-light-secondary dark:text-dark-secondary" />
+                    <FaCaretRight className="mr-2 mt-1 text-light-secondary dark:text-dark-secondary" />
                     {item}
                   </li>
                 ))}

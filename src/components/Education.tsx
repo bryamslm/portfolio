@@ -9,9 +9,9 @@ const education = [
     institution: "Tecnológico de Costa Rica",
     period: "2020 - 2024",
     description: [
-      "🎓 Specialized in software development and observability frameworks.",
-      "📚 Developed AR/VR educational projects using Unity and Vuforia SDK.",
-      "💻 Final project: Designed and implemented an observability framework for Node.js services."
+      "Specialized in software development and observability frameworks.",
+      "Developed AR/VR educational projects using Unity and Vuforia SDK.",
+      "Final project: Designed and implemented an observability framework for Node.js services."
     ],
     // 🔗 Enlace al título de Bachillerato
     certificateLink: "https://drive.google.com/file/d/1e2hkG0mGfKou1ZxyGHVl9OqMGzIEi7Lh/view?usp=sharing"
@@ -53,7 +53,7 @@ const education = [
 export default function Education() {
   return (
     <section id="education" className="min-h-screen py-20 bg-light-background dark:bg-dark-background">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
