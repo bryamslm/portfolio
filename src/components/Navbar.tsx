@@ -19,7 +19,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
 
       // Detectar la sección activa
-      const sections = ["profile", "education", "experience", "projects", "skills"];
+      const sections = ["profile", "projects",  "experience", "skills", "education"];
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 100) {
@@ -56,7 +56,7 @@ export default function Navbar() {
           onClick={() => handleScroll("profile", () => setIsMenuOpen(false))}
           className="text-xl font-bold text-light-text dark:text-dark-text cursor-pointer"
         >
-          🚀 Bryam López
+          Portfolio
         </span>
 
         {/* Desktop Navigation */}

@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Por defecto: Modo claro */
+.border {
+  border-color: #E5E7EB; /* light-border */
+}
+
+/* Cuando el tema oscuro está activo */
+.dark .border {
+  border-color: #374151; /* dark-border */
+}

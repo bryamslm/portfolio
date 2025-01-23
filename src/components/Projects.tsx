@@ -54,7 +54,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="min-h-screen py-20 bg-light-background dark:bg-dark-background">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

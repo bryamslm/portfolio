@@ -2,7 +2,7 @@ export const handleScroll = (id: string, closeMenu?: () => void) => {
   const element = document.getElementById(id);
   if (element) {
     window.scrollTo({
-      top: element.offsetTop - 80, // Adjustment for fixed Navbar
+      top: element.offsetTop - 10, // Adjustment for fixed Navbar
       behavior: "smooth"
     });
     window.history.pushState(null, "", `#${id}`);
