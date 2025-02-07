@@ -5,6 +5,13 @@ import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 
 const projects = [
   {
+    title: "FlowDent - Automated Dental Clinic Management",
+    description: "Intelligent automation system for dental clinics, handling appointment scheduling, patient-doctor interactions, and workflow management.",
+    techStack: ["NextJs", "Supabase", "WhatsApp API", "Twilio", ],
+    repoLink: "https://github.com/bryamslm/odontologia-web",
+    liveDemo: "https://odontologia-web.vercel.app/"
+  },
+  {
     title: "AR Educational Application",
     description: "Interactive AR educational apps designed to teach molecular ionization, biodiversity, and mechanical concepts.",
     techStack: ["Unity", "Vuforia SDK", "C#"],
