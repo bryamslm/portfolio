@@ -27,12 +27,12 @@ export const handleScroll = (id: string, closeMenu?: () => void) => {
 export const addVisit = async (visitData: { userAgent: string, pageUrl: string, referer: string, visited_at: Date }) => {
   const { data, error } = await supabase
     .from("visits")
-    .insert([visitData]);
-
-    
-  if (error) {
-    console.error("Error adding visit:", error);
-  }
+    .insert([{
+      visited_at: visitData.visited_at,
+      user_agent: visitData.userAgent,
+      page_url: visitData.pageUrl,
+      referer: visitData.referer
+    }]);
 
   return data;
 };
