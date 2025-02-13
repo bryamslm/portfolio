@@ -25,7 +25,7 @@ export const handleScroll = (id: string, closeMenu?: () => void) => {
 
 //metodo addVisit que no recive parametros, no retorna nada y se encarga de agregar una visita a la base de datos, mete la info que se pueda extraer del navegador sin necesidad de que el usuario la proporcione permisos
 export const addVisit = async (visitData: { userAgent: string, pageUrl: string, referer: string, visited_at: Date }) => {
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from("visits")
     .insert([{
       visited_at: visitData.visited_at,
