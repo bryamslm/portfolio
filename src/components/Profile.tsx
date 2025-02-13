@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from "react-icons/fa";
-import { handleScroll } from "../utils/scrollToSection";
+import { handleScroll } from "../utils/utils";
 
 export default function Profile() {
   return (

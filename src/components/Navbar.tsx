@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { handleScroll } from "../utils/scrollToSection";
+import { handleScroll } from "../utils/utils";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function Navbar() {
