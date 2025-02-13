@@ -29,6 +29,7 @@ export const addVisit = async (visitData: { userAgent: string, pageUrl: string, 
     .from("visits")
     .insert([visitData]);
 
+    
   if (error) {
     console.error("Error adding visit:", error);
   }
