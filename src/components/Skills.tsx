@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCode, FaTools, FaMobileAlt, FaGamepad, FaJava } from "react-icons/fa";
+import { FaCode, FaTools, FaMobileAlt, FaGamepad, FaJava,  } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
-import { SiFramework7, SiJavascript, SiTypescript, SiPython, SiCplusplus, SiExpress, SiReact, SiNextdotjs, SiNodedotjs, SiFlutter, SiIonic, SiUnity, SiGrafana, SiPrometheus, SiOpentelemetry, SiElasticsearch } from "react-icons/si";
+import { CgMoreO } from "react-icons/cg";
+import { SiFramework7, SiSendgrid, SiServerfault, SiMeta, SiWhatsapp, SiVercel, SiJavascript, SiTypescript, SiPython, SiCplusplus, SiExpress, SiReact, SiNextdotjs, SiAstro, SiTailwindcss, SiNodedotjs, SiFlutter, SiIonic, SiUnity, SiGrafana, SiPrometheus, SiOpentelemetry, SiElasticsearch } from "react-icons/si";
 
 const skills = [
   {
@@ -23,6 +24,8 @@ const skills = [
     icon: <SiFramework7 size={24} />,
     items: [
       { name: "Next.js", icon: <SiNextdotjs size={16} /> },
+      { name: "Astro", icon: <SiAstro size={16} /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={16} /> },
       { name: "React", icon: <SiReact size={16} /> },
       { name: "Node.js", icon: <SiNodedotjs size={16} /> },
       { name: "Express.js", icon: <SiExpress size={16} /> }
@@ -55,24 +58,37 @@ const skills = [
       { name: "Tempo", image: "tempo-dark.png", imageDark: "tempo-blank.png" },
       { name: "Mimir", image: "mimir-dark.png", imageDark: "mimir-blank.png" },
       { name: "Loki", image: "loki-black.png", imageDark: "loki-blank.png" },
+
+    ]
+  },
+  {
+    category: "Others",
+    icon: <CgMoreO size={24} />,
+    items: [
+      { name: "Vercel", icon: <SiVercel size={16} /> },
+      { name: "Whatsapp API", icon: <SiWhatsapp size={16} /> },
+     
+      { name: "Meta (Facebook) for developers", icon: <SiMeta size={16} /> },
+      { name: "BlueHost (HostMonster)", icon: <SiServerfault size={16} /> },
+      { name: "SendGrid", icon: <SiSendgrid size={16} /> },
     ]
   }
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="min-h-screen py-20 bg-light-background dark:bg-dark-background">
+    <section id="skills" className=" py-8 bg-light-background dark:bg-dark-background">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center text-light-text dark:text-dark-text"
+          className="text-4xl font-bold text-center  text-light-text dark:text-dark-text"
         >
           Skills
         </motion.h2>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {skills.map((skill, index) => (
             <motion.div
               key={index}

@@ -10,10 +10,10 @@ module.exports = {
     extend: {
       colors: {
         light: {
-          background: "#FFFFFF",
+          background: "#f0f9ff",
           text: "#1F2937",
           secondary: "#FACC15",
-          section: "#F3F4F6",
+          section: "#ffffff",
           border: "#E5E7EB",
         },
         dark: {

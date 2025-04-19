@@ -18,14 +18,15 @@ export default function Navbar() {
     const handleScrollEvent = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Detectar la sección activa
-      const sections = ["profile", "projects",  "experience", "skills", "education"];
-      sections.forEach((section) => {
+      // Detect active section
+      const sections = ["profile", "projects", "experience", "skills", "education"];
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 100) {
           setActiveSection(section);
+          break; // Stop after finding the first matching section (highest in the viewport)
         }
-      });
+      }
     };
 
     window.addEventListener("scroll", handleScrollEvent);
@@ -46,11 +47,11 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-light-background/70 dark:bg-dark-background/70 backdrop-blur-md shadow-md"
+          ? "bg-light-background/80 dark:bg-dark-background/80 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo */}
         <span
           onClick={() => handleScroll("profile", () => setIsMenuOpen(false))}
@@ -60,34 +61,36 @@ export default function Navbar() {
         </span>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6">
           {navigationLinks.map((link) => (
             <span
               key={link.href}
-              onClick={() => handleScroll(link.href, () => setIsMenuOpen(false))}
-              className={`cursor-pointer ${
+              onClick={() => handleScroll(link.href, () => {})}
+              className={`cursor-pointer transition-colors ${
                 activeSection === link.href
-                  ? "text-light-secondary dark:text-dark-secondary font-semibold underline"
-                  : "text-light-text dark:text-dark-text hover:text-light-secondary dark:hover:text-dark-secondary"
+                  ? "text-light-secondary dark:text-dark-secondary font-medium"
+                  : "text-light-text/80 dark:text-dark-text/80 hover:text-light-secondary dark:hover:text-dark-secondary"
               }`}
             >
               {link.label}
             </span>
           ))}
+          
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="p-2 rounded-full bg-light-section dark:bg-dark-section text-light-text dark:text-dark-text hover:bg-light-secondary/20 dark:hover:bg-dark-secondary/20 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? <FaMoon size={18} /> : <FaSun size={18} />}
+          </button>
         </div>
-
-        {/* Theme Toggle */}
-        <button
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          className="hidden md:block p-2 rounded-md bg-light-section dark:bg-dark-section text-light-text dark:text-dark-text hover:bg-light-secondary dark:hover:bg-dark-secondary transition-colors"
-        >
-          {theme === "light" ? <FaMoon size={20} /> : <FaSun size={20} />}
-        </button>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 rounded-md bg-light-section dark:bg-dark-section text-light-text dark:text-dark-text hover:bg-light-secondary dark:hover:bg-dark-secondary"
+          className="md:hidden p-2 rounded-md text-light-text dark:text-dark-text"
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? "✖️" : "☰"}
         </button>
@@ -95,30 +98,37 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-light-background dark:bg-dark-background shadow-md transition-all duration-300">
-          <div className="flex flex-col items-center space-y-4 py-4">
+        <div className="md:hidden bg-light-background/95 dark:bg-dark-background/95 backdrop-blur-md shadow-md">
+          <div className="flex flex-col py-3">
             {navigationLinks.map((link) => (
               <span
                 key={link.href}
-                onClick={() => handleScroll(link.href, () => setIsMenuOpen(false))}
-                className={`cursor-pointer ${
+                onClick={() => {
+                  handleScroll(link.href, () => {});
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer py-3 px-4 ${
                   activeSection === link.href
-                    ? "text-light-secondary dark:text-dark-secondary font-semibold underline"
-                    : "text-light-text dark:text-dark-text hover:text-light-secondary dark:hover:text-dark-secondary"
+                    ? "text-light-secondary dark:text-dark-secondary font-medium"
+                    : "text-light-text dark:text-dark-text"
                 }`}
               >
                 {link.label}
               </span>
             ))}
+            
             {/* Theme Toggle in Mobile Menu */}
             <button
               onClick={() => {
                 setTheme(theme === "light" ? "dark" : "light");
                 setIsMenuOpen(false);
               }}
-              className="p-2 rounded-md bg-light-section dark:bg-dark-section text-light-text dark:text-dark-text hover:bg-light-secondary dark:hover:bg-dark-secondary"
+              className="w-full flex items-center justify-center py-4 text-light-text dark:text-dark-text hover:bg-light-secondary/10 dark:hover:bg-dark-secondary/10 transition-colors"
             >
-              {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+              <span className="flex items-center space-x-2">
+                {theme === "light" ? <FaMoon className="w-5 h-5" /> : <FaSun className="w-5 h-5" />}
+                <span>{theme === "light" ? "Dark Mode" : "Light Mode"}</span>
+              </span>
             </button>
           </div>
         </div>

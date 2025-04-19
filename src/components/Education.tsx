@@ -52,8 +52,8 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="min-h-screen py-20 bg-light-background dark:bg-dark-background">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="education" className=" py-8 bg-light-background dark:bg-dark-background">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

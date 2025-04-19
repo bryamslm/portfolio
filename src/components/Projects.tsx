@@ -5,11 +5,18 @@ import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 
 const projects = [
   {
-    title: "FlowDent - Automated Dental Clinic Management",
+    title: "Dulce Placer – Landing Page with WhatsApp Ordering",
+    description: "Astro-based landing page for a Costa Rican ice cream shop with WhatsApp ordering and local SEO optimization.",
+    techStack: ["Astro", "Tailwind CSS", "React", "TypeScript"],
+    repoLink: "https://github.com/bryamslm/dulce-placer",
+    liveDemo: "https://dulceplacercr.com/"
+  },
+  {
+    title: "FlowDental - Landing Page & Appointment Scheduler",
     description: "Intelligent automation system for dental clinics, handling appointment scheduling, patient-doctor interactions, and workflow management.",
-    techStack: ["NextJs", "Supabase", "WhatsApp API", "Twilio", ],
+    techStack: ["NextJs", "Supabase", "WhatsApp API", "SendGrid", "React", "TypeScript"],
     repoLink: "https://github.com/bryamslm/odontologia-web",
-    liveDemo: "https://odontologia-web.vercel.app/"
+    liveDemo: "https://flowdental.vercel.app/"
   },
   {
     title: "AR Educational Application",
@@ -60,8 +67,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen py-20 bg-light-background dark:bg-dark-background">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className=" py-8 bg-light-background dark:bg-dark-background">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
