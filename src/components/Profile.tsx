@@ -1,26 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaChevronDown } from "react-icons/fa";
 import { handleScroll } from "../utils/utils";
 
 export default function Profile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Handle responsive detection
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const socialLinks = [
     {
