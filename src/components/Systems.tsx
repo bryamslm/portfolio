@@ -56,7 +56,7 @@ export default function Systems() {
                 </dt>
                 <dd className="mt-2 text-light-soft dark:text-dark-soft text-pretty">
                   Cada vertical necesita identidad, memoria, herramientas y
-                  guardas propias sin reescribir la base.
+                  límites propios sin reescribir la base.
                 </dd>
               </div>
               <div>
@@ -65,7 +65,8 @@ export default function Systems() {
                 </dt>
                 <dd className="mt-2 text-light-soft dark:text-dark-soft text-pretty">
                   Plataforma multi-tenant con aislamiento por organización,
-                  RAG scoped, handoff, outbox y operación Linux/PM2.
+                  memoria y conocimiento propio, traspaso a humano y
+                  recuperación ante fallos.
                 </dd>
               </div>
               <div>
@@ -115,7 +116,7 @@ export default function Systems() {
                 {assistants.map((a) => {
                   const statusLabel: Record<string, string> = {
                     live: "Operando",
-                    "live-with-caveats": "Con caveats",
+                    "live-with-caveats": "Con limitaciones",
                     demonstrative: "Demostrativo",
                   };
                   return (
@@ -207,8 +208,8 @@ export default function Systems() {
             </dl>
 
             <p className="mt-4 text-xs text-light-muted dark:text-dark-muted text-pretty">
-              Motor local consumido mediante skills por Claude Code, Codex y
-              otros agentes. No es un arnés.
+              Motor local que otros agentes (Claude Code, Codex) consumen como
+              herramienta para generar, corregir y validar flujos.
             </p>
           </article>
         </div>

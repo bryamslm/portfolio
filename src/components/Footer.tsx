@@ -24,7 +24,7 @@ const primaryContacts = [
   },
   {
     label: "CV",
-    value: "Descargar PDF ATS (es)",
+    value: "Descargar CV (PDF)",
     href: "/documents/CV_Bryam_Lopez_ES.pdf",
     download: "CV_Bryam_Lopez_ES.pdf",
     icon: null,

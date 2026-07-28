@@ -81,7 +81,7 @@ export const cvEs: Cv = {
       current: true,
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
-        "Construí Plica/Licita, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, operable con paridad funcional desde ERP/web, Plica Chat y MCP.",
+        "Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, accesible desde la web, el chat y la integración para herramientas.",
         "Construí asistentes como Aldana, Emma, Charlotte, Cata y Ben con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente; el tenant 2 enruta un mismo cerebro entre cinco marcas.",
         "Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas entrantes, campañas salientes y transferencias.",
         "Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.",
@@ -106,9 +106,9 @@ export const cvEs: Cv = {
   ],
   projects: [
     {
-      title: "Plica/Licita - Inteligencia para contratación pública",
+      title: "Plica Licitaciones CR - Inteligencia para contratación pública",
       description:
-        "Motor listo de inteligencia para SICOP con datos, especialistas, RAG legal y modelos, operable con paridad funcional desde ERP/web, Plica Chat y MCP.",
+        "Inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones honestas, accesible desde la web, el chat y la integración para herramientas.",
       techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },
@@ -179,7 +179,7 @@ export const cvEn: Cv = {
       current: true,
       bullets: [
         "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
-        "Built Plica/Licita, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, available with functional parity across ERP/web, Plica Chat and MCP.",
+        "Built Plica Licitaciones CR, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, accessible from the web, chat and tool integration.",
         "Built assistants such as Aldana, Emma, Charlotte, Cata and Ben with memory, RAG, tools, guards, fallbacks and per-organization configuration; tenant 2 routes one brain across five brands.",
         "Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for inbound calls, outbound campaigns and transfers.",
         "Implemented RLS, feature flags, idempotency, auditing, outbox, notifications and failure recovery on Linux, PostgreSQL and self-hosted Supabase.",
@@ -204,9 +204,9 @@ export const cvEn: Cv = {
   ],
   projects: [
     {
-      title: "Plica/Licita - Public procurement intelligence",
+      title: "Plica Licitaciones CR - Public procurement intelligence",
       description:
-        "Production-ready SICOP intelligence engine with data, specialists, legal RAG and evaluated models, available with functional parity across ERP/web, Plica Chat and MCP.",
+        "Public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and honest predictions, accessible from the web, chat and tool integration.",
       techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },

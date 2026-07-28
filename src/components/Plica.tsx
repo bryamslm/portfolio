@@ -31,14 +31,14 @@ export default function Plica() {
             Caso insignia
           </p>
           <h2 className="mt-4 font-semibold tracking-tight text-3xl sm:text-5xl text-light-text dark:text-dark-text text-balance">
-            Plica / Licita
+            Plica Licitaciones CR
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-light-soft dark:text-dark-soft text-pretty">
-            Motor de inteligencia para contratación pública en Costa Rica.
-            Convierte diez años de SICOP, conocimiento legal y herramientas
+            Inteligencia para contratación pública en Costa Rica. Convierte
+            diez años de datos de SICOP, conocimiento legal y herramientas
             especializadas en decisiones trazables para proveedores y
-            consultoras. Producto listo, operable con paridad funcional desde
-            tres superficies: ERP/web, Plica Chat y MCP.
+            consultoras. Producto listo, accesible desde la web, el chat y
+            la integración para herramientas.
           </p>
         </motion.div>
 
@@ -165,44 +165,44 @@ export default function Plica() {
             <div className="mt-5 max-w-editorial space-y-4 text-sm leading-relaxed text-light-soft dark:text-dark-soft">
               <p className="text-pretty">
                 <span className="font-medium text-light-text dark:text-dark-text">
-                  Pipeline de datos.
+                  Datos verificables.
                 </span>{" "}
-                Ingesta, normalización y materialización analítica con lineage
-                y filtros de calidad. Bronze, Silver y marts verificables por
-                etapa; cada cifra puede trazarse a SICOP con fecha de corte.
+                  Cada cifra se obtiene de SICOP con fecha de corte y se puede
+                  rastrear paso a paso hasta su origen. Sin números sueltos ni
+                  estimaciones sin respaldo.
               </p>
               <p className="text-pretty">
                 <span className="font-medium text-light-text dark:text-dark-text">
-                  RAG legal verbatim.
+                  Respuesta legal con citas.
                 </span>{" "}
-                Jerarquía normativa, vigencia y citas explícitas. La doctrina
-                antifumo exige respuesta declarada cuando no hay cobertura,
-                nunca relleno.
+                  Normas organizadas por jerarquía y vigencia, con referencias
+                  explícitas. Si la plataforma no tiene cobertura sobre una
+                  pregunta, lo dice de frente en lugar de inventar una
+                  respuesta.
               </p>
               <p className="text-pretty">
                 <span className="font-medium text-light-text dark:text-dark-text">
                   Especialistas y herramientas.
                 </span>{" "}
-                Catálogo cerrado de especialistas del dominio; tools de lectura,
-                simulación, expediente, watcher y decisión, todas auditables y
-                con la misma guardas en cualquier superficie.
+                  Un catálogo de especialistas del dominio con herramientas de
+                  lectura, simulación y seguimiento, todas auditables y
+                  accesibles desde cualquier superficie.
               </p>
               <p className="text-pretty">
                 <span className="font-medium text-light-text dark:text-dark-text">
-                  Frontera público/pago.
+                  Un producto, tres accesos.
                 </span>{" "}
-                El hub público (<code className="font-mono text-xs text-light-secondary dark:text-dark-secondary">plica-web</code>)
-                opera como capa comercial y pSEO con vistas read-only; no toca
-                el motor directamente. La frontera está codificada en tres
-                capas: vista SQL, tipo TS y build check.
+                  El mismo motor está disponible desde la web, el chat y la
+                  integración para herramientas. Lo que funciona en un lado
+                  funciona en los demás.
               </p>
               <p className="text-pretty text-light-muted dark:text-dark-muted">
                 <span className="font-medium text-light-text dark:text-dark-text">
-                  Antifumo.
+                  Predicciones honestas.
                 </span>{" "}
-                El predictor solo se sirve si pasa la compuerta de calibración;
-                antes de eso, &ldquo;próximamente&rdquo;. GO / NO-GO es
-                explícito, humano y auditado.
+                  La proyección solo se muestra cuando pasa un control de
+                  calidad. Antes de eso no se publica. La decisión final sobre
+                  una oportunidad la toma una persona, no el sistema.
               </p>
             </div>
           )}

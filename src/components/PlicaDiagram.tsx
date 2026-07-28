@@ -456,10 +456,10 @@ export default function PlicaDiagram() {
                 </ul>
 
                 <p className="mt-6 rounded-lg border border-light-border dark:border-dark-border bg-light-background/60 dark:bg-dark-background/40 p-3 text-xs leading-relaxed text-light-muted dark:text-dark-muted text-pretty">
-                  Plica se vende como producto listo con paridad funcional entre
-                  ERP/web, Plica Chat y MCP. Este visual resume la doctrina
-                  pública del motor; los detalles operativos viven en fuentes
-                  internas de ingeniería.
+                  Plica es un producto listo accesible desde la web, el chat y
+                  la integración para herramientas. Este diagrama resume cómo
+                  funciona; los detalles operativos viven en la documentación
+                  interna de ingeniería.
                 </p>
               </div>
 

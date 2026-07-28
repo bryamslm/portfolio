@@ -110,27 +110,27 @@ export const plicaMetrics: PlicaMetric[] = [
 export const plicaCapabilities: PlicaCapability[] = [
   {
     id: "data-pipeline",
-    title: "Pipeline Bronze / Silver / marts",
+    title: "Pipeline de datos",
     description:
-      "Ingesta, normalización y materialización analítica con lineage y filtros de calidad verificables.",
+      "Ingesta, normalización y organización de los datos en capas, con trazabilidad y filtros de calidad verificables.",
   },
   {
     id: "rag-legal",
-    title: "RAG legal verbatim",
+    title: "Respuestas legales con citas",
     description:
-      "Jerarquía normativa, vigencia y citas. Respuesta explícita cuando no hay cobertura, sin rellenar.",
+      "Normas por jerarquía y vigencia, con referencias explícitas. Si no hay cobertura, lo dice en lugar de rellenar.",
   },
   {
     id: "specialists",
-    title: "Especialistas con guardas",
+    title: "Especialistas del dominio",
     description:
-      "Catálogo cerrado de especialistas que cualquier superficie invoca. Cifras y citas siempre con procedencia.",
+      "Catálogo de especialistas que cualquier acceso puede invocar. Cifras y citas siempre con procedencia.",
   },
   {
     id: "tools",
     title: "Herramientas auditables",
     description:
-      "Tools de lectura, simulación, expediente, watcher, decisión y exportación. La doctrina motor-vs-skin se mide en el build.",
+      "Lectura, simulación, expediente, seguimiento, decisión y exportación. Todas registran su procedencia.",
   },
   {
     id: "mcp",
@@ -163,13 +163,13 @@ export const plicaFlow: PlicaFlowStep[] = [
     step: 3,
     title: "Opera desde tres superficies",
     description:
-      "Misma autoridad, mismas guardas, misma procedencia. ERP para trabajo profundo, Chat para investigación conversacional, MCP para agentes externos.",
+      "Misma autoridad, mismos límites, misma procedencia. ERP para trabajo profundo, Chat para investigación conversacional, MCP para agentes externos.",
   },
   {
     step: 4,
     title: "Decide con evidencia",
     description:
-      "GO / NO-GO explícito, auditado, con score stale cuando cambian los hechos. La decisión la toma una persona; el motor prepara el terreno.",
+      "Recomendación explícita y auditada, que se reevalúa cuando cambian los hechos. La decisión final la toma una persona; el sistema prepara el terreno.",
   },
 ];
 
@@ -183,14 +183,14 @@ export const tenantTwo: {
   description: string;
 } = {
   summary:
-    "Tenant 2 — AI Solutions Mauricio: un único cerebro que atiende cinco marcas con routing, memoria, RAG scoped y handoff.",
-  description:
-    "Caso multi-BU emblemático. Identidad histórica del cerebro: Aldana. El cerebro adopta el contexto de cada marca; las BUs grandes (SobrePoxi, AI Solutions) usan RAG scoped, las más pequeñas conservan playbooks completos cuando resulta más seguro. WhatsApp bidireccional con entrega E2E, Messenger entregando dentro de la ventana de Meta, multimedia y cotizaciones con PDF preliminar.",
+    "Tenant 2 — AI Solutions Mauricio: un único cerebro que atiende cinco marcas con enrutamiento, memoria, conocimiento propio y traspaso a humano.",
+    description:
+      "Caso multi-BU emblemático. Identidad histórica del cerebro: Aldana. El cerebro adopta el contexto de cada marca; las unidades grandes (SobrePoxi, AI Solutions) usan conocimiento propio por marca, las más pequeñas conservan guiones completos cuando resulta más seguro. WhatsApp bidireccional con entrega confiable, Messenger dentro de la ventana de Meta, multimedia y cotizaciones con PDF preliminar.",
   brands: [
     {
       name: "SobrePoxi",
       description:
-        "Pisos epóxicos industriales y decorativos, resina, mobiliario. Cotizador con guardas de precio canónico.",
+        "Pisos epóxicos industriales y decorativos, resina, mobiliario. Cotizador con validación de precios.",
     },
     {
       name: "AI Solutions Costa Rica",
@@ -261,7 +261,7 @@ export const assistants: Assistant[] = [
     brand: "Operación interna",
     vertical: "Backoffice",
     description:
-      "Asistente de seguimiento y operación con outbox supervisado, self-heal y test-redirect para no notificar a clientes reales durante pruebas.",
+      "Asistente de seguimiento y operación, con recuperación automática y un modo de prueba que evita notificar a clientes reales durante pruebas.",
     highlights: [
       "Tool-calling de dos pasadas (LOOKUP / ACTION)",
       "17 tools: conteos, leads, SR urgentes, triage, handoffs, fallback email",
@@ -396,7 +396,7 @@ export const plicaDiagramNodes: DiagramNode[] = [
     id: "data",
     ring: "capability",
     label: "Pipeline de datos",
-    short: "Bronze · Silver · marts",
+    short: "Datos verificables",
     description:
       "Ingesta, normalización y materialización analítica con lineage y filtros de calidad. Diez años y 120 periodos de SICOP estructurados, listos para consulta.",
     invokedBy: ["Investigación", "Expedientes", "Simulador"],

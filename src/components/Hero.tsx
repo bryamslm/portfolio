@@ -82,7 +82,7 @@ export default function Hero() {
             download="CV_Bryam_Lopez_ES.pdf"
             className="inline-flex items-center justify-center rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
           >
-            Descargar CV ATS
+            Descargar CV
           </a>
 
           <a
