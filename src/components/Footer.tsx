@@ -1,149 +1,132 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   FaLinkedin,
   FaGithub,
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa";
-import { handleScroll } from "../utils/utils";
+import { useReveal } from "../utils/reveal";
 
-const socials = [
+const primaryContacts = [
   {
-    name: "LinkedIn",
-    icon: <FaLinkedin size={18} />,
-    url: "https://linkedin.com/in/bryamslm",
+    label: "Correo",
+    value: "bryam.steven.lopez@gmail.com",
+    href: "mailto:bryam.steven.lopez@gmail.com",
+    icon: <FaEnvelope size={15} />,
   },
   {
-    name: "GitHub",
-    icon: <FaGithub size={18} />,
-    url: "https://github.com/bryamslm",
+    label: "LinkedIn",
+    value: "linkedin.com/in/bryamslm",
+    href: "https://linkedin.com/in/bryamslm",
+    icon: <FaLinkedin size={15} />,
   },
   {
-    name: "Email",
-    icon: <FaEnvelope size={18} />,
-    url: "mailto:bryam.steven.lopez@gmail.com",
-  },
-  {
-    name: "WhatsApp",
-    icon: <FaWhatsapp size={18} />,
-    url: "https://wa.me/50662633553",
+    label: "CV",
+    value: "Descargar PDF ATS (es)",
+    href: "/documents/CV_Bryam_Lopez_ES.pdf",
+    download: "CV_Bryam_Lopez_ES.pdf",
+    icon: null,
   },
 ];
 
-const navLinks = [
-  { href: "plica", label: "Plica" },
-  { href: "asistentes", label: "Asistentes" },
-  { href: "voice", label: "Voice AI" },
-  { href: "retell-flowkit", label: "Retell Flowkit" },
-  { href: "contacto", label: "Contacto" },
-  { href: "/cv/print?lang=es", label: "CV (ES)", external: true },
+const secondaryContacts = [
+  {
+    label: "GitHub",
+    href: "https://github.com/bryamslm",
+    icon: <FaGithub size={15} />,
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/50662633553",
+    icon: <FaWhatsapp size={15} />,
+  },
 ];
 
 export default function Footer() {
+  const r = useReveal();
+
   return (
     <footer
       id="contacto"
-      className="border-t border-light-border dark:border-dark-border bg-light-section dark:bg-dark-section text-light-text dark:text-dark-text"
+      className="py-20 sm:py-28 bg-light-background dark:bg-dark-background border-t border-light-border dark:border-dark-border"
     >
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-2 md:items-start">
-          <div>
-            <p className="font-serif text-xl font-semibold text-light-text dark:text-dark-text">
-              Bryam Steven López Miranda
-              <span className="text-light-secondary dark:text-dark-secondary">
-                .
-              </span>
-            </p>
-            <p className="mt-2 text-sm text-light-soft dark:text-dark-soft">
-              Ingeniero de IA Aplicada y Sistemas · Applied AI Engineer
-            </p>
-            <p className="mt-1 text-sm text-light-muted dark:text-dark-muted">
-              San Carlos, Alajuela, Costa Rica · Disponible remoto en LatAm
-            </p>
-            <p className="mt-1 text-sm text-light-muted dark:text-dark-muted">
+      <div className="max-w-layout mx-auto px-5 sm:px-8">
+        <motion.div {...r} className="max-w-editorial">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-light-secondary dark:text-dark-secondary">
+            Contacto
+          </p>
+          <h2 className="mt-4 font-semibold tracking-tight text-3xl sm:text-5xl text-light-text dark:text-dark-text text-balance">
+            Hablemos
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-light-soft dark:text-dark-soft text-pretty">
+            Disponible para incorporarme a un equipo estable en Costa Rica o
+            Latinoamérica. Si tu equipo construye productos de IA aplicada,
+            integraciones, Voice AI o sistemas, escribo en menos de 24 horas.
+          </p>
+        </motion.div>
+
+        {/* Acciones de contacto */}
+        <motion.ul
+          {...r}
+          className="mt-10 grid gap-px bg-light-border dark:bg-dark-border border border-light-border dark:border-dark-border rounded-xl overflow-hidden sm:grid-cols-3"
+        >
+          {primaryContacts.map((c) => (
+            <li key={c.label}>
               <a
-                href="mailto:bryam.steven.lopez@gmail.com"
-                className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
+                href={c.href}
+                download={(c as { download?: string }).download || undefined}
+                target={c.href.startsWith("http") ? "_blank" : undefined}
+                rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex h-full flex-col gap-2 bg-light-section dark:bg-dark-section p-5 hover:bg-light-elevated dark:hover:bg-dark-elevated transition-colors"
               >
-                bryam.steven.lopez@gmail.com
-              </a>{" "}
-              ·{" "}
-              <a
-                href="https://wa.me/50662633553"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
-              >
-                +506 6263 3553
+                <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-light-muted dark:text-dark-muted">
+                  {c.icon}
+                  {c.label}
+                </span>
+                <span className="text-base font-medium text-light-text dark:text-dark-text">
+                  {c.value}
+                </span>
               </a>
-            </p>
-          </div>
+            </li>
+          ))}
+        </motion.ul>
 
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-light-muted dark:text-dark-muted">
-              Navegación
-            </p>
-            <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              {navLinks.map((link) =>
-                (link as { external?: boolean }).external ? (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="text-light-soft dark:text-dark-soft hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ) : (
-                  <li key={link.href}>
-                    <button
-                      type="button"
-                      onClick={() => handleScroll(link.href)}
-                      className="text-left text-light-soft dark:text-dark-soft hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ),
-              )}
-            </ul>
+        {/* Secundarios discretos */}
+        <motion.div {...r} className="mt-6 flex items-center gap-5 text-light-muted dark:text-dark-muted">
+          {secondaryContacts.map((c) => (
+            <a
+              key={c.label}
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm transition-colors hover:text-light-secondary dark:hover:text-dark-secondary"
+            >
+              {c.icon}
+              {c.label}
+            </a>
+          ))}
+        </motion.div>
 
-            <div className="mt-6 flex items-center gap-4">
-              {socials.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.name}
-                  className="text-light-muted dark:text-dark-muted transition-colors hover:text-light-secondary dark:hover:text-dark-secondary"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-light-border dark:border-dark-border pt-6 text-xs text-light-muted dark:text-dark-muted">
+        {/* Línea de cierre */}
+        <div className="mt-16 pt-6 border-t border-light-border dark:border-dark-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-light-muted dark:text-dark-muted">
           <span>
-            © {new Date().getFullYear()} Bryam Steven López Miranda · Hecho con
-            Next.js · Costa Rica
+            © {new Date().getFullYear()} Bryam Steven López Miranda · Costa Rica
           </span>
-          <span>
+          <span className="flex items-center gap-3">
             <a
               href="/cv/print?lang=es"
               className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
             >
-              CV en español
+              CV imprimible (ES)
             </a>
-            <span className="mx-2">·</span>
+            <span aria-hidden>·</span>
             <a
               href="/cv/print?lang=en"
               className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
             >
-              CV in English
+              CV (EN)
             </a>
           </span>
         </div>

@@ -2,20 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Sistema visual: "expediente técnico oscuro".
+ * Tokens definidos en tailwind.config.ts (light/dark).
+ * El modo oscuro es la experiencia predeterminada.
+ */
+
 :root {
-  --background: #f4efe5; /* papel cálido */
-  --foreground: #2a2620;
+  /* Modo claro (secundario) */
+  --background: #f7f8fa;
+  --surface: #ffffff;
+  --elevated: #e6e8ec;
+  --text: #0d0f14;
+  --text-soft: #434955;
+  --text-muted: #6f7683;
+  --border: #dde1e8;
+  --accent: #3f62e8;
+  --accent-soft: #5a7bff;
 }
 
 .dark {
-  --background: #100f0d; /* negro cálido */
-  --foreground: #ece7dc;
+  /* Modo oscuro (predeterminado) */
+  --background: #0d0f14;
+  --surface: #151922;
+  --elevated: #2b2f3a;
+  --text: #f3f5f8;
+  --text-soft: #c7cbd3;
+  --text-muted: #8f96a3;
+  --border: #2b2f3a;
+  --accent: #5a7bff;
+  --accent-soft: #8ea3ff;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Compensa el navbar fijo (h-16) al saltar a #anclas */
-  scroll-padding-top: 5rem;
+  /* Compensa el navbar fijo al saltar a #anclas */
+  scroll-padding-top: 6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -25,50 +47,40 @@ html {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text);
   background: var(--background);
-  font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Selección con acento coral de marca */
+/* Selección con acento azul */
 ::selection {
-  background: rgba(201, 123, 82, 0.28);
+  background: rgba(90, 123, 255, 0.32);
   color: inherit;
 }
 
-/* Foco visible accesible (teclado), con acento coral */
+/* Foco visible accesible: azul 2px con offset */
 :focus-visible {
-  outline: 2px solid #c97b52;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Bordes por token (claro/oscuro) */
-.border {
-  border-color: #e4dbcb;
-}
-.dark .border {
-  border-color: #2c2823;
-}
-
-/* Scrollbar cálida y discreta */
+/* Scrollbar sobria */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c9c3b6 transparent;
-}
-.dark * {
-  scrollbar-color: #3a352e transparent;
+  scrollbar-color: var(--border) transparent;
 }
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8cfbe;
+  background: var(--elevated);
   border-radius: 999px;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #3a352e;
+::-webkit-scrollbar-track {
+  background: transparent;
 }

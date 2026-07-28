@@ -75,23 +75,13 @@ export const cvEs: Cv = {
     "Ingeniero en Computación especializado en IA aplicada y sistemas. Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos y comunicaciones por voz. Experiencia desarrollando productos completos con TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell. Busco integrarme a un equipo estable en IA aplicada, integraciones, Voice AI o ingeniería de producto.",
   experience: [
     {
-      role: "Ingeniero de IA Aplicada y Sistemas",
-      company: "Profesional independiente",
-      period: "Jul 2026 - Actualidad",
-      current: true,
-      bullets: [
-        "Desarrollo Plica/Licita, una plataforma de inteligencia para contratación pública basada en diez años y 120 periodos de SICOP; procesa más de 23 millones de registros y 1,27 millones de líneas analíticas.",
-        "Plica opera como producto listo sobre un mismo motor, con paridad funcional entre ERP/web, Plica Chat y MCP para acceder a herramientas, especialistas y backend.",
-        "Desarrollé Retell Flowkit, un motor local consumido mediante skills para generar, corregir, auditar y validar Conversation Flows: 751/751 pruebas aprobadas, más de 19 validadores y round-trip de 28/28 plantillas oficiales.",
-        "Mantengo y evoluciono sistemas multi-tenant, automatización y Voice AI con TypeScript, Next.js, PostgreSQL, Supabase, n8n, Asterisk, SIP y Retell.",
-      ],
-    },
-    {
       role: "Ingeniero de Integración de Sistemas",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Mar 2026",
+      period: "Mar 2025 - Jul 2026",
+      current: true,
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
+        "Construí Plica/Licita, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, operable con paridad funcional desde ERP/web, Plica Chat y MCP.",
         "Construí asistentes como Aldana, Emma, Charlotte, Cata y Ben con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente; el tenant 2 enruta un mismo cerebro entre cinco marcas.",
         "Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas entrantes, campañas salientes y transferencias.",
         "Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.",
@@ -183,23 +173,13 @@ export const cvEn: Cv = {
     "Computer Engineer specializing in applied AI and systems. I build tool-using agents, RAG, memory, deterministic guards, automation, data pipelines and voice communications. Experience delivering complete products with TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP and Retell. Seeking a stable role in applied AI, integrations, Voice AI or product engineering.",
   experience: [
     {
-      role: "Applied AI and Systems Engineer",
-      company: "Independent",
-      period: "Jul 2026 - Present",
-      current: true,
-      bullets: [
-        "Develop Plica/Licita, a public-procurement intelligence platform based on ten years and 120 SICOP periods; it processes more than 23 million records and 1.27 million analytical lines.",
-        "Plica operates as a production-ready product on one engine, with functional parity across ERP/web, Plica Chat and MCP for tools, specialists and backend capabilities.",
-        "Built Retell Flowkit, a local engine consumed through skills to generate, repair, audit and validate Conversation Flows: 751/751 passing tests, more than 19 validators and verified round trips for 28/28 official templates.",
-        "Maintain and evolve multi-tenant, automation and Voice AI systems using TypeScript, Next.js, PostgreSQL, Supabase, n8n, Asterisk, SIP and Retell.",
-      ],
-    },
-    {
       role: "Systems Integration Engineer",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Mar 2026",
+      period: "Mar 2025 - Jul 2026",
+      current: true,
       bullets: [
         "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
+        "Built Plica/Licita, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, available with functional parity across ERP/web, Plica Chat and MCP.",
         "Built assistants such as Aldana, Emma, Charlotte, Cata and Ben with memory, RAG, tools, guards, fallbacks and per-organization configuration; tenant 2 routes one brain across five brands.",
         "Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for inbound calls, outbound campaigns and transfers.",
         "Implemented RLS, feature flags, idempotency, auditing, outbox, notifications and failure recovery on Linux, PostgreSQL and self-hosted Supabase.",

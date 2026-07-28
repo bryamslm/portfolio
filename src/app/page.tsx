@@ -3,13 +3,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Plica from "../components/Plica";
-import Assistants from "../components/Assistants";
-import VoiceAi from "../components/VoiceAi";
-import RetellFlowkit from "../components/RetellFlowkit";
+import Systems from "../components/Systems";
 import Experience from "../components/Experience";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import Education from "../components/Education";
+import About from "../components/About";
 import Footer from "../components/Footer";
 import { useEffect, useRef } from "react";
 import moment from "moment-timezone";
@@ -27,17 +23,11 @@ export default function Home() {
       const pageUrl = window.location.href;
       const referer = document.referrer || "Direct";
       const now = new Date();
-      const visited_at = moment(now).tz("America/Costa_Rica").format("YYYY-MM-DDTHH:mm:ss");
-      const visitData = {
-        userAgent,
-        pageUrl,
-        referer,
-        visited_at,
-      };
-
-      await addVisit(visitData);
+      const visited_at = moment(now)
+        .tz("America/Costa_Rica")
+        .format("YYYY-MM-DDTHH:mm:ss");
+      await addVisit({ userAgent, pageUrl, referer, visited_at });
     };
-
     registerVisit();
   }, []);
 
@@ -47,13 +37,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Plica />
-      <Assistants />
-      <VoiceAi />
-      <RetellFlowkit />
+      <Systems />
       <Experience />
-      <Skills />
-      <Projects />
-      <Education />
+      <About />
       <Footer />
     </main>
   );

@@ -1,84 +1,87 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCaretRight } from "react-icons/fa";
-import { cvEs, CvExperienceItem } from "@/content/cv";
+import { cvEs } from "@/content/cv";
+import { useReveal } from "../utils/reveal";
 
-const experiences: CvExperienceItem[] = cvEs.experience;
+const experiences = cvEs.experience;
 
 export default function Experience() {
+  const r = useReveal();
+
   return (
     <section
       id="experiencia"
-      className="py-20 sm:py-28 bg-light-background dark:bg-dark-background"
+      className="py-20 sm:py-28 bg-light-background dark:bg-dark-background border-t border-light-border dark:border-dark-border"
     >
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-light-secondary dark:text-dark-secondary">
+      <div className="max-w-layout mx-auto px-5 sm:px-8">
+        <motion.div {...r} className="max-w-editorial">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-light-secondary dark:text-dark-secondary">
             Experiencia
           </p>
-          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-semibold tracking-tight text-light-text dark:text-dark-text text-balance">
+          <h2 className="mt-4 font-semibold tracking-tight text-3xl sm:text-5xl text-light-text dark:text-dark-text text-balance">
             Recorrido profesional
           </h2>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {experiences.map((exp, index) => (
-            <motion.article
-              key={index}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: (index % 3) * 0.08, duration: 0.5 }}
-              className={`flex flex-col rounded-2xl border border-light-border dark:border-dark-border bg-light-section dark:bg-dark-section p-6 ${
-                exp.current
-                  ? "ring-1 ring-light-secondary/25 dark:ring-dark-secondary/25"
-                  : ""
-              }`}
-            >
-              <div className="flex items-center gap-2.5">
-                <FaBriefcase
-                  size={16}
-                  className="text-light-secondary dark:text-dark-secondary shrink-0"
-                />
-                <h3 className="font-serif text-lg font-semibold text-light-text dark:text-dark-text">
-                  {exp.role}
-                </h3>
-              </div>
+        {/* Timeline */}
+        <motion.ol
+          {...r}
+          className="mt-12 relative border-l border-light-border dark:border-dark-border ml-3 sm:ml-4 space-y-10"
+        >
+          {/* Disponibilidad actual */}
+          <li className="relative pl-8 sm:pl-10">
+            <span
+              aria-hidden
+              className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-light-secondary dark:bg-dark-secondary ring-4 ring-light-background dark:ring-dark-background"
+            />
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-light-secondary dark:text-dark-secondary">
+              Actualidad
+            </p>
+            <p className="mt-1 text-base font-medium text-light-text dark:text-dark-text">
+              Disponible para un equipo estable
+            </p>
+            <p className="mt-1 text-sm text-light-soft dark:text-dark-soft text-pretty">
+              Busco incorporarme a un equipo de IA aplicada, integraciones,
+              Voice AI o ingeniería de producto en Costa Rica o Latinoamérica,
+              remoto o híbrido.
+            </p>
+          </li>
 
-              <p className="mt-1.5 text-sm text-light-soft dark:text-dark-soft">
-                <span className="font-medium text-light-text dark:text-dark-text">
-                  {exp.company}
-                </span>
-                <span className="text-light-muted dark:text-dark-muted">
-                  {" "}
-                  · {exp.period}
-                </span>
+          {/* Experiencias */}
+          {experiences.map((exp) => (
+            <li key={`${exp.company}-${exp.period}`} className="relative pl-8 sm:pl-10">
+              <span
+                aria-hidden
+                className="absolute -left-[6px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-light-muted dark:border-dark-muted bg-light-background dark:bg-dark-background"
+              />
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <p className="text-base font-semibold text-light-text dark:text-dark-text">
+                  {exp.role}
+                </p>
+                <p className="font-mono text-[11px] text-light-muted dark:text-dark-muted">
+                  {exp.period}
+                </p>
+              </div>
+              <p className="mt-0.5 text-sm text-light-secondary dark:text-dark-secondary">
+                {exp.company}
                 {exp.current && (
-                  <span className="ml-2 inline-flex items-center gap-1.5 align-middle text-xs text-light-secondary dark:text-dark-secondary">
-                    <span className="h-1.5 w-1.5 rounded-full bg-light-secondary dark:bg-dark-secondary" />
-                    Actual
+                  <span className="ml-2 inline-flex items-center gap-1 text-[11px] text-light-secondary dark:text-dark-secondary">
+                    <span className="h-1 w-1 rounded-full bg-light-secondary dark:bg-dark-secondary" />
+                    Última posición
                   </span>
                 )}
               </p>
-
-              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-light-soft dark:text-dark-soft">
-                {exp.bullets.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <FaCaretRight className="mt-1 shrink-0 text-light-secondary dark:text-dark-secondary" />
-                    <span className="text-pretty">{item}</span>
+              <ul className="mt-3 space-y-1.5 text-sm text-light-soft dark:text-dark-soft">
+                {exp.bullets.map((b, i) => (
+                  <li key={i} className="text-pretty leading-relaxed">
+                    — {b}
                   </li>
                 ))}
               </ul>
-            </motion.article>
+            </li>
           ))}
-        </div>
+        </motion.ol>
       </div>
     </section>
   );

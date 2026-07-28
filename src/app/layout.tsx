@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -13,15 +13,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-// Serif editorial para títulos — eco del banner.
-const newsreader = Newsreader({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -57,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Bryam Steven López Miranda — Portfolio",
     title: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
     description:
-      "Construyo sistemas completos de IA aplicada: agentes, RAG, MCP, datos, multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+      "Construyo sistemas completos de IA aplicada: producto, agentes, datos, automatización y voz.",
   },
   twitter: {
     card: "summary_large_image",
@@ -112,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning className="dark">
       <head>
         <script
           type="application/ld+json"
@@ -120,7 +111,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider>
           <Analytics />
