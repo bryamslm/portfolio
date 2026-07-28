@@ -78,7 +78,6 @@ export const cvEs: Cv = {
       role: "Ingeniero de Integración de Sistemas",
       company: "AI Solutions CR",
       period: "Mar 2025 - Jul 2026",
-      current: true,
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
         "Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, accesible desde la web, el chat y la integración para herramientas.",
@@ -176,7 +175,6 @@ export const cvEn: Cv = {
       role: "Systems Integration Engineer",
       company: "AI Solutions CR",
       period: "Mar 2025 - Jul 2026",
-      current: true,
       bullets: [
         "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
         "Built Plica Licitaciones CR, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, accessible from the web, chat and tool integration.",

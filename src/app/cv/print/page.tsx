@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 type Props = { searchParams: Promise<{ lang?: string }> };
 
 export const metadata: Metadata = {
-  title: "CV ATS - Bryam Steven López Miranda",
+  title: "Currículum - Bryam Steven López Miranda",
   description: "Currículum de Bryam Steven López Miranda, Ingeniero de IA Aplicada y Sistemas.",
 };
 
