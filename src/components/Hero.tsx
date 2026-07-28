@@ -77,9 +77,9 @@ export default function Hero() {
           transition={{ ...r.transition, delay: 0.18 }}
           className="mt-5 max-w-editorial text-base leading-relaxed text-light-soft dark:text-dark-soft text-pretty"
         >
-          Tres años construyendo IA aplicada en producción: una plataforma
-          multi-tenant para cinco marcas, Voice AI con Asterisk y Retell, y
-          un motor para licitaciones públicas en Costa Rica.
+          Construí una plataforma multi-tenant para cinco marcas, Voice AI
+          con Asterisk y Retell, y un motor para licitaciones públicas en
+          Costa Rica.
         </motion.p>
 
         {/* CTAs */}
