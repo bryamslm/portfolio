@@ -66,15 +66,7 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-layout mx-auto px-5 sm:px-8 flex justify-between items-center h-16">
-        <button
-          onClick={() => handleScroll("hero", () => setIsMenuOpen(false))}
-          className="font-semibold tracking-tight text-light-text dark:text-dark-text text-sm sm:text-base"
-        >
-          BSLM
-          <span className="text-light-secondary dark:text-dark-secondary">.</span>
-        </button>
-
+      <div className="max-w-layout mx-auto px-5 sm:px-8 flex justify-end items-center h-12">
         {/* Navegación escritorio */}
         <div className="hidden md:flex items-center gap-7">
           {navigationLinks.map((link) => (

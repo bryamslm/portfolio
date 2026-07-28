@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100svh] flex items-center bg-light-background dark:bg-dark-background px-5 sm:px-8 pt-24 pb-16"
+      className="relative min-h-[100svh] flex items-center bg-light-background dark:bg-dark-background px-5 sm:px-8 pt-20 pb-16"
     >
       <div className="w-full max-w-layout mx-auto">
         {/* Eyebrow corto: no se rompe en 2 líneas en móvil */}
@@ -69,15 +69,17 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Mini-evidencia en una línea: cifras verificables */}
+        {/* Mini-evidencia: lo que ya hice, no un pitch */}
         <motion.p
           initial={r.initial}
           whileInView={r.whileInView}
           viewport={r.viewport}
           transition={{ ...r.transition, delay: 0.18 }}
-          className="mt-4 max-w-editorial font-mono text-[13px] tracking-[0.04em] text-light-secondary dark:text-dark-secondary text-pretty"
+          className="mt-5 max-w-editorial text-base leading-relaxed text-light-soft dark:text-dark-soft text-pretty"
         >
-          10 años SICOP · 23 M registros · Voice AI en producción
+          Tres años construyendo IA aplicada en producción: una plataforma
+          multi-tenant para cinco marcas, Voice AI con Asterisk y Retell, y
+          un motor para licitaciones públicas en Costa Rica.
         </motion.p>
 
         {/* CTAs */}
@@ -99,16 +101,10 @@ export default function Hero() {
 
           <button
             onClick={() => handleScroll("plica")}
-            className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
           >
-            Ver Plica (demo)
-            <span
-              aria-hidden
-              className="inline-flex items-center gap-1 rounded-full border border-emerald-500/40 dark:border-emerald-400/40 px-1.5 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-              live
-            </span>
+            Ver Plica
+            <FaArrowRight size={12} />
           </button>
 
           <a
