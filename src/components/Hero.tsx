@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaArrowDown } from "react-icons/fa6";
 import { handleScroll } from "../utils/utils";
 import { useReveal } from "../utils/reveal";
 
@@ -69,21 +69,22 @@ export default function Hero() {
           transition={{ ...r.transition, delay: 0.2 }}
           className="mt-9 flex flex-col sm:flex-row gap-3"
         >
+          <a
+            href="/documents/CV_Bryam_Lopez_ES.pdf"
+            download="CV_Bryam_Lopez_ES.pdf"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-light-secondary dark:bg-dark-secondary px-6 min-h-[44px] font-medium text-white transition-colors hover:bg-light-accent dark:hover:bg-dark-accent"
+          >
+            Descargar CV
+            <FaArrowDown size={12} />
+          </a>
+
           <button
             onClick={() => handleScroll("plica")}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-light-secondary dark:bg-dark-secondary px-6 min-h-[44px] font-medium text-white transition-colors hover:bg-light-accent dark:hover:bg-dark-accent"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
           >
             Ver Plica
             <FaArrowRight size={12} />
           </button>
-
-          <a
-            href="/documents/CV_Bryam_Lopez_ES.pdf"
-            download="CV_Bryam_Lopez_ES.pdf"
-            className="inline-flex items-center justify-center rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
-          >
-            Descargar CV
-          </a>
 
           <a
             href="mailto:bryam.steven.lopez@gmail.com"

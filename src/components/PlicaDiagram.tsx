@@ -418,7 +418,7 @@ export default function PlicaDiagram() {
                   </p>
                   <h3
                     id={`${titleId}-drawer-title`}
-                    className="mt-1 font-serif text-2xl font-semibold text-light-text dark:text-dark-text"
+                    className="mt-1 font-semibold text-2xl text-light-text dark:text-dark-text"
                   >
                     {selectedNode.label}
                   </h3>
@@ -442,7 +442,7 @@ export default function PlicaDiagram() {
                 </p>
 
                 <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-light-muted dark:text-dark-muted">
-                  Lo invocan
+                  Quién lo usa
                 </p>
                 <ul className="mt-2 flex flex-wrap gap-1.5">
                   {selectedNode.invokedBy.map((invoker) => (
@@ -458,8 +458,7 @@ export default function PlicaDiagram() {
                 <p className="mt-6 rounded-lg border border-light-border dark:border-dark-border bg-light-background/60 dark:bg-dark-background/40 p-3 text-xs leading-relaxed text-light-muted dark:text-dark-muted text-pretty">
                   Plica es un producto listo accesible desde la web, el chat y
                   la integración para herramientas. Este diagrama resume cómo
-                  funciona; los detalles operativos viven en la documentación
-                  interna de ingeniería.
+                  funciona; los detalles operativos son internos del equipo.
                 </p>
               </div>
 
@@ -542,7 +541,7 @@ function CoreNode({
         y={CENTER_Y - 8}
         textAnchor="middle"
         className="fill-light-text dark:fill-dark-text"
-        style={{ fontFamily: "var(--font-display), Georgia, serif", fontWeight: 600 }}
+        style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif", fontWeight: 600 }}
         fontSize="18"
       >
         Motor
@@ -619,10 +618,7 @@ function RingNode({
         textAnchor="middle"
         className="fill-light-text dark:fill-dark-text"
         style={{
-          fontFamily:
-            variant === "surface"
-              ? "var(--font-display), Georgia, serif"
-              : "var(--font-geist-sans), system-ui, sans-serif",
+          fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
           fontWeight: variant === "surface" ? 600 : 500,
         }}
         fontSize={variant === "surface" ? "13" : "11.5"}
