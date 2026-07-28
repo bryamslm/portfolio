@@ -6,6 +6,8 @@ import { FaArrowRight, FaArrowDown } from "react-icons/fa6";
 import { handleScroll } from "../utils/utils";
 import { useReveal } from "../utils/reveal";
 
+const STACK = ["TypeScript", "Next.js", "PostgreSQL", "Retell", "Asterisk"];
+
 export default function Hero() {
   const r = useReveal();
 
@@ -15,7 +17,7 @@ export default function Hero() {
       className="relative min-h-[100svh] flex items-center bg-light-background dark:bg-dark-background px-5 sm:px-8 pt-24 pb-16"
     >
       <div className="w-full max-w-layout mx-auto">
-        {/* Micro-etiqueta */}
+        {/* Eyebrow corto: no se rompe en 2 líneas en móvil */}
         <motion.p
           initial={r.initial}
           whileInView={r.whileInView}
@@ -23,7 +25,7 @@ export default function Hero() {
           transition={r.transition}
           className="font-mono text-xs uppercase tracking-[0.22em] text-light-secondary dark:text-dark-secondary"
         >
-          Ingeniero de IA Aplicada y Sistemas
+          IA aplicada · Sistemas
         </motion.p>
 
         {/* Nombre como texto display */}
@@ -49,16 +51,33 @@ export default function Hero() {
           datos, automatización y voz.
         </motion.p>
 
-        {/* Disponibilidad */}
-        <motion.p
+        {/* Disponibilidad prominente con indicador "disponible" */}
+        <motion.div
           initial={r.initial}
           whileInView={r.whileInView}
           viewport={r.viewport}
           transition={{ ...r.transition, delay: 0.15 }}
-          className="mt-4 max-w-editorial text-base text-light-muted dark:text-dark-muted text-pretty"
+          className="mt-5 max-w-editorial flex items-start gap-2.5 text-base text-light-text dark:text-dark-text"
         >
-          Disponible para incorporarme a un equipo estable en Costa Rica o
-          Latinoamérica, de forma remota o híbrida.
+          <span
+            aria-hidden
+            className="mt-2 inline-block h-2 w-2 shrink-0 rounded-full bg-emerald-500 dark:bg-emerald-400 shadow-[0_0_0_3px_rgba(16,185,129,0.18)]"
+          />
+          <p className="text-pretty">
+            Disponible para un equipo estable en Costa Rica o Latinoamérica,
+            remoto o híbrido.
+          </p>
+        </motion.div>
+
+        {/* Mini-evidencia en una línea: cifras verificables */}
+        <motion.p
+          initial={r.initial}
+          whileInView={r.whileInView}
+          viewport={r.viewport}
+          transition={{ ...r.transition, delay: 0.18 }}
+          className="mt-4 max-w-editorial font-mono text-[13px] tracking-[0.04em] text-light-secondary dark:text-dark-secondary text-pretty"
+        >
+          10 años SICOP · 23 M registros · Voice AI en producción
         </motion.p>
 
         {/* CTAs */}
@@ -66,7 +85,7 @@ export default function Hero() {
           initial={r.initial}
           whileInView={r.whileInView}
           viewport={r.viewport}
-          transition={{ ...r.transition, delay: 0.2 }}
+          transition={{ ...r.transition, delay: 0.22 }}
           className="mt-9 flex flex-col sm:flex-row gap-3"
         >
           <a
@@ -80,10 +99,16 @@ export default function Hero() {
 
           <button
             onClick={() => handleScroll("plica")}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
+            className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-light-border dark:border-dark-border px-6 min-h-[44px] font-medium text-light-text dark:text-dark-text transition-colors hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary"
           >
-            Ver Plica
-            <FaArrowRight size={12} />
+            Ver Plica (demo)
+            <span
+              aria-hidden
+              className="inline-flex items-center gap-1 rounded-full border border-emerald-500/40 dark:border-emerald-400/40 px-1.5 py-0.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+              live
+            </span>
           </button>
 
           <a
@@ -95,13 +120,32 @@ export default function Hero() {
           </a>
         </motion.div>
 
+        {/* Stack como chips sutiles */}
+        <motion.ul
+          initial={r.initial}
+          whileInView={r.whileInView}
+          viewport={r.viewport}
+          transition={{ ...r.transition, delay: 0.28 }}
+          className="mt-10 flex flex-wrap items-center gap-2"
+          aria-label="Stack principal"
+        >
+          {STACK.map((tech) => (
+            <li
+              key={tech}
+              className="rounded-md border border-light-border dark:border-dark-border bg-light-section/60 dark:bg-dark-section/60 px-2.5 py-1 font-mono text-[11px] text-light-secondary dark:text-dark-secondary"
+            >
+              {tech}
+            </li>
+          ))}
+        </motion.ul>
+
         {/* LinkedIn / GitHub discretos */}
         <motion.div
           initial={r.initial}
           whileInView={r.whileInView}
           viewport={r.viewport}
-          transition={{ ...r.transition, delay: 0.28 }}
-          className="mt-10 flex items-center gap-5 text-light-muted dark:text-dark-muted"
+          transition={{ ...r.transition, delay: 0.32 }}
+          className="mt-8 flex items-center gap-5 text-light-muted dark:text-dark-muted"
         >
           <a
             href="https://linkedin.com/in/bryamslm"

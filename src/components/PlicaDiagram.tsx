@@ -65,50 +65,65 @@ export default function PlicaDiagram() {
 
   // -------------------------------------------------------------------------
   // Drag del lienzo
+  //
+  // Estrategia robusta para todos los navegadores (especialmente in-app
+  // browsers como el de LinkedIn, donde los pointer IDs se cancelan y
+  // los gestos verticales son interceptados). No usamos setPointerCapture:
+  // los in-app browsers lanzan InvalidPointerId sin avisar y eso rompe
+  // el árbol de React. En su lugar, registramos pointermove/pointerup en
+  // window mientras dure el drag.
   // -------------------------------------------------------------------------
   const handlePointerDown = useCallback(
     (e: React.PointerEvent<SVGSVGElement>) => {
       // Solo arrastrar cuando el evento NO proviene de un nodo interactivo.
       const target = e.target as Element;
       if (target.closest("[data-node]")) return;
-      setIsDragging(true);
+      e.preventDefault();
       dragOriginRef.current = {
         x: e.clientX,
         y: e.clientY,
         vx: viewport.x,
         vy: viewport.y,
       };
-      (e.currentTarget as SVGSVGElement).setPointerCapture(e.pointerId);
+      setIsDragging(true);
     },
     [viewport],
   );
 
   const handlePointerMove = useCallback(
-    (e: React.PointerEvent<SVGSVGElement>) => {
-      if (!isDragging || !dragOriginRef.current) return;
-      const dx = e.clientX - dragOriginRef.current.x;
-      const dy = e.clientY - dragOriginRef.current.y;
+    (e: React.PointerEvent<SVGSVGElement> | PointerEvent) => {
+      const origin = dragOriginRef.current;
+      if (!origin) return;
+      const dx = e.clientX - origin.x;
+      const dy = e.clientY - origin.y;
       setViewport((v) => ({
         ...v,
-        x: dragOriginRef.current!.vx + dx,
-        y: dragOriginRef.current!.vy + dy,
+        x: origin.vx + dx,
+        y: origin.vy + dy,
       }));
-    },
-    [isDragging],
-  );
-
-  const handlePointerUp = useCallback(
-    (e: React.PointerEvent<SVGSVGElement>) => {
-      setIsDragging(false);
-      dragOriginRef.current = null;
-      try {
-        (e.currentTarget as SVGSVGElement).releasePointerCapture(e.pointerId);
-      } catch {
-        /* noop */
-      }
     },
     [],
   );
+
+  const handlePointerUp = useCallback(() => {
+    setIsDragging(false);
+    dragOriginRef.current = null;
+  }, []);
+
+  // Listeners globales mientras hay drag, para no depender del SVG.
+  useEffect(() => {
+    if (!isDragging) return;
+    const onMove = (e: PointerEvent) => handlePointerMove(e);
+    const onUp = () => handlePointerUp();
+    window.addEventListener("pointermove", onMove, { passive: true });
+    window.addEventListener("pointerup", onUp, { passive: true });
+    window.addEventListener("pointercancel", onUp, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+    };
+  }, [isDragging, handlePointerMove, handlePointerUp]);
 
   // -------------------------------------------------------------------------
   // Zoom con Ctrl+scroll o trackpad pinch
@@ -177,11 +192,8 @@ export default function PlicaDiagram() {
           viewBox={`0 0 ${VB_W} ${VB_H}`}
           role="img"
           aria-labelledby={`${titleId} ${descId}`}
-          className={`h-full w-full select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+          className={`h-full w-full select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
           onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
           onWheel={handleWheel}
         >
           <title id={titleId}>
