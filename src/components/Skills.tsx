@@ -1,143 +1,153 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaTools, FaMobileAlt, FaGamepad, FaJava,  } from "react-icons/fa";
-import { TbBrandCSharp } from "react-icons/tb";
-import { CgMoreO } from "react-icons/cg";
-import { SiFramework7, SiSendgrid, SiServerfault, SiMeta, SiWhatsapp, SiVercel, SiJavascript, SiTypescript, SiPython, SiCplusplus, SiExpress, SiReact, SiNextdotjs, SiAstro, SiTailwindcss, SiNodedotjs, SiFlutter, SiIonic, SiUnity, SiGrafana, SiPrometheus, SiOpentelemetry, SiElasticsearch } from "react-icons/si";
+import {
+  FaCode,
+  FaRobot,
+  FaMicrophone,
+  FaDatabase,
+  FaServer,
+  FaCogs,
+  FaShieldAlt,
+  FaBroadcastTower,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiNextdotjs,
+  SiReact,
+  SiNodedotjs,
+  SiPostgresql,
+  SiSupabase,
+  SiDocker,
+  SiNginx,
+  SiVercel,
+  SiGrafana,
+  SiPrometheus,
+} from "react-icons/si";
+import { cvEs } from "@/content/cv";
 
-const skills = [
-  {
-    category: "Programming Languages",
-    icon: <FaCode size={24} />,
-    items: [
-      { name: "JavaScript", icon: <SiJavascript size={16} /> },
-      { name: "TypeScript", icon: <SiTypescript size={16} /> },
-      { name: "Python", icon: <SiPython size={16} /> },
-      { name: "Java", icon: <FaJava size={16} /> },
-      { name: "", icon: <SiCplusplus size={22} /> },
-      { name: "", icon: <TbBrandCSharp size={22} /> }
-    ]
-  },
-  {
-    category: "Frameworks & Libraries",
-    icon: <SiFramework7 size={24} />,
-    items: [
-      { name: "Next.js", icon: <SiNextdotjs size={16} /> },
-      { name: "Astro", icon: <SiAstro size={16} /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss size={16} /> },
-      { name: "React", icon: <SiReact size={16} /> },
-      { name: "Node.js", icon: <SiNodedotjs size={16} /> },
-      { name: "Express.js", icon: <SiExpress size={16} /> }
-    ]
-  },
-  {
-    category: "Mobile Development",
-    icon: <FaMobileAlt size={24} />,
-    items: [
-      { name: "Ionic", icon: <SiIonic size={16} /> },
-      { name: "Flutter", icon: <SiFlutter size={16} /> }
-    ]
-  },
-  {
-    category: "Game Development",
-    icon: <FaGamepad size={24} />,
-    items: [
-      { name: "Unity", icon: <SiUnity size={16} /> },
-      { name: "Vuforia SDK", image: "vuforia-dark.png", imageDark: "vuforia-blank.png"  }
-    ]
-  },
-  {
-    category: "Observability Tools",
-    icon: <FaTools size={24} />,
-    items: [
-      { name: "OpenTelemetry", icon: <SiOpentelemetry size={16} /> },
-      { name: "Prometheus", icon: <SiPrometheus size={16} /> },
-      { name: "Grafana", icon: <SiGrafana size={16} /> },
-      { name: "Elasticsearch", icon: <SiElasticsearch size={16} /> },
-      { name: "Tempo", image: "tempo-dark.png", imageDark: "tempo-blank.png" },
-      { name: "Mimir", image: "mimir-dark.png", imageDark: "mimir-blank.png" },
-      { name: "Loki", image: "loki-black.png", imageDark: "loki-blank.png" },
+type IconMap = Record<string, React.ReactNode>;
 
-    ]
-  },
-  {
-    category: "Others",
-    icon: <CgMoreO size={24} />,
-    items: [
-      { name: "Vercel", icon: <SiVercel size={16} /> },
-      { name: "Whatsapp API", icon: <SiWhatsapp size={16} /> },
-     
-      { name: "Meta (Facebook) for developers", icon: <SiMeta size={16} /> },
-      { name: "BlueHost (HostMonster)", icon: <SiServerfault size={16} /> },
-      { name: "SendGrid", icon: <SiSendgrid size={16} /> },
-    ]
+const languageIcons: IconMap = {
+  TypeScript: <SiTypescript size={14} />,
+  JavaScript: <SiJavascript size={14} />,
+  Python: <SiPython size={14} />,
+};
+
+const frameworkIcons: IconMap = {
+  "Next.js": <SiNextdotjs size={14} />,
+  React: <SiReact size={14} />,
+  "Node.js": <SiNodedotjs size={14} />,
+};
+
+const dataIcons: IconMap = {
+  PostgreSQL: <SiPostgresql size={14} />,
+  Supabase: <SiSupabase size={14} />,
+  pgvector: <FaDatabase size={14} />,
+};
+
+const devopsIcons: IconMap = {
+  Docker: <SiDocker size={14} />,
+  nginx: <SiNginx size={14} />,
+  Vercel: <SiVercel size={14} />,
+  Grafana: <SiGrafana size={14} />,
+  Prometheus: <SiPrometheus size={14} />,
+};
+
+const categoryIcons: Record<string, React.ReactNode> = {
+  "IA aplicada": <FaRobot size={20} />,
+  "Ingeniería de software": <FaCode size={20} />,
+  Datos: <FaDatabase size={20} />,
+  "Voice AI y telefonía": <FaBroadcastTower size={20} />,
+  "Automatización e infraestructura": <FaServer size={20} />,
+  "Desarrollo AI-native": <FaCogs size={20} />,
+};
+
+function pickIcon(category: string, name: string): React.ReactNode | undefined {
+  switch (category) {
+    case "IA aplicada":
+      return name === "MCP" ? (
+        <FaShieldAlt size={14} />
+      ) : name === "Retell" ? (
+        <FaMicrophone size={14} />
+      ) : undefined;
+    case "Ingeniería de software":
+      return languageIcons[name] ?? frameworkIcons[name];
+    case "Datos":
+      return dataIcons[name];
+    case "Automatización e infraestructura":
+      return devopsIcons[name];
+    default:
+      return undefined;
   }
-];
+}
 
 export default function Skills() {
-  return (
-    <section id="skills" className=" py-8 bg-light-background dark:bg-dark-background">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-center  text-light-text dark:text-dark-text"
-        >
-          Skills
-        </motion.h2>
+  const groups = cvEs.skills;
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-          {skills.map((skill, index) => (
+  return (
+    <section
+      id="capacidades"
+      className="py-20 sm:py-28 bg-light-background dark:bg-dark-background"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
+          <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.28em] text-light-secondary dark:text-dark-secondary">
+            Capacidades
+          </p>
+          <h2 className="mt-4 font-serif text-3xl sm:text-5xl font-semibold tracking-tight text-light-text dark:text-dark-text text-balance">
+            Stack técnico y áreas de profundidad
+          </h2>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {groups.map((group, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
-              className="p-6 border rounded-lg shadow-md bg-light-section dark:bg-dark-section hover:shadow-xl transition-transform hover:scale-105"
+              key={group.category}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: (index % 3) * 0.08, duration: 0.5 }}
+              className="rounded-2xl border border-light-border dark:border-dark-border bg-light-section dark:bg-dark-section p-6"
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <span className="text-black dark:text-white">
-                  {skill.icon}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="text-light-secondary dark:text-dark-secondary">
+                  {categoryIcons[group.category] ?? <FaCode size={20} />}
                 </span>
-                <h3 className="text-xl font-semibold text-light-text dark:text-dark-text">
-                  {skill.category}
+                <h3 className="font-serif text-lg font-semibold text-light-text dark:text-dark-text">
+                  {group.category}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2 text-light-text dark:text-dark-text">
-                {skill.items.map((item, i) => (
-                  <span
-                    key={i}
-                    className="flex items-center space-x-2 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-lg text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                  >
-                    {item.image ? (
-                      // Renderizar la imagen si existe
-                      <div>
-                        <img
-                        src={item.image} // Imagen por defecto (tema claro)
-                        className="w-4 h-4 dark:hidden" // Mostrar solo en tema claro
-                        alt={item.name}
-                      />
-                    
-                      <img
-                        src={item.imageDark} // Imagen para tema oscuro
-                        className="w-4 h-4 hidden dark:block" // Mostrar solo en tema oscuro
-                        alt={item.name}
-                      />
-                      </div>
-                    ) : (
-                      // Renderizar el ícono si no hay imagen
-                      <span className="text-base">{item.icon}</span>
-                    )}
-                    <span>{item.name}</span>
-                  </span>
-                ))}
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((name) => {
+                  const icon = pickIcon(group.category, name);
+                  return (
+                    <span
+                      key={name}
+                      className="inline-flex items-center gap-2 rounded-lg border border-light-border dark:border-dark-border bg-light-background/60 dark:bg-dark-background/40 px-3 py-1.5 text-sm text-light-soft dark:text-dark-soft transition-colors hover:border-light-secondary/40 dark:hover:border-dark-secondary/40 hover:text-light-text dark:hover:text-dark-text"
+                    >
+                      {icon && (
+                        <span className="text-light-muted dark:text-dark-muted">
+                          {icon}
+                        </span>
+                      )}
+                      <span>{name}</span>
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "../components/ThemeProvider"; // 👈 Importar ThemeProvider
-import { Analytics } from "@vercel/analytics/react"
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { ThemeProvider } from "../components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,20 +13,97 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
+// Serif editorial para títulos — eco del banner.
+const newsreader = Newsreader({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const SITE_URL = "https://portfolio-bryam.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Bryam López | Full Stack Developer",
-  description: "Professional portfolio showcasing projects and skills in web development and observability.",
-  keywords: ["Bryam López", "Full Stack Developer", "Node.js", "OpenTelemetry", "Next.js", "Observability"],
-  authors: [{ name: "Bryam López" }],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    template: "%s | Bryam Steven López Miranda",
+  },
+  description:
+    "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas. Construyo agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+  keywords: [
+    "Bryam Steven López Miranda",
+    "Ingeniero de IA Aplicada",
+    "Applied AI Engineer Costa Rica",
+    "AI Systems Engineer",
+    "Voice AI Engineer",
+    "Asterisk SIP Retell",
+    "RAG MCP TypeScript Next.js PostgreSQL",
+    "Multi-tenant SaaS",
+  ],
+  authors: [{ name: "Bryam Steven López Miranda" }],
+  creator: "Bryam Steven López Miranda",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Bryam López | Full Stack Developer",
-    description: "Professional portfolio showcasing projects and skills.",
-    url: "https://portfolio-bryam.vercel.app",
-    siteName: "Bryam López Portfolio",
     type: "website",
-  }
+    locale: "es_CR",
+    url: SITE_URL,
+    siteName: "Bryam Steven López Miranda — Portfolio",
+    title: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    description:
+      "Construyo sistemas completos de IA aplicada: agentes, RAG, MCP, datos, multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    description:
+      "Agentes de IA, RAG, MCP, multi-tenant y Voice AI. Disponible para equipo estable en Costa Rica o Latinoamérica.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Bryam Steven López Miranda",
+  jobTitle: "Ingeniero de IA Aplicada y Sistemas",
+  alternateName: "Applied AI Engineer",
+  description:
+    "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas: agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+  url: SITE_URL,
+  email: "mailto:bryam.steven.lopez@gmail.com",
+  telephone: "+50662633553",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Carlos",
+    addressRegion: "Alajuela",
+    addressCountry: "CR",
+  },
+  knowsLanguage: ["es-CR", "en"],
+  sameAs: [
+    "https://linkedin.com/in/bryamslm",
+    "https://github.com/bryamslm",
+    "https://wa.me/50662633553",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Tecnológico de Costa Rica",
+  },
 };
 
 export default function RootLayout({
@@ -35,8 +112,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} font-sans antialiased`}
+      >
         <ThemeProvider>
           <Analytics />
           {children}

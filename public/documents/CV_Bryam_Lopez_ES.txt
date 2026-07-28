@@ -1,0 +1,103 @@
+BRYAM STEVEN LÓPEZ MIRANDA
+Ingeniero de IA Aplicada y Sistemas | Applied AI Engineer
+
+CONTACTO
+Email: bryam.steven.lopez@gmail.com
+Teléfono / WhatsApp: +506 6263 3553
+LinkedIn: linkedin.com/in/bryamslm
+GitHub: github.com/bryamslm
+Portafolio: portfolio-bryam.vercel.app
+Ubicación: San Carlos, Alajuela, Costa Rica
+Disponibilidad: remoto en Latinoamérica
+
+PERFIL PROFESIONAL
+Ingeniero en Computación especializado en IA aplicada y sistemas. Construyo agentes
+con herramientas, RAG, memoria, guardas deterministas, automatización, datos y
+comunicaciones por voz. Experiencia desarrollando productos completos con TypeScript,
+Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell. Busco
+integrarme a un equipo estable en IA aplicada, integraciones, Voice AI o ingeniería
+de producto.
+
+EXPERIENCIA PROFESIONAL
+
+Ingeniero de IA Aplicada y Sistemas
+Profesional independiente | Jul 2026 - Actualidad
+- Desarrollo Plica/Licita, una plataforma de inteligencia para contratación pública
+  basada en diez años y 120 periodos de SICOP; procesa más de 23 millones de registros
+  y 1,27 millones de líneas analíticas.
+- Plica opera como producto listo sobre un mismo motor, con paridad funcional entre
+  ERP/web, Plica Chat y MCP para acceder a herramientas, especialistas y backend.
+- Desarrollé Retell Flowkit, un motor local consumido mediante skills para generar,
+  corregir, auditar y validar Conversation Flows: 751/751 pruebas aprobadas, más de
+  19 validadores y round-trip de 28/28 plantillas oficiales.
+- Mantengo y evoluciono sistemas multi-tenant, automatización y Voice AI con
+  TypeScript, Next.js, PostgreSQL, Supabase, n8n, Asterisk, SIP y Retell.
+
+Ingeniero de Integración de Sistemas
+AI Solutions CR | Mar 2025 - Mar 2026
+- Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para
+  WhatsApp, Messenger, Instagram, web y telefonía.
+- Construí asistentes como Aldana, Emma, Charlotte, Cata y Ben con memoria, RAG,
+  herramientas, guardas y configuración independiente; el tenant 2 enruta un mismo
+  cerebro entre cinco marcas.
+- Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW
+  para llamadas entrantes, campañas salientes y transferencias.
+- Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y
+  recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.
+
+Desarrollador de Software - Práctica Profesional
+Vivo Gaming | Jul 2024 - Nov 2024
+- Desarrollé un framework de observabilidad para servicios Node.js, centralizando
+  métricas, trazas y diagnóstico con OpenTelemetry, Prometheus, Grafana y Elasticsearch.
+- Documenté la arquitectura y los procedimientos de adopción; el trabajo se convirtió
+  en mi proyecto de graduación de Ingeniería en Computación.
+
+HABILIDADES TÉCNICAS
+- IA aplicada: AI Agents, LLMs, RAG, tool use, MCP, prompt engineering, guardas
+  deterministas, Retell.
+- Ingeniería de software: TypeScript, JavaScript, Python, Next.js, React, Node.js,
+  REST APIs, sistemas multi-tenant.
+- Datos: PostgreSQL, Supabase, pgvector, pipelines de datos, RLS, modelos predictivos.
+- Voice AI y telefonía: Asterisk 20, PJSIP, AMI, SIP trunks, Kamailio, RTPengine,
+  Retell, Telnyx, DIDWW, LiveKit.
+- Automatización e infraestructura: n8n, Linux, Docker, PM2, nginx, Vercel,
+  OpenTelemetry, Grafana, Prometheus.
+
+PROYECTOS
+
+Plica/Licita - Inteligencia para contratación pública
+Motor listo de inteligencia para SICOP con datos, especialistas, RAG legal y modelos,
+operable con paridad funcional desde ERP/web, Plica Chat y MCP.
+Stack: TypeScript, Next.js, PostgreSQL, Supabase, Python, RAG, MCP.
+Enlace: plica.aisolutionscr.tech
+
+Voice AI / Voice Ops
+Operación de llamadas entrantes y salientes, campañas, transferencias, consola SIP en
+navegador, grabaciones y analítica.
+Stack: Asterisk 20, PJSIP, AMI, SIP, Kamailio, Retell, LiveKit.
+Enlace: ops.aisolutionscr.tech
+
+Retell Flowkit
+Motor local consumido mediante skills para generar, corregir, auditar y validar
+Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.
+Stack: TypeScript, skills, LLMs, validadores, testing, Codex.
+
+SaaS multi-tenant de IA conversacional
+Agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas,
+guardas, handoff humano, auditoría y recuperación ante fallos.
+Stack: Next.js, TypeScript, Node.js, PostgreSQL, Supabase, n8n.
+Enlace: app.aisolutionscr.tech/es
+
+EDUCACIÓN
+Bachillerato Universitario en Ingeniería en Computación
+Tecnológico de Costa Rica (TEC) | 2020 - 2024
+Proyecto de graduación: framework de observabilidad para servicios Node.js.
+
+CERTIFICACIONES
+- Algoritmos y Estructuras de Datos en JavaScript - freeCodeCamp
+- Desarrollo de Aplicaciones Móviles - Google Actívate
+- Curso Profesional de C++ - Azul School
+
+IDIOMAS
+Español: nativo
+Inglés: lectura técnica; conversación básica

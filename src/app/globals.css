@@ -3,28 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4efe5; /* papel cálido */
+  --foreground: #2a2620;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: #100f0d; /* negro cálido */
+  --foreground: #ece7dc;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa el navbar fijo (h-16) al saltar a #anclas */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-/* Por defecto: Modo claro */
-.border {
-  border-color: #E5E7EB; /* light-border */
+  font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Cuando el tema oscuro está activo */
+/* Selección con acento coral de marca */
+::selection {
+  background: rgba(201, 123, 82, 0.28);
+  color: inherit;
+}
+
+/* Foco visible accesible (teclado), con acento coral */
+:focus-visible {
+  outline: 2px solid #c97b52;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Bordes por token (claro/oscuro) */
+.border {
+  border-color: #e4dbcb;
+}
 .dark .border {
-  border-color: #374151; /* dark-border */
+  border-color: #2c2823;
+}
+
+/* Scrollbar cálida y discreta */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9c3b6 transparent;
+}
+.dark * {
+  scrollbar-color: #3a352e transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cfbe;
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3a352e;
 }

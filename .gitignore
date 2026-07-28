@@ -2,6 +2,11 @@
 
 # dependencies
 /node_modules
+/private
+/.agents/
+/.tmp/
+/tmp/
+/output/
 /.pnp
 .pnp.*
 .yarn/*
