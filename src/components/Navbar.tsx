@@ -58,11 +58,18 @@ export default function Navbar() {
   const isDark = resolvedTheme === "dark";
 
   return (
+    /*
+      Sobre el hero el nav es transparente para que el video llegue al borde
+      superior, y lleva `.on-video` para que sus tokens sean claros en los dos
+      temas. Al scrollear recupera la cápsula difuminada y vuelve al tema.
+      Los ítems usan utilidades de token (no hex por tema): así una sola clase
+      en el <nav> cambia todo el subárbol.
+    */
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-200 ${
         isScrolled
           ? "bg-light-background/85 dark:bg-dark-background/85 backdrop-blur-md border-b border-light-border dark:border-dark-border"
-          : "bg-light-background/70 dark:bg-dark-background/70 backdrop-blur-sm border-b border-light-border/60 dark:border-dark-border/60"
+          : "on-video bg-transparent"
       }`}
     >
       <div className="max-w-layout mx-auto px-3 sm:px-6 lg:px-8">
@@ -76,8 +83,8 @@ export default function Navbar() {
                   onClick={() => handleScroll(link.href)}
                   className={`text-xs sm:text-sm whitespace-nowrap px-2 sm:px-3 py-2 rounded-md transition-colors ${
                     activeSection === link.href
-                      ? "text-light-secondary dark:text-dark-secondary font-medium"
-                      : "text-light-soft dark:text-dark-soft hover:text-light-text dark:hover:text-dark-text"
+                      ? "text-token-accent font-medium"
+                      : "text-token-soft hover:text-token"
                   }`}
                 >
                   {link.label}
@@ -90,7 +97,7 @@ export default function Navbar() {
           <div className="flex items-center gap-0.5 sm:gap-2 shrink-0">
             <button
               onClick={() => handleScroll("contacto")}
-              className="hidden sm:inline-flex text-sm whitespace-nowrap px-3 py-2 rounded-md text-light-soft dark:text-dark-soft hover:text-light-text dark:hover:text-dark-text transition-colors"
+              className="hidden sm:inline-flex text-sm whitespace-nowrap px-3 py-2 rounded-md text-token-soft hover:text-token transition-colors"
             >
               Contacto
             </button>
@@ -98,14 +105,14 @@ export default function Navbar() {
             <a
               href={cvLink.href}
               download={cvLink.download}
-              className="text-xs sm:text-sm font-medium px-2 sm:px-3 py-2 rounded-md text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent hover:bg-light-elevated/60 dark:hover:bg-dark-elevated/60 transition-colors"
+              className="text-xs sm:text-sm font-medium px-2 sm:px-3 py-2 rounded-md text-token-accent hover:bg-token-elevated transition-colors"
             >
               {cvLink.label}
             </a>
 
             <button
               onClick={() => setTheme(isDark ? "light" : "dark")}
-              className="p-2 rounded-md text-light-soft dark:text-dark-soft hover:bg-light-elevated dark:hover:bg-dark-elevated hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
+              className="p-2 rounded-md text-token-soft hover:bg-token-elevated hover:text-token-accent transition-colors"
               aria-label="Cambiar tema"
             >
               {mounted ? (

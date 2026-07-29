@@ -426,3 +426,125 @@ servidor de producción local en `:3100`.
   px estricto en TODO control touch, conviene envolverlos en
   `inline-flex min-h-[44px]` (los primarios ya cumplen). No es
   bloqueante para el brief (son enlaces textuales, no botones).
+---
+
+# Iteración C — hero cinematográfico (2026-07-29)
+
+Método aplicado: `cinematic-public-pages`. Assets generados con Higgsfield
+(MCP): imagen `nano_banana_pro` 16:9 2k, animación `kling3_0_turbo` I2V 1080p
+10s. Modelos verificados contra `specs/*.yaml` del skill (snapshot 2026-07-05).
+
+## Asset
+
+- **Concepto:** el motor de Plica como objeto físico — disco de grafito
+  mecanizado con tres anillos concéntricos (motor + tres superficies). Es el
+  lenguaje visual propio del sitio, no un render genérico de "IA".
+- **Encuadre como instrucción de prompt**, no como ajuste de CSS: objeto en el
+  40% inferior, 60% superior vacío. Ahí vive el titular, y por eso **no hay
+  overlay, ni scrim, ni text-shadow** sobre el video.
+- **Animación con prompt restrictivo:** los anillos giran, el disco no cambia de
+  tamaño ni de posición, cámara fija. Verificado comparando los frames 0/120/240:
+  encuadre idéntico. Se descartó el preset sugerido por el MCP ("IN THE DARK")
+  porque impone su propio movimiento.
+- **Loop sin costura:** el render crudo cerraba con PSNR 23,3 dB entre el primer
+  y el último frame (salto visible cada vuelta). Se resolvió con un crossfade
+  del video sobre sí mismo (`xfade`, cabeza de 1,2 s) → 34,4 dB, que ya es ruido
+  de compresión y no un salto de posición. Duración final 8,83 s.
+- **Bordes horneados, no con `mask-image`:** la máscara CSS se calcula sobre la
+  caja del elemento, no sobre el contenido que `object-contain` renderiza
+  dentro, así que el desvanecido caía fuera de cuadro. Se hornea en el mp4 y en
+  el póster un velo radial hacia el color de página.
+- **Lienzo 64:27 con relleno por extensión de píxeles.** Un `pad` con color
+  plano dejaba una costura vertical medible en el 12,5% y el 87,5% del lienzo
+  (el borde del render es más oscuro que el relleno). Se rellena estirando la
+  columna de borde (`crop=2 → scale=320 → hstack`), lo que da un degradado
+  continuo. Barrido horizontal medido a y=690: sin escalón.
+- **Bordes finales del asset:** rgb(12,16,20) contra el token de fondo
+  rgb(13,15,20). El negro del asset ya coincidía con `#0D0F14` de fábrica
+  (frame medido: rgb(12,11,19)), así que **la paleta no se tocó**.
+
+## Bug de codificación encontrado y corregido
+
+`scale` sobre una columna de 2 px fijó `sample_aspect_ratio=1:160`, que el
+`hstack` propagó al stream: DAR 2:135 y Chromium rechazando el archivo con
+`DEMUXER_ERROR_NO_SUPPORTED_STREAMS`. Corregido con `setsar=1`. Verificado en
+runtime: `readyState=4`, `error=null`, `currentTime` avanzando.
+
+## Hero
+
+- Titular con contraste de dos familias: Instrument Serif itálica (nombre) +
+  Geist Sans semibold ~1,8x (rol). **Desviación documentada en `DESIGN.md`**,
+  cuya regla previa prohibía serif en titulares; se acotó a esta única línea.
+- Poda del primer viewport: se quitaron los chips de stack (que además eran la
+  "lista de tecnologías sin contexto" que `PRODUCT.md` prohíbe), los enlaces
+  sociales (ya están en navbar y footer) y el párrafo de mini-evidencia
+  (duplicaba lo que dice `Systems`, y `PRODUCT.md` pide no repetir evidencia).
+  Quedan ~5 elementos: eyebrow, titular, propuesta, disponibilidad, acciones.
+- Píldoras completas, relleno sólido, sin borde ni sombra. La píldora primaria
+  usa `#3F62E8` y no el accent claro: blanco sobre `#5A7BFF` da 3,7:1 y no pasa
+  AA para texto normal; este da 5,04:1.
+- Entrada escalonada: blur-rise del titular a 0,25 s / 0,42 s, párrafos a
+  0,7 s / 0,85 s. Con motion reducido o en SSR el estado inicial es la
+  identidad: el hero nunca queda invisible.
+- `100dvh`, no `100vh`.
+
+## Tema claro sobre video (§3.b del método)
+
+- El contenido sobre el video vive en `.on-video`, que redefine los tokens
+  semánticos; los hijos usan `.text-token*` y no se enteran del tema. **No hay
+  `text-white` esparcido por el markup.** Medido: el color del titular es
+  rgb(243,245,248) con `pageBg` claro Y oscuro.
+- El navbar es transparente sobre el hero (con `.on-video`) y recupera su barra
+  difuminada al scrollear. Sus ítems pasaron a utilidades de token.
+- El degradado de salida vive FUERA de `.on-video` para fundirse al color de
+  página del tema activo, y el media está anclado por encima de esa franja: el
+  video termina antes de que empiece el degradado, así en claro el objeto no
+  queda envuelto en niebla blanca. Costura medida: llega a (247,248,250) en
+  claro y se mantiene constante; en oscuro (13,15,20) constante. Sin escalón.
+- Nota: la trampa de Tailwind v4 (`dark:` compilando a
+  `prefers-color-scheme`) **no aplica** en este repo — Tailwind 3.4.17 con
+  `darkMode: "class"` y next-themes con `attribute="class"`. Verificado en
+  `tailwind.config.ts:8`.
+
+## Presupuesto de performance (verificado en runtime, no estimado)
+
+- Póster como `<img fetchPriority="high">` propio, nunca el atributo `poster`.
+- **Antes del evento `load` solo viaja el póster (15 KB) + 3 woff2.** El mp4 de
+  1,08 MB se pide en idle. Medido interceptando respuestas.
+- `preload="none"` + src inyectado en `requestIdleCallback` (fallback
+  `setTimeout`). Crossfade de opacidad del video sobre el póster al `playing`.
+- `prefers-reduced-motion`: **el src no se inyecta nunca** (`videoSrc: null`
+  medido), queda el póster estático.
+- Video sin pista de audio (`-an`), `+faststart`, CRF 23.
+
+## Corrección de encuadre tras revisión del usuario
+
+El primer intento usaba `aspect-video w-full`, que deriva la altura del ANCHO:
+en una ventana ancha y baja (1900×890) el objeto se infló hasta invadir el
+párrafo y los CTAs, y el texto quedó ilegible. Corregido con techo de altura
+(`max-h-[42%]`), techo de ancho y `object-contain` (que además no recorta la
+silueta de los anillos en ningún viewport, cosa que `object-cover` sí hacía en
+móvil). Además se bajó la opacidad del media a 0,72 para que el objeto acompañe
+y no compita.
+
+En móvil los tres CTAs apilados dejaban el tercero encima del objeto:
+"Ver Plica" y "Contactar" ahora comparten fila (2 filas en vez de 3).
+
+## Validación ejecutada
+
+- `npx tsc --noEmit` → exit 0.
+- `npx next lint` → ✔ sin warnings ni errores.
+- `CI=true next build` → ✓ compilado, 8/8 páginas.
+- Playwright headless en 1900×890, 1440×900 y 390×844, en claro y oscuro:
+  video reproduciéndose en los 6 escenarios, `docScrollX: false` en los 6.
+- Consola sin errores propios (solo los 404 de telemetría de Vercel, esperados
+  en local).
+
+## Pendiente conocido
+
+- El PDF `CV_Bryam_Lopez.pdf` sigue siendo un duplicado byte a byte de
+  `CV_Bryam_Lopez_ES.pdf` y ningún componente lo referencia.
+- Sigue sin existir la página de caso de Plica que el rework de LinkedIn lista
+  como Destacado #2.
+- Contradicción de fechas entre el CV (AI Solutions hasta jul 2026) y el plan de
+  LinkedIn (hasta mar 2026), sin resolver.

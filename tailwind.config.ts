@@ -40,12 +40,15 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-instrument-serif)", "Georgia", "serif"],
         mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
         display: ["clamp(3rem,7vw,6.5rem)", { lineHeight: "0.98", letterSpacing: "-0.03em" }],
         "display-tight": ["clamp(2.5rem,5.5vw,4.5rem)", { lineHeight: "1.02", letterSpacing: "-0.025em" }],
+        // Primera línea del titular del hero: serif itálica, ~1.8x más chica
+        // que la línea sans que le sigue.
+        "hero-lead": ["clamp(1.5rem,3.2vw,2.5rem)", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
       },
       maxWidth: {
         editorial: "760px",

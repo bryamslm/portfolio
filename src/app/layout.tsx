@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -13,6 +13,17 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Serif editorial: solo para la primera línea del titular del hero.
+// El contraste de dos familias en un mismo titular es lo que separa un hero
+// cinematográfico de un hero de plantilla.
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -111,7 +122,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} font-sans antialiased`}
       >
         <ThemeProvider>
           <Analytics />

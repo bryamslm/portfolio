@@ -44,6 +44,53 @@
   --accent-soft: #8ea3ff;
 }
 
+/*
+ * Contenido sobre el video del hero.
+ *
+ * El asset es oscuro en los dos temas (negro medido del frame: rgb(12,11,19),
+ * el token dark-background es rgb(13,15,20)), así que el texto encima es claro
+ * SIEMPRE. Se resuelve redefiniendo los tokens semánticos en una sola clase:
+ * los hijos usan `.text-token*` y no se enteran del tema.
+ * No usar `text-white` esparcido por el markup.
+ */
+.on-video {
+  --background: #0d0f14;
+  --surface: #151922;
+  --elevated: #2b2f3a;
+  --text: #f3f5f8;
+  --text-soft: #c7cbd3;
+  --text-muted: #8f96a3;
+  --border: #2b2f3a;
+  --accent: #5a7bff;
+  --accent-soft: #8ea3ff;
+  color-scheme: dark;
+}
+
+@layer utilities {
+  /* Utilidades ligadas a los tokens semánticos: obedecen a `.on-video`. */
+  .text-token {
+    color: var(--text);
+  }
+  .text-token-soft {
+    color: var(--text-soft);
+  }
+  .text-token-muted {
+    color: var(--text-muted);
+  }
+  .text-token-accent {
+    color: var(--accent);
+  }
+  .bg-token-accent {
+    background-color: var(--accent);
+  }
+  .bg-token-elevated {
+    background-color: var(--elevated);
+  }
+  .border-token {
+    border-color: var(--border);
+  }
+}
+
 html {
   scroll-behavior: smooth;
   /* Compensa el navbar fijo al saltar a #anclas */

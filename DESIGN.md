@@ -86,6 +86,8 @@ oscuro.
 - **Principal:** Satoshi.
 - **Fallback:** Geist Sans, `system-ui`, sans-serif.
 - **Código o datos técnicos breves:** Geist Mono.
+- **Serif editorial (excepción acotada):** Instrument Serif itálica 400, y solo
+  para la primera línea del titular del hero.
 
 Satoshi debe servirse localmente en WOFF2 si se incorpora. No depender de una
 descarga bloqueante en runtime.
@@ -93,7 +95,14 @@ descarga bloqueante en runtime.
 ### Uso
 
 - Toda la interfaz usa sans serif.
-- No usar serif para titulares; la referencia es limpia y tecnológica, no clásica.
+- **Excepción única de serif — titular del hero.** La regla original de este
+  documento era "no usar serif para titulares". Se acota, no se deroga: el hero
+  cinematográfico necesita contraste de dos familias dentro de un mismo titular
+  (línea 1 serif itálica fina con el nombre, línea 2 sans semibold ~1,8x más
+  grande con el rol). Es el recurso que separa un hero compuesto de un hero de
+  plantilla. Fuera de esa línea, el serif sigue prohibido: h2, h3, cuerpo,
+  navegación, métricas y tarjetas son sans. Si aparece `font-serif` en cualquier
+  otro componente, es un error, no una licencia.
 - Peso recomendado:
   - 600 para títulos y métricas;
   - 500 para navegación y acciones;
