@@ -1,0 +1,18 @@
+# Normalizacion de fin de linea. Sin esto git avisa "LF will be replaced by
+# CRLF" tambien sobre los PDF y depende de su autodeteccion de binarios para
+# no corromperlos.
+* text=auto eol=lf
+
+# Binarios: nunca tocar los bytes.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.ico   binary
+*.mp4   binary
+*.woff  binary
+*.woff2 binary
+
+# Los CV en texto plano se pegan en formularios web; LF es lo correcto.
+*.txt   text eol=lf
