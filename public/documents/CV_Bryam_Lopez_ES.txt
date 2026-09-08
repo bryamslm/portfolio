@@ -1,5 +1,5 @@
 BRYAM STEVEN LÓPEZ MIRANDA
-Ingeniero de Software - IA Aplicada, Integraciones y Voice AI
+Ingeniero de Software - Agentes de IA en producción, de la API a la telefonía
 
 San Carlos, Alajuela, Costa Rica | Disponible remoto en Latinoamérica
 Email: bryam.steven.lopez@gmail.com
@@ -9,27 +9,34 @@ GitHub: github.com/bryamslm
 Portafolio: portfolio-bryam.vercel.app
 
 PERFIL PROFESIONAL
-Ingeniero en Computación especializado en IA aplicada, sistemas e ingeniería de producto.
-Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos,
-comunicaciones por voz y productos web orientados al usuario. Entrego productos completos con
-TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell, desde
-el modelo de datos hasta la operación en Linux.
+Ingeniero en Computación. Construyo y opero sistemas de IA aplicada completos: agentes con
+herramientas, RAG, memoria y guardas deterministas, apoyados en datos propios y en telefonía
+real. Trabajo de punta a punta —modelo de datos, backend, integraciones, interfaz y operación en
+Linux— con TypeScript, Node.js, Python, PostgreSQL y Asterisk/SIP. Lo que construyo está en
+producción y es verificable desde los enlaces de abajo.
 
 EXPERIENCIA PROFESIONAL
 
 Ingeniero de Integración de Sistemas
 AI Solutions CR | Mar 2025 - Actualidad
 - Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp,
-  Messenger, Instagram, web y telefonía.
+  Messenger, Instagram, web y telefonía: 499 migraciones, 43 esquemas PostgreSQL y 295 políticas
+  RLS de aislamiento por organización, con outbox, idempotencia, feature flags y auditoría;
+  1.136 pruebas automatizadas en verde.
+- Integré Voice AI sobre Asterisk 20 escribiendo un cliente AMI propio sobre socket TCP, sin
+  librería, para originar, transferir y redirigir llamadas: dialplan de ~2.000 líneas, 6
+  troncales SIP (Telnyx, DIDWW, Retell), 7 colas y consola SIP en el navegador, con 244
+  endpoints y 77 tablas.
 - Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública
   (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de
-  líneas comparables, con RAG legal sobre pgvector y un servidor MCP de 24 herramientas.
-- Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración
-  independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.
-- Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas
-  entrantes, campañas salientes y transferencias.
-- Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación
-  ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.
+  líneas comparables, con RAG legal sobre pgvector, servidor MCP de 24 herramientas y predictor
+  LightGBM calibrado (AUC 0,698 y ECE 0,025 contra una línea base de 0,508).
+- Endurecí la seguridad del código propio: cerré una inyección CRLF en el canal AMI y una
+  política RLS que permitía borrar el catálogo con la clave anónima; dejé firmas HMAC,
+  verificación en tiempo constante e idempotencia por restricción en la base.
+- Construí Colibrí, plataforma de comunicaciones para instituciones públicas: motor de
+  autorización propio sin dependencias, control ARI de Asterisk y 22 verificaciones de
+  gobernanza propias en integración continua.
 
 Desarrollador de Software - Práctica Profesional
 Vivo Gaming | Jul 2024 - Nov 2024
@@ -39,34 +46,31 @@ Vivo Gaming | Jul 2024 - Nov 2024
   proyecto de graduación de Ingeniería en Computación.
 
 HABILIDADES TÉCNICAS
-- IA aplicada: AI Agents, LLMs, RAG, tool use, MCP, prompt engineering, guardas deterministas,
-  Retell.
-- Ingeniería de software: TypeScript, JavaScript, Python, Next.js, React, Node.js, REST APIs,
-  software multi-tenant.
-- Datos: PostgreSQL, Supabase, pgvector, pipelines de datos, RLS, modelos predictivos.
-- Voice AI y telefonía: Asterisk 20, PJSIP, AMI, SIP trunks, Kamailio, RTPengine, Retell,
-  Telnyx, DIDWW, LiveKit.
-- Automatización e infraestructura: n8n, Linux, Docker, PM2, nginx, Vercel, OpenTelemetry,
-  Grafana, Prometheus.
+- IA aplicada: AI Agents, LLMs, RAG, tool use, MCP, LangChain, LangGraph, pgvector, evaluación
+  de agentes, guardas deterministas, Retell.
+- Backend y full stack: TypeScript, JavaScript, Python, Node.js, Fastify, Next.js, React, REST
+  APIs, webhooks, arquitectura multi-tenant.
+- Datos: PostgreSQL, Supabase, Drizzle, SQL analítico, RLS, pipelines ETL, LightGBM, modelos
+  calibrados.
+- Voice AI y telefonía: Asterisk 20, PJSIP, AMI, ARI, SIP trunks, WebRTC, SIP.js, Kamailio,
+  RTPengine, Telnyx, DIDWW, LiveKit.
+- Seguridad y operación: RLS, HMAC, firma de webhooks, idempotencia, outbox, auditoría, Docker,
+  Linux, nginx, Celery, Redis, OpenTelemetry, Grafana, Prometheus.
 
 PROYECTOS DESTACADOS
-- Plica Licitaciones CR: inteligencia para contratación pública con datos verificables de SICOP,
-  especialistas, respuestas legales con citas y predicciones honestas. Stack: TypeScript,
-  Next.js, PostgreSQL, Supabase, Python, RAG, MCP. plica.aisolutionscr.tech
-- Voice AI / Voice Ops: llamadas entrantes y salientes, campañas, transferencias, consola SIP en
-  navegador, grabaciones y analítica. Stack: Asterisk 20, PJSIP, AMI, SIP, Kamailio, Retell,
-  LiveKit. ops.aisolutionscr.tech
-- Retell Flowkit: motor local para generar, corregir, auditar y validar Retell Conversation
-  Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas. Stack: TypeScript, skills,
-  LLMs, validadores, testing, Codex.
-- SaaS multi-tenant de IA conversacional: agentes por chat y voz con aislamiento por
-  organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación
-  ante fallos. Stack: Next.js, TypeScript, Node.js, PostgreSQL, Supabase, n8n.
+- Plica Licitaciones CR: el mismo motor de datos operado desde la web, el chat y MCP, con citas
+  verbatim. Stack: TypeScript, Next.js, PostgreSQL, pgvector. plica.aisolutionscr.tech
+- Voice AI / Voice Ops: consola de agente, campañas salientes, transferencias asistidas,
+  grabaciones y analítica. Stack: Asterisk 20, PJSIP, AMI, SIP. ops.aisolutionscr.tech
+- Colibrí: autorización por capacidades y telefonía Asterisk para instituciones del Estado.
+  Stack: TypeScript, Fastify, Drizzle, PostgreSQL.
+- Retell Flowkit: 8 verificaciones de grafo; 751/751 pruebas y 28/28 plantillas oficiales.
+  Stack: TypeScript, Ajv, Vitest, CLI.
+- SaaS multi-tenant de IA conversacional: un mismo cerebro atendiendo cinco canales, con handoff
+  humano y auditoría. Stack: Next.js, TypeScript, LangGraph, PostgreSQL.
   app.aisolutionscr.tech/es
-- Ya Sale: carta QR y pedidos con cliente, mesa y cocina conectados; menú y disponibilidad
-  actualizables, estados de cocina y solicitudes de atención o cuenta. Desarrollado con
-  TicaCode. Stack: TypeScript, Next.js, Product Engineering, QR ordering, real-time operations.
-  yasale.app
+- Ya Sale: socio al 50%; carta QR, cocina en tiempo real y cobro con ONVO Pay. Stack: Next.js,
+  TypeScript, PostgreSQL, Supabase Realtime. yasale.app
 
 EDUCACIÓN
 Bachillerato Universitario en Ingeniería en Computación — Tecnológico de Costa Rica (TEC), 2020

@@ -66,22 +66,34 @@ export type Cv = {
   languages: string[];
 };
 
+/*
+ * Toda cifra de este archivo esta verificada contra el repositorio que la
+ * sostiene: conteo real de codigo, migraciones, endpoints o corrida de tests.
+ * Las de Plica salen de design/entrega-marketing/datos-y-claims.md, que es el
+ * documento canonico del proyecto; las anteriores ("23 M registros",
+ * "1,27 M lineas") estaban marcadas ahi como obsoletas y prohibidas de citar.
+ * Si una cifra cambia en el proyecto, se actualiza aca y se corre
+ * `npm run cv:build`. No se inventan numeros.
+ */
+
 // ---------------------------------------------------------------------------
 // ESPAÑOL
 // ---------------------------------------------------------------------------
 
 export const cvEs: Cv = {
   name: "Bryam Steven López Miranda",
-  title: "Ingeniero de Software | IA Aplicada, Integraciones y Voice AI",
-  headline: "Ingeniero de Software - IA Aplicada, Integraciones y Voice AI",
+  title: "Ingeniero de Software | Agentes de IA en producción, de la API a la telefonía",
+  headline: "Ingeniero de Software - Agentes de IA en producción, de la API a la telefonía",
   keywords: [
-    "Ingeniero de Software", "Software Engineer", "Backend Engineer", "Full Stack",
+    "Ingeniero de Software", "Software Engineer", "Backend Engineer", "Full Stack Engineer",
     "Applied AI Engineer", "AI Engineer", "Systems Integration", "Integraciones",
-    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js",
-    "PostgreSQL", "Supabase", "pgvector", "RAG", "LLM", "AI Agents", "MCP",
-    "Voice AI", "Asterisk", "PJSIP", "SIP", "AMI", "Retell", "Telnyx", "LiveKit",
-    "n8n", "Docker", "Linux", "nginx", "REST API", "multi-tenant", "SaaS",
-    "OpenTelemetry", "Grafana", "Prometheus", "Costa Rica", "remoto", "LATAM",
+    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js", "Fastify",
+    "PostgreSQL", "Supabase", "pgvector", "Drizzle", "SQL", "RLS", "ETL", "pipelines",
+    "RAG", "LLM", "AI Agents", "MCP", "LangChain", "LangGraph", "tool use", "evaluación",
+    "Voice AI", "Asterisk", "PJSIP", "AMI", "ARI", "SIP", "WebRTC", "Retell", "Telnyx", "LiveKit",
+    "n8n", "Celery", "Redis", "Docker", "Linux", "nginx", "REST API", "webhooks",
+    "multi-tenant", "SaaS", "seguridad", "HMAC", "OpenTelemetry", "Grafana", "Prometheus",
+    "Costa Rica", "remoto", "LATAM",
   ],
   location: "San Carlos, Alajuela, Costa Rica | Disponible remoto en Latinoamérica",
   contact: [
@@ -92,10 +104,9 @@ export const cvEs: Cv = {
     { label: "Portafolio", value: "portfolio-bryam.vercel.app", href: "https://portfolio-bryam.vercel.app" },
   ],
   // El estado de busqueda no va aca: las tres primeras lineas son el espacio
-  // mas caro del CV y "equipo estable" se lee como reproche al empleador actual.
-  // Eso pertenece a la carta de presentacion o a la conversacion.
+  // mas caro del CV. Eso pertenece a la carta o a la conversacion.
   summary:
-    "Ingeniero en Computación especializado en IA aplicada, sistemas e ingeniería de producto. Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos, comunicaciones por voz y productos web orientados al usuario. Entrego productos completos con TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell, desde el modelo de datos hasta la operación en Linux.",
+    "Ingeniero en Computación. Construyo y opero sistemas de IA aplicada completos: agentes con herramientas, RAG, memoria y guardas deterministas, apoyados en datos propios y en telefonía real. Trabajo de punta a punta —modelo de datos, backend, integraciones, interfaz y operación en Linux— con TypeScript, Node.js, Python, PostgreSQL y Asterisk/SIP. Lo que construyo está en producción y es verificable desde los enlaces de abajo.",
   experience: [
     {
       role: "Ingeniero de Integración de Sistemas",
@@ -103,11 +114,11 @@ export const cvEs: Cv = {
       period: "Mar 2025 - Actualidad",
       current: true,
       bullets: [
-        "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
-        "Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de líneas comparables, con RAG legal sobre pgvector y un servidor MCP de 24 herramientas.",
-        "Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.",
-        "Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas entrantes, campañas salientes y transferencias.",
-        "Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.",
+        "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía: 499 migraciones, 43 esquemas PostgreSQL y 295 políticas RLS de aislamiento por organización, con outbox, idempotencia, feature flags y auditoría; 1.136 pruebas automatizadas en verde.",
+        "Integré Voice AI sobre Asterisk 20 escribiendo un cliente AMI propio sobre socket TCP, sin librería, para originar, transferir y redirigir llamadas: dialplan de ~2.000 líneas, 6 troncales SIP (Telnyx, DIDWW, Retell), 7 colas y consola SIP en el navegador, con 244 endpoints y 77 tablas.",
+        "Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de líneas comparables, con RAG legal sobre pgvector, servidor MCP de 24 herramientas y predictor LightGBM calibrado (AUC 0,698 y ECE 0,025 contra una línea base de 0,508).",
+        "Endurecí la seguridad del código propio: cerré una inyección CRLF en el canal AMI y una política RLS que permitía borrar el catálogo con la clave anónima; dejé firmas HMAC, verificación en tiempo constante e idempotencia por restricción en la base.",
+        "Construí Colibrí, plataforma de comunicaciones para instituciones públicas: motor de autorización propio sin dependencias, control ARI de Asterisk y 22 verificaciones de gobernanza propias en integración continua.",
       ],
     },
     {
@@ -121,20 +132,20 @@ export const cvEs: Cv = {
     },
   ],
   skills: [
-    { category: "IA aplicada", items: ["AI Agents", "LLMs", "RAG", "tool use", "MCP", "prompt engineering", "guardas deterministas", "Retell"] },
-    { category: "Ingeniería de software", items: ["TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js", "REST APIs", "software multi-tenant"] },
-    { category: "Datos", items: ["PostgreSQL", "Supabase", "pgvector", "pipelines de datos", "RLS", "modelos predictivos"] },
-    { category: "Voice AI y telefonía", items: ["Asterisk 20", "PJSIP", "AMI", "SIP trunks", "Kamailio", "RTPengine", "Retell", "Telnyx", "DIDWW", "LiveKit"] },
-    { category: "Automatización e infraestructura", items: ["n8n", "Linux", "Docker", "PM2", "nginx", "Vercel", "OpenTelemetry", "Grafana", "Prometheus"] },
+    { category: "IA aplicada", items: ["AI Agents", "LLMs", "RAG", "tool use", "MCP", "LangChain", "LangGraph", "pgvector", "evaluación de agentes", "guardas deterministas", "Retell"] },
+    { category: "Backend y full stack", items: ["TypeScript", "JavaScript", "Python", "Node.js", "Fastify", "Next.js", "React", "REST APIs", "webhooks", "arquitectura multi-tenant"] },
+    { category: "Datos", items: ["PostgreSQL", "Supabase", "Drizzle", "SQL analítico", "RLS", "pipelines ETL", "LightGBM", "modelos calibrados"] },
+    { category: "Voice AI y telefonía", items: ["Asterisk 20", "PJSIP", "AMI", "ARI", "SIP trunks", "WebRTC", "SIP.js", "Kamailio", "RTPengine", "Telnyx", "DIDWW", "LiveKit"] },
+    { category: "Seguridad y operación", items: ["RLS", "HMAC", "firma de webhooks", "idempotencia", "outbox", "auditoría", "Docker", "Linux", "nginx", "Celery", "Redis", "OpenTelemetry", "Grafana", "Prometheus"] },
   ],
   projects: [
     {
       title: "Plica Licitaciones CR - Inteligencia para contratación pública",
       description:
-        "Inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones honestas, accesible desde la web, el chat y la integración para herramientas.",
+        "Inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones calibradas, accesible desde la web, el chat y la integración para herramientas.",
       cvLine:
-        "inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones honestas.",
-      techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
+        "el mismo motor de datos operado desde la web, el chat y MCP, con citas verbatim.",
+      techStack: ["TypeScript", "Next.js", "PostgreSQL", "pgvector", "Python", "LightGBM", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },
     {
@@ -142,17 +153,26 @@ export const cvEs: Cv = {
       description:
         "Operación de llamadas entrantes y salientes, campañas, transferencias, consola SIP en navegador, grabaciones y analítica.",
       cvLine:
-        "llamadas entrantes y salientes, campañas, transferencias, consola SIP en navegador, grabaciones y analítica.",
-      techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "Kamailio", "Retell", "LiveKit"],
+        "consola de agente, campañas salientes, transferencias asistidas, grabaciones y analítica.",
+      techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "JsSIP", "Retell", "LiveKit"],
       liveDemo: "https://ops.aisolutionscr.tech/",
+    },
+    {
+      title: "Colibrí - Comunicaciones para instituciones públicas",
+      description:
+        "Contact center, comunicación interna y motor de agentes de voz para instituciones del Estado y empresas grandes, con autorización por capacidades y telefonía Asterisk real.",
+      cvLine:
+        "autorización por capacidades y telefonía Asterisk para instituciones del Estado.",
+      techStack: ["TypeScript", "Fastify", "Drizzle", "PostgreSQL", "Asterisk ARI", "SIP.js", "Redis"],
+      privateWork: true,
     },
     {
       title: "Retell Flowkit",
       description:
-        "Motor local consumido mediante skills para generar, corregir, auditar y validar Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.",
+        "Motor local consumido mediante skills para generar, corregir, auditar y validar Retell Conversation Flows.",
       cvLine:
-        "motor local para generar, corregir, auditar y validar Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.",
-      techStack: ["TypeScript", "skills", "LLMs", "validadores", "testing", "Codex"],
+        "8 verificaciones de grafo; 751/751 pruebas y 28/28 plantillas oficiales.",
+      techStack: ["TypeScript", "Ajv", "Vitest", "CLI", "skills"],
       privateWork: true,
     },
     {
@@ -160,17 +180,17 @@ export const cvEs: Cv = {
       description:
         "Agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación ante fallos.",
       cvLine:
-        "agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación ante fallos.",
-      techStack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "n8n"],
+        "un mismo cerebro atendiendo cinco canales, con handoff humano y auditoría.",
+      techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
       liveDemo: "https://app.aisolutionscr.tech/es/",
     },
     {
       title: "Ya Sale - carta digital y pedidos para restaurantes",
       description:
-        "Producto desarrollado en conjunto con TicaCode. Como desarrollador técnico construí una experiencia web para que restaurantes operen su carta por QR: el cliente escanea, arma el pedido y cocina lo recibe identificado por mesa; incluye actualización de menú, disponibilidad de platos, estados de cocina y solicitudes de atención o cuenta.",
+        "Producto del que soy socio al 50% y desarrollador técnico: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
       cvLine:
-        "carta QR y pedidos con cliente, mesa y cocina conectados; menú y disponibilidad actualizables, estados de cocina y solicitudes de atención o cuenta. Desarrollado con TicaCode.",
-      techStack: ["TypeScript", "Next.js", "Product Engineering", "QR ordering", "real-time operations"],
+        "socio al 50%; carta QR, cocina en tiempo real y cobro con ONVO Pay.",
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
       liveDemo: "https://yasale.app/",
     },
   ],
@@ -200,16 +220,18 @@ export const cvEs: Cv = {
 
 export const cvEn: Cv = {
   name: "Bryam Steven López Miranda",
-  title: "Software Engineer | Applied AI, Integrations and Voice AI",
-  headline: "Software Engineer - Applied AI, Integrations and Voice AI",
+  title: "Software Engineer | Production AI agents, from the API to the phone line",
+  headline: "Software Engineer - Production AI agents, from the API to the phone line",
   keywords: [
     "Software Engineer", "Backend Engineer", "Full Stack Engineer",
     "Applied AI Engineer", "AI Engineer", "Systems Integration Engineer",
-    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js",
-    "PostgreSQL", "Supabase", "pgvector", "RAG", "LLM", "AI Agents", "MCP",
-    "Voice AI", "Asterisk", "PJSIP", "SIP", "AMI", "Retell", "Telnyx", "LiveKit",
-    "n8n", "Docker", "Linux", "nginx", "REST API", "multi-tenant", "SaaS",
-    "OpenTelemetry", "Grafana", "Prometheus", "Costa Rica", "remote", "LATAM",
+    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js", "Fastify",
+    "PostgreSQL", "Supabase", "pgvector", "Drizzle", "SQL", "RLS", "ETL", "pipelines",
+    "RAG", "LLM", "AI Agents", "MCP", "LangChain", "LangGraph", "tool use", "evaluation",
+    "Voice AI", "Asterisk", "PJSIP", "AMI", "ARI", "SIP", "WebRTC", "Retell", "Telnyx", "LiveKit",
+    "n8n", "Celery", "Redis", "Docker", "Linux", "nginx", "REST API", "webhooks",
+    "multi-tenant", "SaaS", "security", "HMAC", "OpenTelemetry", "Grafana", "Prometheus",
+    "Costa Rica", "remote", "LATAM",
   ],
   location: "San Carlos, Alajuela, Costa Rica | Open to remote work in Latin America",
   contact: [
@@ -220,7 +242,7 @@ export const cvEn: Cv = {
     { label: "Portfolio", value: "portfolio-bryam.vercel.app", href: "https://portfolio-bryam.vercel.app" },
   ],
   summary:
-    "Computer Engineer specializing in applied AI, systems and product engineering. I build tool-using agents, RAG, memory, deterministic guards, automation, data pipelines, voice communications and user-facing web products. I deliver complete products with TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP and Retell, from the data model through to running them on Linux.",
+    "Computer Engineer. I build and run complete applied-AI systems: tool-using agents with RAG, memory and deterministic guards, backed by my own data platforms and by real telephony. I work end to end —data model, backend, integrations, interface and Linux operations— with TypeScript, Node.js, Python, PostgreSQL and Asterisk/SIP. What I build runs in production and is verifiable through the links below.",
   experience: [
     {
       role: "Systems Integration Engineer",
@@ -228,11 +250,11 @@ export const cvEn: Cv = {
       period: "Mar 2025 - Present",
       current: true,
       bullets: [
-        "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
-        "Built Plica Licitaciones CR, a procurement-intelligence engine over ten years of Costa Rican public spend (SICOP, Jul 2016-Jul 2026): 269k tenders, 349k awards and over one million comparable lines, with legal RAG on pgvector and a 24-tool MCP server.",
-        "Built assistants with memory, RAG, tools, guards, fallbacks and per-organization configuration; one brain routes five brands within a single tenant.",
-        "Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for inbound calls, outbound campaigns and transfers.",
-        "Implemented RLS, feature flags, idempotency, auditing, outbox, notifications and failure recovery on Linux, PostgreSQL and self-hosted Supabase.",
+        "Designed and built a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony: 499 migrations, 43 PostgreSQL schemas and 295 RLS policies enforcing per-organization isolation, with outbox, idempotency, feature flags and auditing; 1,136 automated tests green.",
+        "Integrated Voice AI on Asterisk 20 by writing my own AMI client over a raw TCP socket, no library, to originate, transfer and redirect calls: a ~2,000-line dialplan, 6 SIP trunks (Telnyx, DIDWW, Retell), 7 queues and an in-browser SIP console, across 244 endpoints and 77 tables.",
+        "Built Plica Licitaciones CR, a procurement-intelligence engine over ten years of Costa Rican public spend (SICOP, Jul 2016-Jul 2026): 269k tenders, 349k awards and over one million comparable lines, with legal RAG on pgvector, a 24-tool MCP server and a calibrated LightGBM predictor (AUC 0.698, ECE 0.025 against a 0.508 baseline).",
+        "Hardened the security of my own code: closed a CRLF injection in the AMI channel and an RLS policy that allowed deleting the catalog with the anonymous key; left HMAC signatures, constant-time verification and database-level idempotency constraints in place.",
+        "Built Colibrí, a communications platform for public institutions: a dependency-free authorization engine, Asterisk ARI control and 22 custom governance checks in continuous integration.",
       ],
     },
     {
@@ -246,20 +268,20 @@ export const cvEn: Cv = {
     },
   ],
   skills: [
-    { category: "Applied AI", items: ["AI Agents", "LLMs", "RAG", "tool use", "MCP", "prompt engineering", "deterministic guards", "Retell"] },
-    { category: "Software engineering", items: ["TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js", "REST APIs", "multi-tenant systems"] },
-    { category: "Data", items: ["PostgreSQL", "Supabase", "pgvector", "data pipelines", "RLS", "predictive models"] },
-    { category: "Voice AI and telephony", items: ["Asterisk 20", "PJSIP", "AMI", "SIP trunks", "Kamailio", "RTPengine", "Retell", "Telnyx", "DIDWW", "LiveKit"] },
-    { category: "Automation and infrastructure", items: ["n8n", "Linux", "Docker", "PM2", "nginx", "Vercel", "OpenTelemetry", "Grafana", "Prometheus"] },
+    { category: "Applied AI", items: ["AI Agents", "LLMs", "RAG", "tool use", "MCP", "LangChain", "LangGraph", "pgvector", "agent evaluation", "deterministic guards", "Retell"] },
+    { category: "Backend and full stack", items: ["TypeScript", "JavaScript", "Python", "Node.js", "Fastify", "Next.js", "React", "REST APIs", "webhooks", "multi-tenant architecture"] },
+    { category: "Data", items: ["PostgreSQL", "Supabase", "Drizzle", "analytical SQL", "RLS", "ETL pipelines", "LightGBM", "calibrated models"] },
+    { category: "Voice AI and telephony", items: ["Asterisk 20", "PJSIP", "AMI", "ARI", "SIP trunks", "WebRTC", "SIP.js", "Kamailio", "RTPengine", "Telnyx", "DIDWW", "LiveKit"] },
+    { category: "Security and operations", items: ["RLS", "HMAC", "webhook signing", "idempotency", "outbox", "auditing", "Docker", "Linux", "nginx", "Celery", "Redis", "OpenTelemetry", "Grafana", "Prometheus"] },
   ],
   projects: [
     {
       title: "Plica Licitaciones CR - Public procurement intelligence",
       description:
-        "Public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and honest predictions, accessible from the web, chat and tool integration.",
+        "Public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and calibrated predictions, accessible from the web, chat and tool integration.",
       cvLine:
-        "public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and honest predictions.",
-      techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
+        "the same data engine driven from web, chat and MCP, with verbatim citations.",
+      techStack: ["TypeScript", "Next.js", "PostgreSQL", "pgvector", "Python", "LightGBM", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },
     {
@@ -267,17 +289,26 @@ export const cvEn: Cv = {
       description:
         "Inbound and outbound calls, campaigns, transfers, browser SIP console, recordings and operational analytics.",
       cvLine:
-        "inbound and outbound calls, campaigns, transfers, browser SIP console, recordings and operational analytics.",
-      techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "Kamailio", "Retell", "LiveKit"],
+        "agent console, outbound campaigns, warm transfers, recordings and analytics.",
+      techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "JsSIP", "Retell", "LiveKit"],
       liveDemo: "https://ops.aisolutionscr.tech/",
+    },
+    {
+      title: "Colibrí - Communications for public institutions",
+      description:
+        "Contact center, internal communications and a voice-agent engine for state institutions and large companies, with capability-based authorization and real Asterisk telephony.",
+      cvLine:
+        "capability-based authorization and Asterisk telephony for state institutions.",
+      techStack: ["TypeScript", "Fastify", "Drizzle", "PostgreSQL", "Asterisk ARI", "SIP.js", "Redis"],
+      privateWork: true,
     },
     {
       title: "Retell Flowkit",
       description:
-        "Local engine consumed through skills to generate, repair, audit and validate Retell Conversation Flows; 751/751 tests and 28/28 official templates verified.",
+        "Local engine consumed through skills to generate, repair, audit and validate Retell Conversation Flows.",
       cvLine:
-        "local engine to generate, fix, audit and validate Retell Conversation Flows; 751/751 tests and 28/28 official templates verified.",
-      techStack: ["TypeScript", "skills", "LLMs", "validators", "testing", "Codex"],
+        "8 graph checks; 751/751 tests and 28/28 official templates.",
+      techStack: ["TypeScript", "Ajv", "Vitest", "CLI", "skills"],
       privateWork: true,
     },
     {
@@ -285,17 +316,17 @@ export const cvEn: Cv = {
       description:
         "Chat and voice agents with organization isolation, memory, RAG, tools, guards, human handoff, auditing and failure recovery.",
       cvLine:
-        "chat and voice agents with organization isolation, memory, RAG, tools, guards, human handoff, auditing and failure recovery.",
-      techStack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "n8n"],
+        "one brain serving five channels, with human handoff and auditing.",
+      techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
       liveDemo: "https://app.aisolutionscr.tech/es/",
     },
     {
       title: "Ya Sale - digital menu and restaurant ordering",
       description:
-        "Product developed jointly with TicaCode. As the technical developer, I built a web experience for restaurants to run QR menus: diners scan, assemble an order and the kitchen receives it identified by table; it includes menu updates, item availability, kitchen statuses and requests for service or the bill.",
+        "A product I co-own (50%) and built technically: QR menus, table ordering, real-time kitchen, payments and loyalty, with per-restaurant roles.",
       cvLine:
-        "QR menu and ordering with diner, table and kitchen connected; updatable menus and availability, kitchen statuses and service or bill requests. Built with TicaCode.",
-      techStack: ["TypeScript", "Next.js", "Product Engineering", "QR ordering", "real-time operations"],
+        "50% co-owner; QR menus, real-time kitchen and payments through ONVO Pay.",
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
       liveDemo: "https://yasale.app/",
     },
   ],

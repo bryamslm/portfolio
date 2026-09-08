@@ -75,12 +75,12 @@ def build_styles():
         "name": ParagraphStyle("Name", parent=base["Title"], fontName="Helvetica-Bold", fontSize=17, leading=20, textColor=colors.HexColor("#111827"), alignment=TA_LEFT, spaceAfter=2),
         "title": ParagraphStyle("Titular", parent=base["Normal"], fontName="Helvetica", fontSize=9.3, leading=11.5, textColor=colors.HexColor("#374151"), spaceAfter=6),
         "contact": ParagraphStyle("Contact", parent=base["Normal"], fontName="Helvetica", fontSize=7.6, leading=9.8, textColor=colors.HexColor("#4B5563")),
-        "section": ParagraphStyle("Section", parent=base["Heading2"], fontName="Helvetica-Bold", fontSize=9.2, leading=10.6, textColor=colors.HexColor("#0F766E"), spaceBefore=7, spaceAfter=2.5),
-        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="Helvetica", fontSize=7.95, leading=9.9, textColor=colors.HexColor("#1F2937"), spaceAfter=2),
+        "section": ParagraphStyle("Section", parent=base["Heading2"], fontName="Helvetica-Bold", fontSize=9.2, leading=10.6, textColor=colors.HexColor("#0F766E"), spaceBefore=5.5, spaceAfter=2),
+        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=colors.HexColor("#1F2937"), spaceAfter=1.5),
         "role": ParagraphStyle("Role", parent=base["BodyText"], fontName="Helvetica-Bold", fontSize=8.35, leading=10, textColor=colors.HexColor("#111827"), spaceAfter=1),
         "company": ParagraphStyle("Company", parent=base["BodyText"], fontName="Helvetica-Oblique", fontSize=7.7, leading=9.2, textColor=colors.HexColor("#4B5563"), spaceAfter=1.5),
-        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="Helvetica", fontSize=7.5, leading=9.15, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=1.2),
-        "small": ParagraphStyle("Small", parent=base["BodyText"], fontName="Helvetica", fontSize=7.5, leading=9.15, textColor=colors.HexColor("#1F2937"), spaceAfter=1.5),
+        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.5, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=0.9),
+        "small": ParagraphStyle("Small", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.5, textColor=colors.HexColor("#1F2937"), spaceAfter=1),
     }
 
 
@@ -116,7 +116,9 @@ def strip_url(url):
 def project_line(proj):
     # cvLine es la version corta pensada para el impreso; description es la de la web.
     parts = [proj["title"].split(" - ")[0] + ": " + (proj.get("cvLine") or proj["description"])]
-    parts.append("Stack: " + ", ".join(proj["techStack"]) + ".")
+    # Solo los 4 primeros: la seccion de habilidades ya enumera el stack
+    # completo y repetirlo por proyecto cuesta casi dos lineas de pagina.
+    parts.append("Stack: " + ", ".join(proj["techStack"][:4]) + ".")
     if proj.get("liveDemo"):
         parts.append(strip_url(proj["liveDemo"]))
     if proj.get("repoLink"):
@@ -172,8 +174,8 @@ def create_pdf(cv, lang, target):
         pagesize=letter,
         leftMargin=15 * mm,
         rightMargin=15 * mm,
-        topMargin=12 * mm,
-        bottomMargin=11 * mm,
+        topMargin=11 * mm,
+        bottomMargin=9 * mm,
         title=meta["title"],
         author=meta["author"],
         subject=meta["subject"],
