@@ -253,8 +253,16 @@ def main():
     data = json.loads(DATA.read_text(encoding="utf-8"))
     PUBLIC.mkdir(parents=True, exist_ok=True)
 
-    for lang, suffix in (("es", "ES"), ("en", "EN")):
-        cv = data[lang]
+    # La variante _Backend es el mismo CV con otro enfasis: lidera con backend
+    # e integraciones, que es lo que pide la mayoria de las vacantes. Se manda
+    # a puestos full stack/backend; la principal, a AI Platform y Voice AI.
+    for key, lang, suffix in (
+        ("es", "es", "ES"),
+        ("en", "en", "EN"),
+        ("es_backend", "es", "ES_Backend"),
+        ("en_backend", "en", "EN_Backend"),
+    ):
+        cv = data[key]
         create_pdf(cv, lang, PUBLIC / ("CV_Bryam_Lopez_" + suffix + ".pdf"))
         create_txt(cv, lang, PUBLIC / ("CV_Bryam_Lopez_" + suffix + ".txt"))
         print("generado: CV_Bryam_Lopez_" + suffix + ".pdf / .txt")

@@ -9,10 +9,10 @@
 import { writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { cvEs, cvEn } from "../src/content/cv.ts";
+import { cvEs, cvEn, cvEsBackend, cvEnBackend } from "../src/content/cv.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const target = resolve(here, "cv.build.json");
 
-writeFileSync(target, JSON.stringify({ es: cvEs, en: cvEn }, null, 2), "utf8");
+writeFileSync(target, JSON.stringify({ es: cvEs, en: cvEn, es_backend: cvEsBackend, en_backend: cvEnBackend }, null, 2), "utf8");
 console.log(`cv.build.json escrito: ${target}`);

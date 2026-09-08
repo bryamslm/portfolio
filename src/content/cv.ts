@@ -349,3 +349,42 @@ export const cvEn: Cv = {
   ],
   languages: ["Spanish (native)", "English (technical reading; basic conversation)"],
 };
+
+// ---------------------------------------------------------------------------
+// VARIANTE BACKEND / INTEGRACIONES
+// ---------------------------------------------------------------------------
+
+/*
+ * Mismo contenido, otro enfasis. En el feed de 50 vacantes que se analizo, la
+ * mayoria pide backend, full stack, APIs e integraciones; solo cuatro
+ * mencionan voz. La variante por defecto lidera con la telefonia porque es lo
+ * que vuelve memorable el perfil; esta lidera con backend porque es lo que
+ * hace que un filtro lo encuentre. No se cambia ninguna cifra ni se agrega
+ * nada que la version principal no afirme: solo cambian el titular, el
+ * resumen y el orden en que se presentan las mismas capacidades.
+ */
+function withBackendEmphasis(cv: Cv, overrides: Pick<Cv, "title" | "headline" | "summary">): Cv {
+  const order = ["Backend y full stack", "Backend and full stack", "Datos", "Data"];
+  return {
+    ...cv,
+    ...overrides,
+    // Backend y datos primero; IA aplicada y telefonia siguen presentes, mas abajo.
+    skills: [...cv.skills].sort(
+      (a, b) => Number(order.includes(b.category)) - Number(order.includes(a.category)),
+    ),
+  };
+}
+
+export const cvEsBackend: Cv = withBackendEmphasis(cvEs, {
+  title: "Ingeniero de Software Backend | Integraciones, datos y agentes de IA en producción",
+  headline: "Ingeniero de Software Backend - Integraciones, datos y agentes de IA en producción",
+  summary:
+    "Ingeniero en Computación con foco en backend, integraciones y datos. Diseño APIs y esquemas PostgreSQL multi-tenant con aislamiento por RLS, idempotencia, outbox y auditoría; conecto sistemas de terceros por webhooks firmados; y llevo lo que construyo hasta producción en Linux. Trabajo con TypeScript, Node.js, Fastify, Next.js y Python, y aplico lo mismo a agentes de IA con herramientas y RAG, incluida la telefonía. Lo que construyo está en producción y es verificable desde los enlaces de abajo.",
+});
+
+export const cvEnBackend: Cv = withBackendEmphasis(cvEn, {
+  title: "Backend Software Engineer | Integrations, data and production AI agents",
+  headline: "Backend Software Engineer - Integrations, data and production AI agents",
+  summary:
+    "Computer Engineer focused on backend, integrations and data. I design APIs and multi-tenant PostgreSQL schemas with RLS isolation, idempotency, outbox and auditing; I connect third-party systems through signed webhooks; and I take what I build all the way to production on Linux. I work with TypeScript, Node.js, Fastify, Next.js and Python, and apply the same discipline to tool-using AI agents with RAG, telephony included. What I build runs in production and is verifiable through the links below.",
+});

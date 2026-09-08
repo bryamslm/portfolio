@@ -12,8 +12,17 @@ Portafolio y CV de Bryam Steven López Miranda — Next.js 15, React 19, Tailwin
 |---|---|
 | Secciones del sitio | `About.tsx`, `Experience.tsx` importan `cvEs` |
 | CV imprimible en el navegador | ruta `/cv/print?lang=es\|en` |
-| `public/documents/CV_Bryam_Lopez_{ES,EN}.pdf` | `npm run cv:build` |
-| `public/documents/CV_Bryam_Lopez_{ES,EN}.txt` | `npm run cv:build` |
+| `public/documents/CV_Bryam_Lopez_{ES,EN}.pdf` y `.txt` | `npm run cv:build` |
+| `public/documents/CV_Bryam_Lopez_{ES,EN}_Backend.pdf` y `.txt` | `npm run cv:build` |
+
+### Dos variantes, un solo contenido
+
+La variante principal lidera con agentes de IA y telefonía: es lo que vuelve
+memorable el perfil. La `_Backend` lidera con backend, integraciones y datos:
+es lo que buscan la mayoría de los filtros. **No cambia ninguna cifra ni afirma
+nada distinto** — cambian el titular, el resumen y el orden de las mismas
+capacidades. Se manda la principal a puestos de AI Platform y Voice AI, y la
+`_Backend` a full stack y backend.
 
 Antes el PDF vivía en un script fuera del repo con el CV hardcodeado, y las tres
 copias ya habían derivado entre sí. Para actualizar el CV se edita `cv.ts` y se
