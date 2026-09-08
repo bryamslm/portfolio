@@ -44,3 +44,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Material privado de búsqueda de empleo y prospección comercial.
+# Contiene criterios salariales, posicionamiento de inglés y datos de
+# contacto de terceros: el repo es público, esto nunca se commitea.
+/BITACORA_POSTULACIONES_LINKEDIN.md
+/POSTULACIONES_*.md
+/LISTA_*_POSTULACIONES_*.md
+/OPORTUNIDADES_LINKEDIN_*.md
+/SIGNAL_CLIENTES_*.md
+
+# Artefactos de herramientas locales
+/.playwright-mcp/
+
+# Derivado de src/content/cv.ts (npm run cv:build)
+/scripts/cv.build.json
