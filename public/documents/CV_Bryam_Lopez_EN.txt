@@ -25,7 +25,7 @@ AI Solutions CR | Mar 2025 - Present
   tests green.
 - Integrated Voice AI on Asterisk 20 by writing my own AMI client over a raw TCP socket, no
   library, to originate, transfer and redirect calls: a ~2,000-line dialplan, 6 SIP trunks
-  (Telnyx, DIDWW, Retell), 7 queues and an in-browser SIP console, across 244 endpoints and 77
+  (Telnyx, DIDWW, Retell), 7 queues and an in-browser SIP console, across 244 endpoints and 105
   tables.
 - Built Plica Licitaciones CR, a procurement-intelligence engine over ten years of Costa Rican
   public spend (SICOP, Jul 2016-Jul 2026): 269k tenders, 349k awards and over one million

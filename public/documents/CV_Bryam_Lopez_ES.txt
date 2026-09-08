@@ -26,7 +26,7 @@ AI Solutions CR | Mar 2025 - Actualidad
 - Integré Voice AI sobre Asterisk 20 escribiendo un cliente AMI propio sobre socket TCP, sin
   librería, para originar, transferir y redirigir llamadas: dialplan de ~2.000 líneas, 6
   troncales SIP (Telnyx, DIDWW, Retell), 7 colas y consola SIP en el navegador, con 244
-  endpoints y 77 tablas.
+  endpoints y 105 tablas.
 - Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública
   (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de
   líneas comparables, con RAG legal sobre pgvector, servidor MCP de 24 herramientas y predictor
