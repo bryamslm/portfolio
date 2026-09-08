@@ -181,7 +181,7 @@ export default function Hero() {
             {...rise(0.42)}
             className="mt-2 block max-w-[22ch] text-display-tight font-semibold tracking-tight text-balance text-token"
           >
-            Ingeniero de IA Aplicada y Sistemas
+            Ingeniero de Software, IA Aplicada y Voice AI
           </motion.span>
         </h1>
 
@@ -202,8 +202,8 @@ export default function Hero() {
             className="mt-2 inline-block h-2 w-2 shrink-0 rounded-full bg-emerald-400"
           />
           <p className="text-pretty">
-            Disponible para un equipo estable en Costa Rica o Latinoamérica,
-            remoto o híbrido.
+            Disponible para incorporarme a un equipo en Costa Rica o
+            Latinoamérica, remoto o híbrido.
           </p>
         </motion.div>
 
@@ -246,6 +246,22 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
+
+        {/*
+          El botón principal baja el CV en español porque el sitio lo está.
+          Sin esta segunda puerta, un reclutador anglófono se llevaba el PDF en
+          español: era el único CV enlazado en todo el sitio.
+        */}
+        <motion.p {...fade(1.05)} className="mt-4 text-sm text-token-soft">
+          <a
+            href="/documents/CV_Bryam_Lopez_EN.pdf"
+            download="CV_Bryam_Lopez_EN.pdf"
+            hrefLang="en"
+            className="underline underline-offset-4 transition-colors hover:text-token"
+          >
+            Resume in English (PDF)
+          </a>
+        </motion.p>
       </div>
     </section>
   );

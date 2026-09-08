@@ -24,9 +24,16 @@ const primaryContacts = [
   },
   {
     label: "CV",
-    value: "Descargar CV (PDF)",
+    value: "Descargar CV en español (PDF)",
     href: "/documents/CV_Bryam_Lopez_ES.pdf",
     download: "CV_Bryam_Lopez_ES.pdf",
+    icon: null,
+  },
+  {
+    label: "Resume",
+    value: "Download resume in English (PDF)",
+    href: "/documents/CV_Bryam_Lopez_EN.pdf",
+    download: "CV_Bryam_Lopez_EN.pdf",
     icon: null,
   },
 ];
@@ -114,19 +121,37 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} Bryam Steven López Miranda · Costa Rica
           </span>
-          <span className="flex items-center gap-3">
+          <span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <a
+              href="/documents/CV_Bryam_Lopez_ES.pdf"
+              download="CV_Bryam_Lopez_ES.pdf"
+              className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
+            >
+              CV PDF (ES)
+            </a>
+            <span aria-hidden>·</span>
+            <a
+              href="/documents/CV_Bryam_Lopez_EN.pdf"
+              download="CV_Bryam_Lopez_EN.pdf"
+              hrefLang="en"
+              className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
+            >
+              Resume PDF (EN)
+            </a>
+            <span aria-hidden>·</span>
             <a
               href="/cv/print?lang=es"
               className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
             >
-              CV imprimible (ES)
+              Imprimible (ES)
             </a>
             <span aria-hidden>·</span>
             <a
               href="/cv/print?lang=en"
+              hrefLang="en"
               className="hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
             >
-              CV (EN)
+              Printable (EN)
             </a>
           </span>
         </div>

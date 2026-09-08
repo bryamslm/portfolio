@@ -32,14 +32,16 @@ const SITE_URL = "https://portfolio-bryam.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    default: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
     template: "%s | Bryam Steven López Miranda",
   },
   description:
     "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas. Construyo agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
   keywords: [
     "Bryam Steven López Miranda",
-    "Ingeniero de IA Aplicada",
+    "Ingeniero de Software Costa Rica",
+    "Software Engineer Costa Rica",
+    "Backend Engineer",
     "Applied AI Engineer Costa Rica",
     "AI Systems Engineer",
     "Voice AI Engineer",
@@ -57,15 +59,15 @@ export const metadata: Metadata = {
     locale: "es_CR",
     url: SITE_URL,
     siteName: "Bryam Steven López Miranda — Portfolio",
-    title: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    title: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
     description:
       "Construyo sistemas completos de IA aplicada: producto, agentes, datos, automatización y voz.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bryam Steven López Miranda | Ingeniero de IA Aplicada y Sistemas",
+    title: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
     description:
-      "Agentes de IA, RAG, MCP, multi-tenant y Voice AI. Disponible para equipo estable en Costa Rica o Latinoamérica.",
+      "Agentes de IA, RAG, MCP, multi-tenant y Voice AI. Disponible en Costa Rica o remoto en Latinoamérica.",
   },
   robots: {
     index: true,
@@ -83,8 +85,8 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Bryam Steven López Miranda",
-  jobTitle: "Ingeniero de IA Aplicada y Sistemas",
-  alternateName: "Applied AI Engineer",
+  jobTitle: "Ingeniero de Software - IA Aplicada, Integraciones y Voice AI",
+  alternateName: "Software Engineer - Applied AI, Integrations and Voice AI",
   description:
     "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas: agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
   url: SITE_URL,
