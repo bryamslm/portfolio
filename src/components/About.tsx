@@ -9,18 +9,15 @@ import { useReveal } from "../utils/reveal";
 
 const skillsGroups = cvEs.skills;
 
-const degree = {
-  title: "Bachillerato Universitario en Ingeniería en Computación",
-  institution: "Tecnológico de Costa Rica (TEC)",
-  period: "2020 – 2024",
-  link: "https://drive.google.com/file/d/1e2hkG0mGfKou1ZxyGHVl9OqMGzIEi7Lh/view?usp=sharing",
-};
-
-const certifications = [
-  { title: "Algoritmos y Estructuras de Datos en JavaScript", provider: "freeCodeCamp" },
-  { title: "Desarrollo de Aplicaciones Móviles", provider: "Google Actívate" },
-  { title: "Curso Profesional de C++", provider: "Azul School" },
-];
+/*
+ * Formación, certificaciones e idiomas se leen del CV, igual que las skills:
+ * una sola fuente. Antes estaban copiados a mano acá y ya habían derivado —
+ * el periodo del título decía "2020 – 2024" (guion largo) contra el
+ * "2020 - 2024" de cv.ts, prueba de que eran copias independientes.
+ */
+const [degree] = cvEs.education;
+const certifications = cvEs.certifications;
+const languages = cvEs.languages;
 
 export default function About() {
   const [certsOpen, setCertsOpen] = useState(false);
@@ -74,14 +71,17 @@ export default function About() {
             </p>
             <p className="mt-1 text-sm text-light-soft dark:text-dark-soft">
               {degree.institution} · {degree.period}{" "}
-              <a
-                href={degree.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-1 inline-flex items-center align-middle text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors"
-              >
-                <FaExternalLinkAlt size={10} />
-              </a>
+              {degree.certificateLink && (
+                <a
+                  href={degree.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver el título (abre en una pestaña nueva)"
+                  className="ml-1 inline-flex items-center align-middle text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors"
+                >
+                  <FaExternalLinkAlt size={10} aria-hidden />
+                </a>
+              )}
             </p>
 
             {/* Certificaciones en acordeón */}
@@ -116,7 +116,7 @@ export default function About() {
               Idiomas
             </p>
             <p className="mt-2 text-sm text-light-soft dark:text-dark-soft text-pretty">
-              Español nativo. Inglés con lectura técnica y conversación básica.
+              {languages.join(" · ")}
             </p>
           </div>
         </motion.div>

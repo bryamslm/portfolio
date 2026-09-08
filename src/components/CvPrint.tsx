@@ -7,10 +7,10 @@ type Props = { cv: Cv; lang: "es" | "en" };
 
 export default function CvPrint({ cv, lang }: Props) {
   const t = {
-    summary: lang === "en" ? "Summary" : "Perfil profesional",
-    experience: lang === "en" ? "Professional Experience" : "Experiencia profesional",
-    skills: lang === "en" ? "Technical Skills" : "Habilidades técnicas",
-    projects: lang === "en" ? "Selected Projects" : "Proyectos",
+    summary: lang === "en" ? "Professional summary" : "Perfil profesional",
+    experience: lang === "en" ? "Professional experience" : "Experiencia profesional",
+    skills: lang === "en" ? "Technical skills" : "Habilidades técnicas",
+    projects: lang === "en" ? "Selected projects" : "Proyectos destacados",
     education: lang === "en" ? "Education" : "Educación",
     certifications: lang === "en" ? "Certifications" : "Certificaciones",
     languages: lang === "en" ? "Languages" : "Idiomas",
@@ -125,7 +125,7 @@ export default function CvPrint({ cv, lang }: Props) {
           <ul className="mt-0.5 space-y-0.5 text-[10.5px] leading-snug text-zinc-800">
             {cv.projects.map((p, i) => (
               <li key={i} className="cv-item">
-                <span className="font-semibold">{p.title}.</span> {p.description}{" "}
+                <span className="font-semibold">{p.title}.</span> {p.cvLine ?? p.description}{" "}
                 <span className="text-zinc-600">Stack: {p.techStack.join(", ")}.</span>
                 {p.repoLink && (
                   <> | <a href={p.repoLink} className="underline">{p.repoLink.replace("https://", "")}</a></>

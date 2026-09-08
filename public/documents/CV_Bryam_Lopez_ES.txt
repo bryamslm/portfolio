@@ -1,93 +1,80 @@
 BRYAM STEVEN LÓPEZ MIRANDA
-Ingeniero de IA Aplicada y Sistemas | Applied AI Engineer
+Ingeniero de Software - IA Aplicada, Integraciones y Voice AI
 
-CONTACTO
+San Carlos, Alajuela, Costa Rica | Disponible remoto en Latinoamérica
 Email: bryam.steven.lopez@gmail.com
-Teléfono / WhatsApp: +506 6263 3553
+Teléfono: +506 6263 3553
 LinkedIn: linkedin.com/in/bryamslm
 GitHub: github.com/bryamslm
 Portafolio: portfolio-bryam.vercel.app
-Ubicación: San Carlos, Alajuela, Costa Rica
-Disponibilidad: remoto en Latinoamérica
 
 PERFIL PROFESIONAL
-Ingeniero en Computación especializado en IA aplicada y sistemas. Construyo agentes
-con herramientas, RAG, memoria, guardas deterministas, automatización, datos y
-comunicaciones por voz. Experiencia desarrollando productos completos con TypeScript,
-Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell. Busco
-integrarme a un equipo estable en IA aplicada, integraciones, Voice AI o ingeniería
-de producto.
+Ingeniero en Computación especializado en IA aplicada, sistemas e ingeniería de producto.
+Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos,
+comunicaciones por voz y productos web orientados al usuario. Entrego productos completos con
+TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell, desde
+el modelo de datos hasta la operación en Linux.
 
 EXPERIENCIA PROFESIONAL
 
 Ingeniero de Integración de Sistemas
-AI Solutions CR | Mar 2025 - Jul 2026
-- Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para
-  WhatsApp, Messenger, Instagram, web y telefonía.
-- Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública
-  basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y
-  1,27 millones de líneas analíticas, accesible desde ERP/web, Plica Chat y MCP.
-- Construí asistentes como Aldana, Emma, Charlotte, Cata y Ben con memoria, RAG,
-  herramientas, guardas, fallbacks y configuración independiente; el tenant 2 enruta
-  un mismo cerebro entre cinco marcas.
-- Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW
-  para llamadas entrantes, campañas salientes y transferencias.
-- Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y
-  recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.
+AI Solutions CR | Mar 2025 - Actualidad
+- Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp,
+  Messenger, Instagram, web y telefonía.
+- Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en
+  diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de
+  líneas analíticas, accesible desde la web, el chat y la integración para herramientas.
+- Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración
+  independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.
+- Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas
+  entrantes, campañas salientes y transferencias.
+- Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación
+  ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.
 
 Desarrollador de Software - Práctica Profesional
 Vivo Gaming | Jul 2024 - Nov 2024
-- Desarrollé un framework de observabilidad para servicios Node.js, centralizando
-  métricas, trazas y diagnóstico con OpenTelemetry, Prometheus, Grafana y Elasticsearch.
-- Documenté la arquitectura y los procedimientos de adopción; el trabajo se convirtió
-  en mi proyecto de graduación de Ingeniería en Computación.
+- Desarrollé un framework de observabilidad para servicios Node.js, centralizando métricas,
+  trazas y diagnóstico con OpenTelemetry, Prometheus, Grafana y Elasticsearch.
+- Documenté la arquitectura y los procedimientos de adopción; el trabajo se convirtió en mi
+  proyecto de graduación de Ingeniería en Computación.
 
 HABILIDADES TÉCNICAS
-- IA aplicada: AI Agents, LLMs, RAG, tool use, MCP, prompt engineering, guardas
-  deterministas, Retell.
-- Ingeniería de software: TypeScript, JavaScript, Python, Next.js, React, Node.js,
-  REST APIs, sistemas multi-tenant.
+- IA aplicada: AI Agents, LLMs, RAG, tool use, MCP, prompt engineering, guardas deterministas,
+  Retell.
+- Ingeniería de software: TypeScript, JavaScript, Python, Next.js, React, Node.js, REST APIs,
+  software multi-tenant.
 - Datos: PostgreSQL, Supabase, pgvector, pipelines de datos, RLS, modelos predictivos.
-- Voice AI y telefonía: Asterisk 20, PJSIP, AMI, SIP trunks, Kamailio, RTPengine,
-  Retell, Telnyx, DIDWW, LiveKit.
-- Automatización e infraestructura: n8n, Linux, Docker, PM2, nginx, Vercel,
-  OpenTelemetry, Grafana, Prometheus.
+- Voice AI y telefonía: Asterisk 20, PJSIP, AMI, SIP trunks, Kamailio, RTPengine, Retell,
+  Telnyx, DIDWW, LiveKit.
+- Automatización e infraestructura: n8n, Linux, Docker, PM2, nginx, Vercel, OpenTelemetry,
+  Grafana, Prometheus.
 
-PROYECTOS
-
-Plica/Licita - Inteligencia para contratación pública
-Motor listo de inteligencia para SICOP con datos, especialistas, RAG legal y modelos,
-operable con paridad funcional desde ERP/web, Plica Chat y MCP.
-Stack: TypeScript, Next.js, PostgreSQL, Supabase, Python, RAG, MCP.
-Enlace: plica.aisolutionscr.tech
-
-Voice AI / Voice Ops
-Operación de llamadas entrantes y salientes, campañas, transferencias, consola SIP en
-navegador, grabaciones y analítica.
-Stack: Asterisk 20, PJSIP, AMI, SIP, Kamailio, Retell, LiveKit.
-Enlace: ops.aisolutionscr.tech
-
-Retell Flowkit
-Motor local consumido mediante skills para generar, corregir, auditar y validar
-Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.
-Stack: TypeScript, skills, LLMs, validadores, testing, Codex.
-
-SaaS multi-tenant de IA conversacional
-Agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas,
-guardas, handoff humano, auditoría y recuperación ante fallos.
-Stack: Next.js, TypeScript, Node.js, PostgreSQL, Supabase, n8n.
-Enlace: app.aisolutionscr.tech/es
+PROYECTOS DESTACADOS
+- Plica Licitaciones CR: inteligencia para contratación pública con datos verificables de SICOP,
+  especialistas, respuestas legales con citas y predicciones honestas. Stack: TypeScript,
+  Next.js, PostgreSQL, Supabase, Python, RAG, MCP. plica.aisolutionscr.tech
+- Voice AI / Voice Ops: llamadas entrantes y salientes, campañas, transferencias, consola SIP en
+  navegador, grabaciones y analítica. Stack: Asterisk 20, PJSIP, AMI, SIP, Kamailio, Retell,
+  LiveKit. ops.aisolutionscr.tech
+- Retell Flowkit: motor local para generar, corregir, auditar y validar Retell Conversation
+  Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas. Stack: TypeScript, skills,
+  LLMs, validadores, testing, Codex.
+- SaaS multi-tenant de IA conversacional: agentes por chat y voz con aislamiento por
+  organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación
+  ante fallos. Stack: Next.js, TypeScript, Node.js, PostgreSQL, Supabase, n8n.
+  app.aisolutionscr.tech/es
+- Ya Sale: carta QR y pedidos con cliente, mesa y cocina conectados; menú y disponibilidad
+  actualizables, estados de cocina y solicitudes de atención o cuenta. Desarrollado con
+  TicaCode. Stack: TypeScript, Next.js, Product Engineering, QR ordering, real-time operations.
+  yasale.app
 
 EDUCACIÓN
-Bachillerato Universitario en Ingeniería en Computación
-Tecnológico de Costa Rica (TEC) | 2020 - 2024
-Proyecto de graduación: framework de observabilidad para servicios Node.js.
+Bachillerato Universitario en Ingeniería en Computación — Tecnológico de Costa Rica (TEC), 2020
+- 2024. Proyecto de graduación: framework de observabilidad para servicios Node.js.
 
 CERTIFICACIONES
-- Algoritmos y Estructuras de Datos en JavaScript - freeCodeCamp
-- Desarrollo de Aplicaciones Móviles - Google Actívate
-- Curso Profesional de C++ - Azul School
+Algoritmos y Estructuras de Datos en JavaScript (freeCodeCamp); Desarrollo de Aplicaciones
+Móviles (Google Actívate); Curso Profesional de C++ (Azul School).
 
 IDIOMAS
-Español: nativo
-Inglés: lectura técnica; conversación básica
+Español (nativo) · Inglés (lectura técnica; conversación básica)

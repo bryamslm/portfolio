@@ -42,7 +42,8 @@ export default function Experience() {
               Disponible para un equipo estable
             </p>
             <p className="mt-1 text-sm text-light-soft dark:text-dark-soft text-pretty">
-              Busco incorporarme a un equipo de IA aplicada, integraciones,
+              Actualmente continúo en AI Solutions CR y, mientras desempeño ese
+              rol, busco incorporarme a un equipo de IA aplicada, integraciones,
               Voice AI o ingeniería de producto en Costa Rica o Latinoamérica,
               remoto o híbrido.
             </p>
@@ -68,7 +69,7 @@ export default function Experience() {
                 {exp.current && (
                   <span className="ml-2 inline-flex items-center gap-1 text-[11px] text-light-secondary dark:text-dark-secondary">
                     <span className="h-1 w-1 rounded-full bg-light-secondary dark:bg-dark-secondary" />
-                    Última posición
+                    Posición actual
                   </span>
                 )}
               </p>

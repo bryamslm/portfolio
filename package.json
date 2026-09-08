@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv:export": "node --no-warnings --experimental-strip-types scripts/export-cv.mts",
+    "cv:build": "npm run cv:export && python scripts/generate_cv_docs.py"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.48.1",

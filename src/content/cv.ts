@@ -20,6 +20,12 @@ export type CvSkillGroup = {
 export type CvProjectItem = {
   title: string;
   description: string;
+  /**
+   * Version corta para el CV impreso. La web puede permitirse la descripcion
+   * larga; el PDF tiene que caber en una pagina y una linea de mas empuja
+   * medio curriculum a la segunda.
+   */
+  cvLine?: string;
   techStack: string[];
   repoLink?: string;
   liveDemo?: string;
@@ -45,6 +51,10 @@ export type CvCertificationItem = {
 export type Cv = {
   name: string;
   title: string;
+  /** Titular corto y monolingue: alimenta el /Title y el job title que parsea el ATS. */
+  headline: string;
+  /** Va al campo /Keywords del PDF, que varios parsers de ATS indexan. */
+  keywords: string[];
   location: string;
   contact: CvContact[];
   summary: string;
@@ -62,7 +72,17 @@ export type Cv = {
 
 export const cvEs: Cv = {
   name: "Bryam Steven López Miranda",
-  title: "Ingeniero de IA Aplicada y Sistemas | Applied AI Engineer",
+  title: "Ingeniero de Software | IA Aplicada, Integraciones y Voice AI",
+  headline: "Ingeniero de Software - IA Aplicada, Integraciones y Voice AI",
+  keywords: [
+    "Ingeniero de Software", "Software Engineer", "Backend Engineer", "Full Stack",
+    "Applied AI Engineer", "AI Engineer", "Systems Integration", "Integraciones",
+    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js",
+    "PostgreSQL", "Supabase", "pgvector", "RAG", "LLM", "AI Agents", "MCP",
+    "Voice AI", "Asterisk", "PJSIP", "SIP", "AMI", "Retell", "Telnyx", "LiveKit",
+    "n8n", "Docker", "Linux", "nginx", "REST API", "multi-tenant", "SaaS",
+    "OpenTelemetry", "Grafana", "Prometheus", "Costa Rica", "remoto", "LATAM",
+  ],
   location: "San Carlos, Alajuela, Costa Rica | Disponible remoto en Latinoamérica",
   contact: [
     { label: "Email", value: "bryam.steven.lopez@gmail.com", href: "mailto:bryam.steven.lopez@gmail.com" },
@@ -71,17 +91,21 @@ export const cvEs: Cv = {
     { label: "GitHub", value: "github.com/bryamslm", href: "https://github.com/bryamslm" },
     { label: "Portafolio", value: "portfolio-bryam.vercel.app", href: "https://portfolio-bryam.vercel.app" },
   ],
+  // El estado de busqueda no va aca: las tres primeras lineas son el espacio
+  // mas caro del CV y "equipo estable" se lee como reproche al empleador actual.
+  // Eso pertenece a la carta de presentacion o a la conversacion.
   summary:
-    "Ingeniero en Computación especializado en IA aplicada y sistemas. Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos y comunicaciones por voz. Experiencia desarrollando productos completos con TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell. Busco integrarme a un equipo estable en IA aplicada, integraciones, Voice AI o ingeniería de producto.",
+    "Ingeniero en Computación especializado en IA aplicada, sistemas e ingeniería de producto. Construyo agentes con herramientas, RAG, memoria, guardas deterministas, automatización, datos, comunicaciones por voz y productos web orientados al usuario. Entrego productos completos con TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP y Retell, desde el modelo de datos hasta la operación en Linux.",
   experience: [
     {
       role: "Ingeniero de Integración de Sistemas",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Jul 2026",
+      period: "Mar 2025 - Actualidad",
+      current: true,
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
         "Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, accesible desde la web, el chat y la integración para herramientas.",
-        "Construí asistentes como Aldana, Emma, Charlotte, Cata y Ben con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente; el tenant 2 enruta un mismo cerebro entre cinco marcas.",
+        "Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.",
         "Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas entrantes, campañas salientes y transferencias.",
         "Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.",
       ],
@@ -108,6 +132,8 @@ export const cvEs: Cv = {
       title: "Plica Licitaciones CR - Inteligencia para contratación pública",
       description:
         "Inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones honestas, accesible desde la web, el chat y la integración para herramientas.",
+      cvLine:
+        "inteligencia para contratación pública con datos verificables de SICOP, especialistas, respuestas legales con citas y predicciones honestas.",
       techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },
@@ -115,6 +141,8 @@ export const cvEs: Cv = {
       title: "Voice AI / Voice Ops",
       description:
         "Operación de llamadas entrantes y salientes, campañas, transferencias, consola SIP en navegador, grabaciones y analítica.",
+      cvLine:
+        "llamadas entrantes y salientes, campañas, transferencias, consola SIP en navegador, grabaciones y analítica.",
       techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "Kamailio", "Retell", "LiveKit"],
       liveDemo: "https://ops.aisolutionscr.tech/",
     },
@@ -122,6 +150,8 @@ export const cvEs: Cv = {
       title: "Retell Flowkit",
       description:
         "Motor local consumido mediante skills para generar, corregir, auditar y validar Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.",
+      cvLine:
+        "motor local para generar, corregir, auditar y validar Retell Conversation Flows; 751/751 pruebas y 28/28 plantillas oficiales verificadas.",
       techStack: ["TypeScript", "skills", "LLMs", "validadores", "testing", "Codex"],
       privateWork: true,
     },
@@ -129,8 +159,19 @@ export const cvEs: Cv = {
       title: "SaaS multi-tenant de IA conversacional",
       description:
         "Agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación ante fallos.",
+      cvLine:
+        "agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación ante fallos.",
       techStack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "n8n"],
       liveDemo: "https://app.aisolutionscr.tech/es/",
+    },
+    {
+      title: "Ya Sale - carta digital y pedidos para restaurantes",
+      description:
+        "Producto desarrollado en conjunto con TicaCode. Como desarrollador técnico construí una experiencia web para que restaurantes operen su carta por QR: el cliente escanea, arma el pedido y cocina lo recibe identificado por mesa; incluye actualización de menú, disponibilidad de platos, estados de cocina y solicitudes de atención o cuenta.",
+      cvLine:
+        "carta QR y pedidos con cliente, mesa y cocina conectados; menú y disponibilidad actualizables, estados de cocina y solicitudes de atención o cuenta. Desarrollado con TicaCode.",
+      techStack: ["TypeScript", "Next.js", "Product Engineering", "QR ordering", "real-time operations"],
+      liveDemo: "https://yasale.app/",
     },
   ],
   education: [
@@ -159,7 +200,17 @@ export const cvEs: Cv = {
 
 export const cvEn: Cv = {
   name: "Bryam Steven López Miranda",
-  title: "Applied AI and Systems Engineer",
+  title: "Software Engineer | Applied AI, Integrations and Voice AI",
+  headline: "Software Engineer - Applied AI, Integrations and Voice AI",
+  keywords: [
+    "Software Engineer", "Backend Engineer", "Full Stack Engineer",
+    "Applied AI Engineer", "AI Engineer", "Systems Integration Engineer",
+    "TypeScript", "JavaScript", "Python", "Next.js", "React", "Node.js",
+    "PostgreSQL", "Supabase", "pgvector", "RAG", "LLM", "AI Agents", "MCP",
+    "Voice AI", "Asterisk", "PJSIP", "SIP", "AMI", "Retell", "Telnyx", "LiveKit",
+    "n8n", "Docker", "Linux", "nginx", "REST API", "multi-tenant", "SaaS",
+    "OpenTelemetry", "Grafana", "Prometheus", "Costa Rica", "remote", "LATAM",
+  ],
   location: "San Carlos, Alajuela, Costa Rica | Open to remote work in Latin America",
   contact: [
     { label: "Email", value: "bryam.steven.lopez@gmail.com", href: "mailto:bryam.steven.lopez@gmail.com" },
@@ -169,16 +220,17 @@ export const cvEn: Cv = {
     { label: "Portfolio", value: "portfolio-bryam.vercel.app", href: "https://portfolio-bryam.vercel.app" },
   ],
   summary:
-    "Computer Engineer specializing in applied AI and systems. I build tool-using agents, RAG, memory, deterministic guards, automation, data pipelines and voice communications. Experience delivering complete products with TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP and Retell. Seeking a stable role in applied AI, integrations, Voice AI or product engineering.",
+    "Computer Engineer specializing in applied AI, systems and product engineering. I build tool-using agents, RAG, memory, deterministic guards, automation, data pipelines, voice communications and user-facing web products. I deliver complete products with TypeScript, Next.js, Node.js, PostgreSQL, Supabase, Python, n8n, Asterisk, SIP and Retell, from the data model through to running them on Linux.",
   experience: [
     {
       role: "Systems Integration Engineer",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Jul 2026",
+      period: "Mar 2025 - Present",
+      current: true,
       bullets: [
         "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
         "Built Plica Licitaciones CR, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, accessible from the web, chat and tool integration.",
-        "Built assistants such as Aldana, Emma, Charlotte, Cata and Ben with memory, RAG, tools, guards, fallbacks and per-organization configuration; tenant 2 routes one brain across five brands.",
+        "Built assistants with memory, RAG, tools, guards, fallbacks and per-organization configuration; one brain routes five brands within a single tenant.",
         "Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for inbound calls, outbound campaigns and transfers.",
         "Implemented RLS, feature flags, idempotency, auditing, outbox, notifications and failure recovery on Linux, PostgreSQL and self-hosted Supabase.",
       ],
@@ -205,6 +257,8 @@ export const cvEn: Cv = {
       title: "Plica Licitaciones CR - Public procurement intelligence",
       description:
         "Public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and honest predictions, accessible from the web, chat and tool integration.",
+      cvLine:
+        "public-procurement intelligence with verifiable SICOP data, specialists, cited legal answers and honest predictions.",
       techStack: ["TypeScript", "Next.js", "PostgreSQL", "Supabase", "Python", "RAG", "MCP"],
       liveDemo: "https://plica.aisolutionscr.tech",
     },
@@ -212,6 +266,8 @@ export const cvEn: Cv = {
       title: "Voice AI / Voice Ops",
       description:
         "Inbound and outbound calls, campaigns, transfers, browser SIP console, recordings and operational analytics.",
+      cvLine:
+        "inbound and outbound calls, campaigns, transfers, browser SIP console, recordings and operational analytics.",
       techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "Kamailio", "Retell", "LiveKit"],
       liveDemo: "https://ops.aisolutionscr.tech/",
     },
@@ -219,6 +275,8 @@ export const cvEn: Cv = {
       title: "Retell Flowkit",
       description:
         "Local engine consumed through skills to generate, repair, audit and validate Retell Conversation Flows; 751/751 tests and 28/28 official templates verified.",
+      cvLine:
+        "local engine to generate, fix, audit and validate Retell Conversation Flows; 751/751 tests and 28/28 official templates verified.",
       techStack: ["TypeScript", "skills", "LLMs", "validators", "testing", "Codex"],
       privateWork: true,
     },
@@ -226,14 +284,25 @@ export const cvEn: Cv = {
       title: "Multi-tenant conversational AI SaaS",
       description:
         "Chat and voice agents with organization isolation, memory, RAG, tools, guards, human handoff, auditing and failure recovery.",
+      cvLine:
+        "chat and voice agents with organization isolation, memory, RAG, tools, guards, human handoff, auditing and failure recovery.",
       techStack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "n8n"],
       liveDemo: "https://app.aisolutionscr.tech/es/",
+    },
+    {
+      title: "Ya Sale - digital menu and restaurant ordering",
+      description:
+        "Product developed jointly with TicaCode. As the technical developer, I built a web experience for restaurants to run QR menus: diners scan, assemble an order and the kitchen receives it identified by table; it includes menu updates, item availability, kitchen statuses and requests for service or the bill.",
+      cvLine:
+        "QR menu and ordering with diner, table and kitchen connected; updatable menus and availability, kitchen statuses and service or bill requests. Built with TicaCode.",
+      techStack: ["TypeScript", "Next.js", "Product Engineering", "QR ordering", "real-time operations"],
+      liveDemo: "https://yasale.app/",
     },
   ],
   education: [
     {
       title: "Bachelor's Degree in Computer Engineering",
-      institution: "Tecnológico de Costa Rica (TEC)",
+      institution: "Costa Rica Institute of Technology (TEC)",
       period: "2020 - 2024",
       certificateLink:
         "https://drive.google.com/file/d/1e2hkG0mGfKou1ZxyGHVl9OqMGzIEi7Lh/view?usp=sharing",
