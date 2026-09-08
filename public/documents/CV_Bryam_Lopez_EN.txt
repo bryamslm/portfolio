@@ -21,9 +21,9 @@ Systems Integration Engineer
 AI Solutions CR | Mar 2025 - Present
 - Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger,
   Instagram, web and telephony.
-- Built Plica Licitaciones CR, a public-procurement intelligence platform based on ten years and
-  120 SICOP periods, with more than 23 million records and 1.27 million analytical lines,
-  accessible from the web, chat and tool integration.
+- Built Plica Licitaciones CR, a procurement-intelligence engine over ten years of Costa Rican
+  public spend (SICOP, Jul 2016-Jul 2026): 269k tenders, 349k awards and over one million
+  comparable lines, with legal RAG on pgvector and a 24-tool MCP server.
 - Built assistants with memory, RAG, tools, guards, fallbacks and per-organization
   configuration; one brain routes five brands within a single tenant.
 - Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for

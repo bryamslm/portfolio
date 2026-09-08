@@ -21,9 +21,9 @@ Ingeniero de Integración de Sistemas
 AI Solutions CR | Mar 2025 - Actualidad
 - Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp,
   Messenger, Instagram, web y telefonía.
-- Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en
-  diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de
-  líneas analíticas, accesible desde la web, el chat y la integración para herramientas.
+- Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública
+  (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de
+  líneas comparables, con RAG legal sobre pgvector y un servidor MCP de 24 herramientas.
 - Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración
   independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.
 - Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas

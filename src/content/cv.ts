@@ -104,7 +104,7 @@ export const cvEs: Cv = {
       current: true,
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía.",
-        "Construí Plica Licitaciones CR, un motor de inteligencia para contratación pública basado en diez años y 120 periodos de SICOP, con más de 23 millones de registros y 1,27 millones de líneas analíticas, accesible desde la web, el chat y la integración para herramientas.",
+        "Construí Plica Licitaciones CR, motor de inteligencia sobre diez años de compra pública (SICOP, jul 2016-jul 2026): 269 mil carteles, 349 mil adjudicaciones y más de un millón de líneas comparables, con RAG legal sobre pgvector y un servidor MCP de 24 herramientas.",
         "Construí asistentes con memoria, RAG, herramientas, guardas, fallbacks y configuración independiente por organización; un mismo cerebro enruta cinco marcas dentro de un tenant.",
         "Integré Voice AI con Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx y DIDWW para llamadas entrantes, campañas salientes y transferencias.",
         "Implementé RLS, feature flags, idempotencia, auditoría, outbox, notificaciones y recuperación ante fallos sobre Linux, PostgreSQL y Supabase self-hosted.",
@@ -229,7 +229,7 @@ export const cvEn: Cv = {
       current: true,
       bullets: [
         "Designed and developed a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony.",
-        "Built Plica Licitaciones CR, a public-procurement intelligence platform based on ten years and 120 SICOP periods, with more than 23 million records and 1.27 million analytical lines, accessible from the web, chat and tool integration.",
+        "Built Plica Licitaciones CR, a procurement-intelligence engine over ten years of Costa Rican public spend (SICOP, Jul 2016-Jul 2026): 269k tenders, 349k awards and over one million comparable lines, with legal RAG on pgvector and a 24-tool MCP server.",
         "Built assistants with memory, RAG, tools, guards, fallbacks and per-organization configuration; one brain routes five brands within a single tenant.",
         "Integrated Voice AI with Asterisk 20, PJSIP, AMI, SIP trunks, Retell, Telnyx and DIDWW for inbound calls, outbound campaigns and transfers.",
         "Implemented RLS, feature flags, idempotency, auditing, outbox, notifications and failure recovery on Linux, PostgreSQL and self-hosted Supabase.",
