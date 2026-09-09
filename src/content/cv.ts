@@ -155,7 +155,16 @@ export const cvEs: Cv = {
       cvLine:
         "consola de agente, campañas salientes, transferencias asistidas, grabaciones y analítica.",
       techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "JsSIP", "Retell", "LiveKit"],
-      liveDemo: "https://ops.aisolutionscr.tech/",
+      privateWork: true,
+    },
+    {
+      title: "Ya Sale - carta digital y pedidos para restaurantes",
+      description:
+        "Producto del que soy socio al 50% y autor íntegro del desarrollo: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
+      cvLine:
+        "50% del producto, 100% del desarrollo; carta QR, cocina en vivo y cobro con ONVO Pay.",
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
+      liveDemo: "https://yasale.app/",
     },
     {
       title: "Colibrí - Comunicaciones para instituciones públicas",
@@ -182,16 +191,7 @@ export const cvEs: Cv = {
       cvLine:
         "un mismo cerebro atendiendo cinco canales, con handoff humano y auditoría.",
       techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
-      liveDemo: "https://app.aisolutionscr.tech/es/",
-    },
-    {
-      title: "Ya Sale - carta digital y pedidos para restaurantes",
-      description:
-        "Producto del que soy socio al 50% y autor íntegro del desarrollo: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
-      cvLine:
-        "50% del producto, 100% del desarrollo; carta QR, cocina en vivo y cobro con ONVO Pay.",
-      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
-      liveDemo: "https://yasale.app/",
+      privateWork: true,
     },
   ],
   education: [
@@ -291,7 +291,16 @@ export const cvEn: Cv = {
       cvLine:
         "agent console, outbound campaigns, warm transfers, recordings and analytics.",
       techStack: ["Asterisk 20", "PJSIP", "AMI", "SIP", "JsSIP", "Retell", "LiveKit"],
-      liveDemo: "https://ops.aisolutionscr.tech/",
+      privateWork: true,
+    },
+    {
+      title: "Ya Sale - digital menu and restaurant ordering",
+      description:
+        "A product I co-own (50%) and built end to end myself: QR menus, table ordering, real-time kitchen, payments and loyalty, with per-restaurant roles.",
+      cvLine:
+        "50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay checkout.",
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
+      liveDemo: "https://yasale.app/",
     },
     {
       title: "Colibrí - Communications for public institutions",
@@ -318,16 +327,7 @@ export const cvEn: Cv = {
       cvLine:
         "one brain serving five channels, with human handoff and auditing.",
       techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
-      liveDemo: "https://app.aisolutionscr.tech/es/",
-    },
-    {
-      title: "Ya Sale - digital menu and restaurant ordering",
-      description:
-        "A product I co-own (50%) and built end to end myself: QR menus, table ordering, real-time kitchen, payments and loyalty, with per-restaurant roles.",
-      cvLine:
-        "50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay checkout.",
-      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
-      liveDemo: "https://yasale.app/",
+      privateWork: true,
     },
   ],
   education: [

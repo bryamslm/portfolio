@@ -62,15 +62,15 @@ SELECTED PROJECTS
 - Plica Licitaciones CR: the same data engine driven from web, chat and MCP, with verbatim
   citations. Stack: TypeScript, Next.js, PostgreSQL, pgvector. plica.aisolutionscr.tech
 - Voice AI / Voice Ops: agent console, outbound campaigns, warm transfers, recordings and
-  analytics. Stack: Asterisk 20, PJSIP, AMI, SIP. ops.aisolutionscr.tech
+  analytics. Stack: Asterisk 20, PJSIP, AMI, SIP.
+- Ya Sale: 50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay
+  checkout. Stack: Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
 - Colibrí: capability-based authorization and Asterisk telephony for state institutions. Stack:
   TypeScript, Fastify, Drizzle, PostgreSQL.
 - Retell Flowkit: 8 graph checks; 751/751 tests and 28/28 official templates. Stack: TypeScript,
   Ajv, Vitest, CLI.
 - Multi-tenant conversational AI SaaS: one brain serving five channels, with human handoff and
-  auditing. Stack: Next.js, TypeScript, LangGraph, PostgreSQL. app.aisolutionscr.tech/es
-- Ya Sale: 50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay
-  checkout. Stack: Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
+  auditing. Stack: Next.js, TypeScript, LangGraph, PostgreSQL.
 
 EDUCATION
 Bachelor's Degree in Computer Engineering — Costa Rica Institute of Technology (TEC), 2020 -
