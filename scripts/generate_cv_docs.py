@@ -30,6 +30,37 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfgen import canvas as pdfcanvas
 from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
+# Fuentes EMBEBIDAS. Las base-14 de ReportLab (Helvetica y compania) no se
+# incrustan en el PDF: dependen de que el visor las sustituya. En escritorio
+# suele funcionar, pero varios lectores moviles y clientes de correo muestran
+# el documento EN BLANCO. Un CV que no se ve en el telefono del reclutador no
+# existe, asi que se embeben DejaVu (metricamente cercana a Helvetica) y se
+# cae a Arial si no estuviera.
+def _register_fonts():
+    import os
+    from pathlib import Path as _P
+    try:
+        import matplotlib
+        d = _P(matplotlib.__file__).parent / "mpl-data" / "fonts" / "ttf"
+        trio = (d / "DejaVuSans.ttf", d / "DejaVuSans-Bold.ttf", d / "DejaVuSans-Oblique.ttf")
+    except Exception:
+        trio = None
+    if not trio or not all(p.exists() for p in trio):
+        w = _P("C:/Windows/Fonts")
+        trio = (w / "arial.ttf", w / "arialbd.ttf", w / "ariali.ttf")
+    if not all(p.exists() for p in trio):
+        raise SystemExit("No hay fuentes TTF para embeber; el PDF saldria sin fuentes.")
+    pdfmetrics.registerFont(TTFont("CvSans", str(trio[0])))
+    pdfmetrics.registerFont(TTFont("CvSans-Bold", str(trio[1])))
+    pdfmetrics.registerFont(TTFont("CvSans-Italic", str(trio[2])))
+    pdfmetrics.registerFontFamily("CvSans", normal="CvSans", bold="CvSans-Bold", italic="CvSans-Italic")
+    return trio[0].name
+
+
+_FONT_SRC = _register_fonts()
 
 ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public" / "documents"
@@ -72,15 +103,15 @@ LABELS["es"]["doc_subject"] = "Currículum profesional de {name}, {headline}."
 def build_styles():
     base = getSampleStyleSheet()
     return {
-        "name": ParagraphStyle("Name", parent=base["Title"], fontName="Helvetica-Bold", fontSize=17, leading=20, textColor=colors.HexColor("#111827"), alignment=TA_LEFT, spaceAfter=2),
-        "title": ParagraphStyle("Titular", parent=base["Normal"], fontName="Helvetica", fontSize=9.3, leading=11.5, textColor=colors.HexColor("#374151"), spaceAfter=6),
-        "contact": ParagraphStyle("Contact", parent=base["Normal"], fontName="Helvetica", fontSize=7.6, leading=9.8, textColor=colors.HexColor("#4B5563")),
-        "section": ParagraphStyle("Section", parent=base["Heading2"], fontName="Helvetica-Bold", fontSize=9.2, leading=10.6, textColor=colors.HexColor("#0F766E"), spaceBefore=5.5, spaceAfter=2),
-        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=colors.HexColor("#1F2937"), spaceAfter=1.5),
-        "role": ParagraphStyle("Role", parent=base["BodyText"], fontName="Helvetica-Bold", fontSize=8.35, leading=10, textColor=colors.HexColor("#111827"), spaceAfter=1),
-        "company": ParagraphStyle("Company", parent=base["BodyText"], fontName="Helvetica-Oblique", fontSize=7.7, leading=9.2, textColor=colors.HexColor("#4B5563"), spaceAfter=1.5),
-        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.4, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=0.9),
-        "small": ParagraphStyle("Small", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.5, textColor=colors.HexColor("#1F2937"), spaceAfter=1),
+        "name": ParagraphStyle("Name", parent=base["Title"], fontName="CvSans-Bold", fontSize=16, leading=19, textColor=colors.HexColor("#111827"), alignment=TA_LEFT, spaceAfter=2),
+        "title": ParagraphStyle("Titular", parent=base["Normal"], fontName="CvSans", fontSize=8.8, leading=10.8, textColor=colors.HexColor("#374151"), spaceAfter=6),
+        "contact": ParagraphStyle("Contact", parent=base["Normal"], fontName="CvSans", fontSize=7.1, leading=9.2, textColor=colors.HexColor("#4B5563")),
+        "section": ParagraphStyle("Section", parent=base["Heading2"], fontName="CvSans-Bold", fontSize=8.6, leading=10, textColor=colors.HexColor("#0F766E"), spaceBefore=5.5, spaceAfter=2),
+        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="CvSans", fontSize=7.35, leading=8.9, textColor=colors.HexColor("#1F2937"), spaceAfter=1.5),
+        "role": ParagraphStyle("Role", parent=base["BodyText"], fontName="CvSans-Bold", fontSize=7.9, leading=9.5, textColor=colors.HexColor("#111827"), spaceAfter=1),
+        "company": ParagraphStyle("Company", parent=base["BodyText"], fontName="CvSans-Italic", fontSize=7.2, leading=8.7, textColor=colors.HexColor("#4B5563"), spaceAfter=1.5),
+        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="CvSans", fontSize=6.95, leading=8.0, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=0.9),
+        "small": ParagraphStyle("Small", parent=base["BodyText"], fontName="CvSans", fontSize=6.95, leading=8.1, textColor=colors.HexColor("#1F2937"), spaceAfter=1),
     }
 
 
