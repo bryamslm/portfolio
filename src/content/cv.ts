@@ -187,9 +187,9 @@ export const cvEs: Cv = {
     {
       title: "Ya Sale - carta digital y pedidos para restaurantes",
       description:
-        "Producto del que soy socio al 50% y desarrollador técnico: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
+        "Producto del que soy socio al 50% y autor íntegro del desarrollo: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
       cvLine:
-        "socio al 50%; carta QR, cocina en tiempo real y cobro con ONVO Pay.",
+        "50% del producto, 100% del desarrollo; carta QR, cocina en tiempo real y cobro con ONVO Pay.",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
       liveDemo: "https://yasale.app/",
     },
@@ -323,9 +323,9 @@ export const cvEn: Cv = {
     {
       title: "Ya Sale - digital menu and restaurant ordering",
       description:
-        "A product I co-own (50%) and built technically: QR menus, table ordering, real-time kitchen, payments and loyalty, with per-restaurant roles.",
+        "A product I co-own (50%) and built end to end myself: QR menus, table ordering, real-time kitchen, payments and loyalty, with per-restaurant roles.",
       cvLine:
-        "50% co-owner; QR menus, real-time kitchen and payments through ONVO Pay.",
+        "50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay checkout.",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
       liveDemo: "https://yasale.app/",
     },

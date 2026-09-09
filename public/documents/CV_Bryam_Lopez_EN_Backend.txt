@@ -69,8 +69,8 @@ SELECTED PROJECTS
   Ajv, Vitest, CLI.
 - Multi-tenant conversational AI SaaS: one brain serving five channels, with human handoff and
   auditing. Stack: Next.js, TypeScript, LangGraph, PostgreSQL. app.aisolutionscr.tech/es
-- Ya Sale: 50% co-owner; QR menus, real-time kitchen and payments through ONVO Pay. Stack:
-  Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
+- Ya Sale: 50% of the product, 100% of the build; QR menus, real-time kitchen and ONVO Pay
+  checkout. Stack: Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
 
 EDUCATION
 Bachelor's Degree in Computer Engineering — Costa Rica Institute of Technology (TEC), 2020 -
