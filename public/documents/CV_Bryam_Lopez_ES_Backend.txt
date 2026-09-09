@@ -70,8 +70,8 @@ PROYECTOS DESTACADOS
 - SaaS multi-tenant de IA conversacional: un mismo cerebro atendiendo cinco canales, con handoff
   humano y auditoría. Stack: Next.js, TypeScript, LangGraph, PostgreSQL.
   app.aisolutionscr.tech/es
-- Ya Sale: 50% del producto, 100% del desarrollo; carta QR, cocina en tiempo real y cobro con
-  ONVO Pay. Stack: Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
+- Ya Sale: 50% del producto, 100% del desarrollo; carta QR, cocina en vivo y cobro con ONVO Pay.
+  Stack: Next.js, TypeScript, PostgreSQL, Supabase Realtime. yasale.app
 
 EDUCACIÓN
 Bachillerato Universitario en Ingeniería en Computación — Tecnológico de Costa Rica (TEC), 2020

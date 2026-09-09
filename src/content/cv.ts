@@ -189,7 +189,7 @@ export const cvEs: Cv = {
       description:
         "Producto del que soy socio al 50% y autor íntegro del desarrollo: carta por QR, pedidos por mesa, cocina en tiempo real, cobro y lealtad, con roles por restaurante.",
       cvLine:
-        "50% del producto, 100% del desarrollo; carta QR, cocina en tiempo real y cobro con ONVO Pay.",
+        "50% del producto, 100% del desarrollo; carta QR, cocina en vivo y cobro con ONVO Pay.",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Supabase Realtime", "ONVO Pay"],
       liveDemo: "https://yasale.app/",
     },

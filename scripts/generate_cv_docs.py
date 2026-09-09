@@ -79,7 +79,7 @@ def build_styles():
         "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="Helvetica", fontSize=7.9, leading=9.4, textColor=colors.HexColor("#1F2937"), spaceAfter=1.5),
         "role": ParagraphStyle("Role", parent=base["BodyText"], fontName="Helvetica-Bold", fontSize=8.35, leading=10, textColor=colors.HexColor("#111827"), spaceAfter=1),
         "company": ParagraphStyle("Company", parent=base["BodyText"], fontName="Helvetica-Oblique", fontSize=7.7, leading=9.2, textColor=colors.HexColor("#4B5563"), spaceAfter=1.5),
-        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.5, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=0.9),
+        "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.4, leftIndent=8, firstLineIndent=-6, textColor=colors.HexColor("#1F2937"), spaceAfter=0.9),
         "small": ParagraphStyle("Small", parent=base["BodyText"], fontName="Helvetica", fontSize=7.45, leading=8.5, textColor=colors.HexColor("#1F2937"), spaceAfter=1),
     }
 
@@ -175,7 +175,7 @@ def create_pdf(cv, lang, target):
         leftMargin=15 * mm,
         rightMargin=15 * mm,
         topMargin=11 * mm,
-        bottomMargin=9 * mm,
+        bottomMargin=7 * mm,
         title=meta["title"],
         author=meta["author"],
         subject=meta["subject"],
