@@ -102,9 +102,9 @@ export const plicaSurfaces: PlicaSurface[] = [
 
 export const plicaMetrics: PlicaMetric[] = [
   { value: "10 años", label: "Datos SICOP procesados" },
-  { value: "120", label: "Periodos cubiertos" },
-  { value: ">23 M", label: "Registros analizados" },
-  { value: ">1,27 M", label: "Líneas analíticas en marts" },
+  { value: "269 mil", label: "Carteles" },
+  { value: "349 mil", label: "Adjudicaciones" },
+  { value: ">1 M", label: "Líneas comparables" },
 ];
 
 export const plicaCapabilities: PlicaCapability[] = [
@@ -398,7 +398,7 @@ export const plicaDiagramNodes: DiagramNode[] = [
     label: "Pipeline de datos",
     short: "Datos verificables",
     description:
-      "Ingesta, normalización y materialización analítica con lineage y filtros de calidad. Diez años y 120 periodos de SICOP estructurados, listos para consulta.",
+      "Ingesta, normalización y materialización analítica con lineage y filtros de calidad. Diez años de SICOP estructurados, listos para consulta.",
     invokedBy: ["Investigación", "Expedientes", "Simulador"],
     angle: 18,
   },

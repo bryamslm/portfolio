@@ -105,9 +105,9 @@ equivalentes como identidad laboral.
 **Plica / Licita**
 
 - Motor de inteligencia para contratación pública.
-- Diez años y 120 periodos de datos SICOP.
-- Más de 23 millones de registros analizados.
-- Más de 1,27 millones de líneas analíticas en marts.
+- Diez años de datos SICOP (jul 2016 - jul 2026).
+- 269 mil carteles y 349 mil adjudicaciones.
+- Más de un millón de líneas comparables.
 - Una autoridad común con paridad funcional entre:
   - ERP/web tradicional;
   - Plica Chat, el arnés conversacional;

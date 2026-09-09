@@ -117,6 +117,11 @@ El visual pasó de SVG estático a un componente interactivo cliente.
 - **Voice AI**: caveat "último estado conocido 691 pass / 28 fail"; nada
   se declara verde.
 - **Cifras de Plica**: 10 años, 120 periodos, >23 M registros, >1,27 M
+  <!-- CORRECCION 2026-09-08: estas cifras quedaron invalidadas. El propio
+  proyecto las prohibe en design/entrega-marketing/datos-y-claims.md:24 y
+  "23 M" no existe en ninguna version de ese repo. Vigentes: 269 mil
+  carteles, 349 mil adjudicaciones, 1.030.227 lineas comparables. Se deja
+  la linea original porque este archivo es un registro historico. -->
   líneas analíticas.
 - **Sin AUC absoluto** de modelos predictivos sin baseline; el copy solo
   habla de la compuerta de calibración y de "próximamente" antes de pasar.
