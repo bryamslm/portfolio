@@ -69,8 +69,8 @@ SELECTED PROJECTS
   TypeScript, Fastify, Drizzle, PostgreSQL.
 - Retell Flowkit: 8 graph checks; 751/751 tests and 28/28 official templates. Stack: TypeScript,
   Ajv, Vitest, CLI.
-- Multi-tenant conversational AI SaaS: one brain serving five channels, with human handoff and
-  auditing. Stack: Next.js, TypeScript, LangGraph, PostgreSQL.
+- Traza: per-organization isolation with RLS forced even on the schema owner; CI blocks the
+  merge if a cross-tenant leak test fails. Stack: TypeScript, Next.js, Drizzle, PostgreSQL.
 
 EDUCATION
 Bachelor's Degree in Computer Engineering — Costa Rica Institute of Technology (TEC), 2020 -

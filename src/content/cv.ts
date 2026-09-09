@@ -185,12 +185,12 @@ export const cvEs: Cv = {
       privateWork: true,
     },
     {
-      title: "SaaS multi-tenant de IA conversacional",
+      title: "Traza - Coaching con decisiones auditables",
       description:
-        "Agentes por chat y voz con aislamiento por organización, memoria, RAG, herramientas, guardas, handoff humano, auditoría y recuperación ante fallos.",
+        "SaaS multi-tenant que convierte la metodología de un entrenador en decisiones de entrenamiento y nutrición que él mismo revisa, con niveles graduales de autonomía y motor de IA intercambiable.",
       cvLine:
-        "un mismo cerebro atendiendo cinco canales, con handoff humano y auditoría.",
-      techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
+        "aislamiento por organización con RLS forzada incluso sobre el dueño del esquema; el CI bloquea el merge si falla un test de fuga entre tenants.",
+      techStack: ["TypeScript", "Next.js", "Drizzle", "PostgreSQL", "arquitectura hexagonal"],
       privateWork: true,
     },
   ],
@@ -321,12 +321,12 @@ export const cvEn: Cv = {
       privateWork: true,
     },
     {
-      title: "Multi-tenant conversational AI SaaS",
+      title: "Traza - Coaching with auditable decisions",
       description:
-        "Chat and voice agents with organization isolation, memory, RAG, tools, guards, human handoff, auditing and failure recovery.",
+        "Multi-tenant SaaS that turns a trainer's methodology into training and nutrition decisions they review themselves, with graduated autonomy levels and a swappable AI engine.",
       cvLine:
-        "one brain serving five channels, with human handoff and auditing.",
-      techStack: ["Next.js", "TypeScript", "LangGraph", "PostgreSQL", "Supabase", "n8n"],
+        "per-organization isolation with RLS forced even on the schema owner; CI blocks the merge if a cross-tenant leak test fails.",
+      techStack: ["TypeScript", "Next.js", "Drizzle", "PostgreSQL", "hexagonal architecture"],
       privateWork: true,
     },
   ],

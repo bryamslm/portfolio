@@ -69,8 +69,9 @@ PROYECTOS DESTACADOS
   Stack: TypeScript, Fastify, Drizzle, PostgreSQL.
 - Retell Flowkit: 8 verificaciones de grafo; 751/751 pruebas y 28/28 plantillas oficiales.
   Stack: TypeScript, Ajv, Vitest, CLI.
-- SaaS multi-tenant de IA conversacional: un mismo cerebro atendiendo cinco canales, con handoff
-  humano y auditoría. Stack: Next.js, TypeScript, LangGraph, PostgreSQL.
+- Traza: aislamiento por organización con RLS forzada incluso sobre el dueño del esquema; el CI
+  bloquea el merge si falla un test de fuga entre tenants. Stack: TypeScript, Next.js, Drizzle,
+  PostgreSQL.
 
 EDUCACIÓN
 Bachillerato Universitario en Ingeniería en Computación — Tecnológico de Costa Rica (TEC), 2020
