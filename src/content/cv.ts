@@ -93,9 +93,9 @@ export const cvEs: Cv = {
     "Voice AI", "Asterisk", "PJSIP", "AMI", "ARI", "SIP", "WebRTC", "Retell", "Telnyx", "LiveKit",
     "n8n", "Celery", "Redis", "Docker", "Linux", "nginx", "REST API", "webhooks",
     "multi-tenant", "SaaS", "seguridad", "HMAC", "OpenTelemetry", "Grafana", "Prometheus",
-    "Costa Rica", "remoto", "LATAM",
+    "Costa Rica", "remoto", "LATAM", "España",
   ],
-  location: "San Carlos, Alajuela, Costa Rica | Disponible remoto en Latinoamérica",
+  location: "San Carlos, Alajuela, Costa Rica | Disponible remoto para Latinoamérica y España",
   contact: [
     { label: "Email", value: "bryam.steven.lopez@gmail.com", href: "mailto:bryam.steven.lopez@gmail.com" },
     { label: "Teléfono", value: "+50662633553", href: "https://wa.me/50662633553" },
@@ -231,9 +231,9 @@ export const cvEn: Cv = {
     "Voice AI", "Asterisk", "PJSIP", "AMI", "ARI", "SIP", "WebRTC", "Retell", "Telnyx", "LiveKit",
     "n8n", "Celery", "Redis", "Docker", "Linux", "nginx", "REST API", "webhooks",
     "multi-tenant", "SaaS", "security", "HMAC", "OpenTelemetry", "Grafana", "Prometheus",
-    "Costa Rica", "remote", "LATAM",
+    "Costa Rica", "remote", "LATAM", "Spain",
   ],
-  location: "San Carlos, Alajuela, Costa Rica | Open to remote work in Latin America",
+  location: "San Carlos, Alajuela, Costa Rica | Open to remote work in Latin America and Spain",
   contact: [
     { label: "Email", value: "bryam.steven.lopez@gmail.com", href: "mailto:bryam.steven.lopez@gmail.com" },
     { label: "Phone", value: "+50662633553", href: "https://wa.me/50662633553" },

@@ -14,8 +14,9 @@ una agencia, una startup genérica de IA ni un catálogo de servicios freelance.
   Bryam merece una entrevista.
 - Engineering Managers, CTOs, Tech Leads y founders que evalúan capacidad real de
   construir y operar sistemas de IA aplicada.
-- Equipos de producto e ingeniería en Costa Rica y Latinoamérica que buscan un
-  perfil multidisciplinario para una posición estable, remota o híbrida.
+- Equipos de producto e ingeniería de Latinoamérica y España, con proceso en
+  español, que buscan un perfil multidisciplinario para una posición remota
+  estable. El staffing de Estados Unidos o India no es la audiencia.
 
 ### Lo que deben entender rápidamente
 
@@ -67,7 +68,11 @@ no como documentación exhaustiva de todos los sistemas.
 
 ### Categoría profesional
 
-**Ingeniero de IA Aplicada y Sistemas**
+**Ingeniero de Software — Agentes de IA en producción, de la API a la telefonía**
+
+El titular es el mismo del CV (`src/content/cv.ts`). No venderse como "otro full
+stack que usa IA": el diferenciador es que los agentes llegan hasta la línea
+telefónica real (Asterisk, SIP), y eso casi nadie más lo puede mostrar.
 
 Equivalencias útiles para búsquedas y ATS:
 
@@ -87,13 +92,19 @@ reproducibles.
 
 ### Mensaje principal recomendado
 
-> Construyo sistemas completos de IA aplicada: producto, agentes, datos,
-> automatización y voz.
+> Agentes con herramientas, RAG y guardas deterministas sobre datos propios,
+> conectados hasta la línea telefónica con Asterisk y SIP.
 
 ### Mensaje de disponibilidad
 
-> Disponible para incorporarme a un equipo estable en Costa Rica o Latinoamérica,
-> de forma remota o híbrida.
+> Disponible para trabajo remoto con equipos de Latinoamérica y España.
+
+### Qué se enlaza
+
+Solo lo que un visitante abre sin cuenta: el hub de Plica
+(`https://plica.aisolutionscr.tech`) y Ya Sale (`https://yasale.app`). Voice AI,
+el SaaS de asistentes, Colibrí y Signal son privados: se describen, no se enlazan.
+Nunca subdominios `app.` ni `ops.`.
 
 No usar “profesional independiente”, “freelancer”, “consultor independiente” ni
 equivalentes como identidad laboral.
@@ -121,20 +132,24 @@ superficies y capacidades es la visual principal del portafolio.
 ### Nivel 2 — Sistemas principales
 
 1. **SaaS multi-tenant de asistentes virtuales**
-   - Tenant 2 como caso emblemático multi-BU.
-   - Asistentes como Aldana, Emma, Charlotte, Cata, Ben y Maya.
-   - Identidad, memoria, RAG, tools, guardas, canales, handoff y operación.
+   - Un cerebro multi-marca que atiende cinco marcas (sin jerga interna en la web).
+   - Asistentes como Emma, Charlotte, Cata, Ben y Maya.
+   - 499 migraciones, 43 esquemas, 295 políticas RLS y 1.136 pruebas en verde.
 
 2. **Voice AI / Voice Ops**
    - Telefonía real con Asterisk, PJSIP, AMI y SIP trunks.
    - Retell, Telnyx, DIDWW, Kamailio, RTPengine y continuidad chat ↔ voz.
    - Llamadas entrantes y salientes, campañas, transferencias y analítica.
 
-3. **Retell Flowkit**
+3. **Ya Sale**
+   - Producto público: carta QR, pedidos por mesa, cocina en tiempo real y cobro.
+   - Socio al 50%, autor del 100% del desarrollo.
+
+4. **Retell Flowkit**
    - Motor local consumido mediante skills; no es un arnés.
    - Genera, corrige, audita y valida Retell Conversation Flows.
-   - 751 pruebas aprobadas, 19+ validadores y round-trip de 28/28 exports
-     oficiales.
+   - 751/751 pruebas (corrida del 2026-09-12), 28/28 plantillas oficiales y 8
+     verificaciones de grafo.
 
 ### Nivel 3 — Evidencia complementaria
 
@@ -152,10 +167,11 @@ asistentes, Voice AI o Retell Flowkit.
 
 ## Recorrido profesional y reglas de veracidad
 
-- **AI Solutions CR:** marzo de 2025 a julio de 2026.
+- **AI Solutions CR:** marzo de 2025 a la actualidad.
 - **Vivo Gaming — práctica profesional:** julio de 2024 a noviembre de 2024.
-- La etapa posterior a AI Solutions se comunica como disponibilidad para un nuevo
-  equipo, no como empleo independiente ficticio.
+- La búsqueda se comunica como disponibilidad para un nuevo equipo mientras sigue
+  en AI Solutions CR, no como empleo independiente ficticio.
+- El inglés nunca se infla: lectura técnica sólida, conversación básica.
 - Las cifras deben incluir fecha de corte o caveat cuando puedan cambiar.
 - No declarar una suite “verde” si existen fallos pendientes de clasificar.
 - No atribuir a producción una capacidad que solo fue demostrativa.
@@ -169,9 +185,10 @@ La página principal debe permitir dos velocidades de lectura.
 
 1. Nombre, rol y propuesta de valor.
 2. Disponibilidad.
-3. Tres acciones: ver Plica, descargar CV, contactar.
+3. Tres acciones: descargar CV (español, con el de inglés a un toque), ver Plica,
+   contactar.
 4. Plica resumido con una visual y cuatro cifras.
-5. Tres áreas de profundidad: asistentes, Voice AI y Retell Flowkit.
+5. Cuatro áreas de profundidad: asistentes, Voice AI, Ya Sale y Retell Flowkit.
 6. Experiencia, educación y contacto.
 
 ### Lectura técnica

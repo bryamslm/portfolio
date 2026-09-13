@@ -9,11 +9,12 @@
  *  - Plica es producto listo: motor + paridad ERP/web ↔ Plica Chat ↔ MCP.
  *    No se publica el semáforo interno del mapa, ni gaps de specs.
  *  - Retell Flowkit es un motor local consumido mediante skills. Nunca arnés.
- *  - Tenant 2 — AI Solutions Mauricio es el caso emblemático multi-BU.
- *    Don Mauricio es dueño/CEO, no cliente externo. Maya/Mestizo es
- *    demostrativo, no cliente real.
- *  - Voice AI: suite `voice-ai` último estado conocido 691 pass / 28 fail.
- *    No declarar verde sin volver a ejecutar.
+ *  - El caso multi-marca se cuenta sin jerga interna (nada de "Tenant N" ni
+ *    nombres de personas). Maya/Mestizo es demostrativo, no cliente real.
+ *  - Solo se enlaza lo que un visitante puede abrir sin cuenta: el hub de
+ *    Plica y Ya Sale. Nunca subdominios `app.` ni `ops.`: detrás hay login.
+ *  - No se publica el estado de suites que no están en verde; cada cifra
+ *    visible sale de una corrida real o de `cv.ts`.
  *  - Sin cifras absolutas de AUC de modelos predictivos sin baseline.
  *  - Sin datos financieros del antiguo empleador.
  */
@@ -82,7 +83,7 @@ export const plicaSurfaces: PlicaSurface[] = [
     name: "ERP / Web tradicional",
     tagline: "Navegación por pantallas",
     description:
-      "Consola operativa multi-tenant en app.aisolutionscr.tech. Radares, expedientes, simuladores, planes y checkout viven sobre el mismo motor.",
+      "Consola operativa multi-tenant para usuarios con cuenta. Radares, expedientes, simuladores, planes y checkout viven sobre el mismo motor.",
   },
   {
     id: "chat",
@@ -179,13 +180,17 @@ export const plicaFlow: PlicaFlowStep[] = [
 
 export const tenantTwo: {
   summary: string;
+  /** Mismas cifras que el primer bullet de experiencia en `cv.ts`. */
+  evidence: string;
   brands: MultiBuBrand[];
   description: string;
 } = {
   summary:
-    "Tenant 2 — AI Solutions Mauricio: un único cerebro que atiende cinco marcas con enrutamiento, memoria, conocimiento propio y traspaso a humano.",
-    description:
-      "Caso multi-BU emblemático. Identidad histórica del cerebro: Aldana. El cerebro adopta el contexto de cada marca; las unidades grandes (SobrePoxi, AI Solutions) usan conocimiento propio por marca, las más pequeñas conservan guiones completos cuando resulta más seguro. WhatsApp bidireccional con entrega confiable, Messenger dentro de la ventana de Meta, multimedia y cotizaciones con PDF preliminar.",
+    "Un solo cerebro atiende cinco marcas con enrutamiento, memoria, conocimiento propio y traspaso a humano.",
+  evidence:
+    "499 migraciones, 43 esquemas PostgreSQL y 295 políticas RLS de aislamiento por organización; 1.136 pruebas automatizadas en verde.",
+  description:
+    "El cerebro adopta el contexto de cada marca: las más grandes usan conocimiento propio y las más pequeñas conservan guiones completos cuando resulta más seguro. WhatsApp bidireccional con entrega confiable, Messenger dentro de la ventana de Meta, multimedia y cotizaciones con PDF preliminar.",
   brands: [
     {
       name: "SobrePoxi",
@@ -205,12 +210,12 @@ export const tenantTwo: {
     {
       name: "Just CR Travel (mini)",
       description:
-        "Asistencia ligera de viajes dentro del cerebro multi-BU. El JCT pleno es Emma.",
+        "Asistencia ligera de viajes dentro del asistente multi-marca. La atención completa de la agencia la lleva Emma.",
     },
     {
       name: "The Green Planet Today",
       description:
-        "Reforestación dentro del Tenant 2; guardas anti-alucinación duras sobre cifras verbatim.",
+        "Reforestación, con guardas anti-alucinación duras sobre cifras citadas textualmente.",
     },
   ],
 };
@@ -236,8 +241,8 @@ export const assistants: Assistant[] = [
     description:
       "Atención a academia y agencia con RAG selectivo y once guardas deterministas, incluida la política reforzada para interacción con menores.",
     highlights: [
-      "RAG scoped sobre kb_runway",
-      "PRICE-GATE y bloqueos de agenda/datos/inscripción sin tutor",
+      "RAG acotado a la base de conocimiento propia",
+      "Bloqueo de precios y de agenda, datos o inscripción sin tutor",
       "Handoff con redacción asistida y cadencia humana",
     ],
     status: "live",
@@ -253,7 +258,6 @@ export const assistants: Assistant[] = [
       "Reserva con RPC voz/web",
       "Pagos ONVO con webhook PSP",
     ],
-    link: "https://app.aisolutionscr.tech/m/cautiva-restaurante",
     status: "live",
   },
   {
@@ -264,8 +268,8 @@ export const assistants: Assistant[] = [
       "Asistente de seguimiento y operación, con recuperación automática y un modo de prueba que evita notificar a clientes reales durante pruebas.",
     highlights: [
       "Tool-calling de dos pasadas (LOOKUP / ACTION)",
-      "17 tools: conteos, leads, SR urgentes, triage, handoffs, fallback email",
-      "Watchdog, anti-loop y aislamiento de root state",
+      "17 tools: conteos, leads, solicitudes urgentes, triage, handoffs y respaldo por correo",
+      "Watchdog, anti-loop y aislamiento de estado",
     ],
     status: "live",
   },
@@ -288,8 +292,12 @@ export const assistants: Assistant[] = [
 // VOICE AI
 // ---------------------------------------------------------------------------
 
-export const voiceAiNote =
-  "Último estado conocido de la suite voice-ai: 691 pruebas aprobadas y 28 fallidas. No declaro la suite verde sin volver a ejecutar y clasificar los fallos.";
+/** Cifras del segundo bullet de experiencia en `cv.ts`. */
+export const voiceAiSummary =
+  "Telefonía real, no solo voz en el navegador. Escribí un cliente AMI propio sobre socket TCP, sin librería, para originar, transferir y redirigir llamadas: dialplan de unas 2.000 líneas, 6 troncales SIP, 7 colas y consola SIP en el navegador.";
+
+export const privateWorkNote =
+  "Sistema privado, sin demo pública. Lo recorro en una entrevista técnica.";
 
 export const voiceAiLayers: VoiceAiLayer[] = [
   {
@@ -460,13 +468,13 @@ export const retellFlowkit = {
     "Retell Flowkit es un motor local consumido mediante skills por Claude Code, Codex y otros agentes para generar, corregir, auditar y validar Retell Conversation Flows.",
   posture:
     "Es un advisor de alta confianza, no una jaula. Errores bloqueantes reflejan condiciones que el dashboard rechaza; warnings son heurísticas que el agente puede justificar y override.",
+  // Pruebas: `npx vitest run` del 2026-09-12, 69/69 archivos. El resto sale
+  // de `cv.ts`. Lo que solo afirmaba el README (linters, skills, versión del
+  // contrato) no se publica sin una corrida que lo sostenga.
   evidence: [
-    { label: "Contrato", value: "v1.4.0 semver" },
-    { label: "Pruebas", value: "751 aprobadas en 69 archivos" },
-    { label: "Typecheck", value: "tsc --noEmit verde" },
-    { label: "Validadores", value: "19+ linters (phases A–H)" },
-    { label: "Round-trip", value: "28/28 exports oficiales dashboard_importable: true" },
-    { label: "Skills", value: "9 capacidades invocables" },
+    { label: "Pruebas", value: "751/751 en verde" },
+    { label: "Plantillas oficiales", value: "28/28 importables" },
+    { label: "Verificaciones de grafo", value: "8" },
   ],
   modes: [
     "create",
@@ -501,19 +509,19 @@ export const secondaryProjects: SecondaryProject[] = [
     name: "handmadeart.store",
     url: "https://handmadeart.store/es",
     description:
-      "Comercio y arte hecho a mano. También vive como unidad de negocio dentro del Tenant 2.",
+      "Comercio y arte hecho a mano. También lo atiende el asistente multi-marca.",
   },
   {
     name: "sobrepoxi.com",
     url: "https://sobrepoxi.com/es",
     description:
-      "Pisos epóxicos, resina y mobiliario. La BU más desarrollada del Tenant 2 multi-BU.",
+      "Pisos epóxicos, resina y mobiliario. La marca más desarrollada del asistente multi-marca.",
   },
   {
     name: "aisolutionscr.tech",
     url: "https://aisolutionscr.tech/",
     description:
-      "Sitio corporativo de AI Solutions. Hub del producto Plica y consola SaaS autenticada.",
+      "Sitio corporativo de AI Solutions CR y puerta de entrada pública a Plica.",
   },
   {
     name: "Realidad aumentada y virtual",

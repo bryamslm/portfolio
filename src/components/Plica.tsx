@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaChevronDown } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
 import PlicaDiagram from "./PlicaDiagram";
 import { useReveal } from "../utils/reveal";
 import {
@@ -216,17 +215,10 @@ export default function Plica() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-light-border dark:border-dark-border px-5 min-h-[44px] text-sm font-medium text-light-text dark:text-dark-text hover:border-light-secondary dark:hover:border-dark-secondary hover:text-light-secondary dark:hover:text-dark-secondary transition-colors"
           >
-            <FaExternalLinkAlt size={11} /> Hub público de Plica
+            <FaExternalLinkAlt size={11} /> Abrir Plica
           </a>
-          <a
-            href="https://app.aisolutionscr.tech/es"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-light-secondary dark:text-dark-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors"
-          >
-            Consola operativa
-            <FaArrowRight size={11} />
-          </a>
+          {/* La consola operativa exige cuenta: enlazarla deja al reclutador
+              frente a un login. Solo se enlaza lo que se puede abrir. */}
         </motion.div>
       </div>
     </section>

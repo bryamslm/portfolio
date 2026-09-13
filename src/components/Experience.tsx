@@ -42,10 +42,9 @@ export default function Experience() {
               Disponible para un equipo estable
             </p>
             <p className="mt-1 text-sm text-light-soft dark:text-dark-soft text-pretty">
-              Actualmente continúo en AI Solutions CR y, mientras desempeño ese
-              rol, busco incorporarme a un equipo de IA aplicada, integraciones,
-              Voice AI o ingeniería de producto en Costa Rica o Latinoamérica,
-              remoto o híbrido.
+              Sigo en AI Solutions CR y busco incorporarme a un equipo de
+              agentes de IA, integraciones, Voice AI o ingeniería de producto,
+              en remoto, con empresas de Latinoamérica o España.
             </p>
           </li>
 

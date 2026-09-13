@@ -24,12 +24,22 @@ const SECTION_IDS = navigationLinks
   .filter((l) => !l.external)
   .map((l) => l.href);
 
-const cvLink: NavLink = {
-  href: "/documents/CV_Bryam_Lopez_ES.pdf",
-  label: "CV",
-  external: true,
-  download: "CV_Bryam_Lopez_ES.pdf",
-};
+// Los dos CV base, siempre a un toque: el sitio es en español, pero la mitad
+// de los reclutadores que llegan desde LinkedIn filtran en inglés.
+const cvLinks: NavLink[] = [
+  {
+    href: "/documents/CV_Bryam_Lopez_ES.pdf",
+    label: "CV",
+    external: true,
+    download: "CV_Bryam_Lopez_ES.pdf",
+  },
+  {
+    href: "/documents/CV_Bryam_Lopez_EN.pdf",
+    label: "EN",
+    external: true,
+    download: "CV_Bryam_Lopez_EN.pdf",
+  },
+];
 
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -102,13 +112,22 @@ export default function Navbar() {
               Contacto
             </button>
 
-            <a
-              href={cvLink.href}
-              download={cvLink.download}
-              className="text-xs sm:text-sm font-medium px-2 sm:px-3 py-2 rounded-md text-token-accent hover:bg-token-elevated transition-colors"
-            >
-              {cvLink.label}
-            </a>
+            {cvLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                download={link.download}
+                hrefLang={link.label === "EN" ? "en" : undefined}
+                aria-label={
+                  link.label === "EN"
+                    ? "Resume in English (PDF)"
+                    : "Descargar CV en español (PDF)"
+                }
+                className="text-xs sm:text-sm font-medium px-1.5 sm:px-3 py-2 rounded-md text-token-accent hover:bg-token-elevated transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
 
             <button
               onClick={() => setTheme(isDark ? "light" : "dark")}

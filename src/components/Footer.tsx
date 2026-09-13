@@ -68,16 +68,16 @@ export default function Footer() {
             Hablemos
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-light-soft dark:text-dark-soft text-pretty">
-            Disponible para incorporarme a un equipo estable en Costa Rica o
-            Latinoamérica. Si tu equipo construye productos de IA aplicada,
-            integraciones, Voice AI o sistemas, escribo en menos de 24 horas.
+            Disponible para trabajo remoto con equipos de Latinoamérica y
+            España. Si tu equipo construye agentes de IA, integraciones, Voice
+            AI o producto, respondo en menos de 24 horas.
           </p>
         </motion.div>
 
         {/* Acciones de contacto */}
         <motion.ul
           {...r}
-          className="mt-10 grid gap-px bg-light-border dark:bg-dark-border border border-light-border dark:border-dark-border rounded-xl overflow-hidden sm:grid-cols-3"
+          className="mt-10 grid gap-px bg-light-border dark:bg-dark-border border border-light-border dark:border-dark-border rounded-xl overflow-hidden sm:grid-cols-2 lg:grid-cols-4"
         >
           {primaryContacts.map((c) => (
             <li key={c.label}>

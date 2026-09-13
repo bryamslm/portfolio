@@ -32,22 +32,23 @@ const SITE_URL = "https://portfolio-bryam.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
+    default: "Bryam Steven López Miranda | Ingeniero de Software · Agentes de IA en producción",
     template: "%s | Bryam Steven López Miranda",
   },
   description:
-    "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas. Construyo agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+    "Ingeniero de Software de Costa Rica. Construyo agentes de IA en producción, de la API a la telefonía: herramientas, RAG, MCP, SaaS multi-tenant y Voice AI con Asterisk y SIP. Disponible remoto para Latinoamérica y España.",
   keywords: [
     "Bryam Steven López Miranda",
     "Ingeniero de Software Costa Rica",
     "Software Engineer Costa Rica",
     "Backend Engineer",
-    "Applied AI Engineer Costa Rica",
-    "AI Systems Engineer",
+    "Applied AI Engineer",
+    "AI Agents Engineer",
     "Voice AI Engineer",
     "Asterisk SIP Retell",
     "RAG MCP TypeScript Next.js PostgreSQL",
     "Multi-tenant SaaS",
+    "Desarrollador remoto Latinoamérica España",
   ],
   authors: [{ name: "Bryam Steven López Miranda" }],
   creator: "Bryam Steven López Miranda",
@@ -59,15 +60,15 @@ export const metadata: Metadata = {
     locale: "es_CR",
     url: SITE_URL,
     siteName: "Bryam Steven López Miranda — Portfolio",
-    title: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
+    title: "Bryam Steven López Miranda | Ingeniero de Software · Agentes de IA en producción",
     description:
-      "Construyo sistemas completos de IA aplicada: producto, agentes, datos, automatización y voz.",
+      "Agentes de IA en producción, de la API a la telefonía. Disponible remoto para Latinoamérica y España.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bryam Steven López Miranda | Ingeniero de Software, IA Aplicada y Voice AI",
+    title: "Bryam Steven López Miranda | Ingeniero de Software · Agentes de IA en producción",
     description:
-      "Agentes de IA, RAG, MCP, multi-tenant y Voice AI. Disponible en Costa Rica o remoto en Latinoamérica.",
+      "Agentes de IA, RAG, MCP, SaaS multi-tenant y Voice AI. Disponible remoto para Latinoamérica y España.",
   },
   robots: {
     index: true,
@@ -85,10 +86,10 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Bryam Steven López Miranda",
-  jobTitle: "Ingeniero de Software - IA Aplicada, Integraciones y Voice AI",
-  alternateName: "Software Engineer - Applied AI, Integrations and Voice AI",
+  jobTitle: "Ingeniero de Software - Agentes de IA en producción, de la API a la telefonía",
+  alternateName: "Software Engineer - Production AI agents, from the API to the phone line",
   description:
-    "Ingeniero en Computación de Costa Rica especializado en IA aplicada y sistemas: agentes con herramientas, RAG, MCP, productos multi-tenant y Voice AI con Asterisk, SIP y Retell.",
+    "Ingeniero de Software de Costa Rica: agentes de IA con herramientas, RAG y MCP, SaaS multi-tenant y Voice AI con Asterisk y SIP. Disponible remoto para Latinoamérica y España.",
   url: SITE_URL,
   email: "mailto:bryam.steven.lopez@gmail.com",
   telephone: "+50662633553",

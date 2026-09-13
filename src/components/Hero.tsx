@@ -166,7 +166,7 @@ export default function Hero() {
           {...fade(0.1)}
           className="font-mono text-xs uppercase tracking-[0.22em] text-token-muted"
         >
-          IA aplicada · Sistemas
+          Ingeniero de Software · Costa Rica
         </motion.p>
 
         {/* Titular con contraste de dos familias en una sola unidad */}
@@ -181,7 +181,7 @@ export default function Hero() {
             {...rise(0.42)}
             className="mt-2 block max-w-[22ch] text-display-tight font-semibold tracking-tight text-balance text-token"
           >
-            Ingeniero de Software, IA Aplicada y Voice AI
+            Agentes de IA en producción, de la API a la telefonía
           </motion.span>
         </h1>
 
@@ -189,8 +189,8 @@ export default function Hero() {
           {...fade(0.7)}
           className="mt-7 max-w-editorial text-lg leading-snug text-token-soft text-pretty sm:text-xl"
         >
-          Construyo sistemas completos de IA aplicada: producto, agentes, datos,
-          automatización y voz.
+          Agentes con herramientas, RAG y guardas deterministas sobre datos
+          propios, conectados hasta la línea telefónica con Asterisk y SIP.
         </motion.p>
 
         <motion.div
@@ -202,8 +202,8 @@ export default function Hero() {
             className="mt-2 inline-block h-2 w-2 shrink-0 rounded-full bg-emerald-400"
           />
           <p className="text-pretty">
-            Disponible para incorporarme a un equipo en Costa Rica o
-            Latinoamérica, remoto o híbrido.
+            Disponible para trabajo remoto con equipos de Latinoamérica y
+            España.
           </p>
         </motion.div>
 
