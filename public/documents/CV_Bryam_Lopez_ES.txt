@@ -18,7 +18,7 @@ producción y es verificable desde los enlaces de abajo.
 EXPERIENCIA PROFESIONAL
 
 Ingeniero de Integración de Sistemas
-AI Solutions CR | Mar 2025 - Actualidad
+AI Solutions CR | Mar 2025 - Sep 2026
 - Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp,
   Messenger, Instagram, web y telefonía: 499 migraciones, 43 esquemas PostgreSQL y 295 políticas
   RLS de aislamiento por organización, con outbox, idempotencia, feature flags y auditoría;

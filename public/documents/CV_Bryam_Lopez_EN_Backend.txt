@@ -19,7 +19,7 @@ verifiable through the links below.
 PROFESSIONAL EXPERIENCE
 
 Systems Integration Engineer
-AI Solutions CR | Mar 2025 - Present
+AI Solutions CR | Mar 2025 - Sep 2026
 - Designed and built a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram,
   web and telephony: 499 migrations, 43 PostgreSQL schemas and 295 RLS policies enforcing per-
   organization isolation, with outbox, idempotency, feature flags and auditing; 1,136 automated

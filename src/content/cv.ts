@@ -111,8 +111,7 @@ export const cvEs: Cv = {
     {
       role: "Ingeniero de Integración de Sistemas",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Actualidad",
-      current: true,
+      period: "Mar 2025 - Sep 2026",
       bullets: [
         "Diseñé y desarrollé una plataforma SaaS multi-tenant de IA conversacional para WhatsApp, Messenger, Instagram, web y telefonía: 499 migraciones, 43 esquemas PostgreSQL y 295 políticas RLS de aislamiento por organización, con outbox, idempotencia, feature flags y auditoría; 1.136 pruebas automatizadas en verde.",
         "Integré Voice AI sobre Asterisk 20 escribiendo un cliente AMI propio sobre socket TCP, sin librería, para originar, transferir y redirigir llamadas: dialplan de ~2.000 líneas, 6 troncales SIP (Telnyx, DIDWW, Retell), 7 colas y consola SIP en el navegador, con 244 endpoints y 105 tablas.",
@@ -247,8 +246,7 @@ export const cvEn: Cv = {
     {
       role: "Systems Integration Engineer",
       company: "AI Solutions CR",
-      period: "Mar 2025 - Present",
-      current: true,
+      period: "Mar 2025 - Sep 2026",
       bullets: [
         "Designed and built a multi-tenant conversational AI SaaS for WhatsApp, Messenger, Instagram, web and telephony: 499 migrations, 43 PostgreSQL schemas and 295 RLS policies enforcing per-organization isolation, with outbox, idempotency, feature flags and auditing; 1,136 automated tests green.",
         "Integrated Voice AI on Asterisk 20 by writing my own AMI client over a raw TCP socket, no library, to originate, transfer and redirect calls: a ~2,000-line dialplan, 6 SIP trunks (Telnyx, DIDWW, Retell), 7 queues and an in-browser SIP console, across 244 endpoints and 105 tables.",
