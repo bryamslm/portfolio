@@ -4,8 +4,25 @@
     {
       "name": "portfolio-prod",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["next", "start", "-p", "3100"],
+      "runtimeArgs": [
+        "next",
+        "start",
+        "-p",
+        "3100"
+      ],
       "port": 3100
+    },
+    {
+      "name": "luz-web",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "-d",
+        "C:/dev/Proyectos/luz-zona-norte/web"
+      ],
+      "port": 8765
     }
   ]
 }
